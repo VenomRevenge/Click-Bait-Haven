@@ -1,0 +1,133 @@
+/* FIRST-SECTION */
+
+.home-1 {
+    background-image: url('https://images5.alphacoders.com/878/878056.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6em 5em;
+}
+
+.home-1-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5em;
+}
+
+.home-1-container > * {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+}
+.home-1-container h1 {
+    font-size: 2.5rem;
+}
+
+.btn-explore {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    border: 2px #FF6B6B solid;
+    background-color: #FF6B6B;
+}
+
+.btn-explore:hover {
+    background-color: #e23c12;
+    color: black;
+}
+
+/* FEATURED-ARTICLES-SECTION */
+
+.featured-articles {
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 5rem 3rem;
+    background-color: #F4F4F4;
+}
+
+.featured-articles h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+
+.articles-box {
+    display: flex;
+    gap: 2rem;
+}
+
+.article-item {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article-img {
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+}
+
+.btn-read-more {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: #333333;
+    color: white;
+    max-width: 45%;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+.btn-read-more:hover {
+    background-color: #605a5a;
+    text-decoration: underline;
+}
+
+
+/* LATEST-ARTICLES-SECTION */
+
+.latest-articles {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 5rem 3rem;
+}
+
+.latest-article-box {
+    text-align: start;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.latest-article-item {
+    flex-basis: 30%;
+    flex-grow: 0;
+}
+
+.latest-article-item a {
+    color: black;
+    text-decoration: none;
+}
+
+.latest-article-item:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1060px) {
+    .articles-box {
+        flex-direction: column;
+    }
+
+    .latest-article-box {
+        flex-direction: column;
+        align-items: center;
+    }
+}
