@@ -3,9 +3,14 @@
 
     <nav>
         <a href="">Home</a>
+        <a href="">Users</a>
         <a href="">Articles</a>
-        <a href="">Articles</a>
+        {% if user.is_authenticated %}
+        <a href="" class="login-btn">Log out</a>
+        <a href="" class="signup-btn">Profile</a>
+        {% else %}
         <a href="" class="login-btn">Sign in</a>
         <a href="" class="signup-btn">Register</a>
+        {% endif %}
     </nav>
 </header>
