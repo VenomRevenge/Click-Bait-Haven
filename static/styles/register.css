@@ -1,0 +1,100 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.site {
+    justify-content: space-between;
+    height: 100vh; 
+}
+
+header {
+    position: relative;
+}
+
+main {
+    width: 100%;
+}
+
+.register-form-container {
+    margin: auto;
+    max-width: 25%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form-container h2 {
+    align-self: center;
+}
+
+.register-form-container p {
+    align-self: center;
+}
+
+.register-form-container p a {
+    text-decoration: none;
+    color: white;
+}
+
+.register-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.register-form-container form div label,
+.register-form-container form div input {
+    display: block;
+    width: 100%
+}
+
+.register-form-container form div input {
+    padding: 0.5rem;
+}
+
+.register-form-container form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.register-form-container form div input,
+.register-btn {
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.register-btn {
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border-color: #007BFF;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+    .register-form-container {
+        max-width: 40%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .register-form-container {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .register-form-container {
+        max-width: 90%;
+    }
+}
