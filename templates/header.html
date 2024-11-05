@@ -1,8 +1,8 @@
 <header>
-    <h2 class="header-title"><a href="">Click-Bait Haven</a></h2>
+    <h2 class="header-title"><a href="{% url 'index' %}">Click-Bait Haven</a></h2>
 
     <nav>
-        <a href="">Home</a>
+        <a href="{% url 'index' %}">Home</a>
         <a href="">Users</a>
         <a href="">Articles</a>
         {% if user.is_authenticated %}
@@ -10,7 +10,7 @@
         <a href="" class="signup-btn">Profile</a>
         {% else %}
         <a href="" class="login-btn">Sign in</a>
-        <a href="" class="signup-btn">Register</a>
+        <a href="{% url 'register' %}" class="signup-btn">Register</a>
         {% endif %}
     </nav>
 </header>

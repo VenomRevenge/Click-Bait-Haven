@@ -68,6 +68,13 @@ main {
     border-width: 1px;
 }
 
+.pw-help-text {
+    color: tomato;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
 .register-btn {
     padding: 0.75rem;
     background-color: #007BFF;

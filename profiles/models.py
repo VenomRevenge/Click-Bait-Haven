@@ -30,7 +30,6 @@ class Profile(models.Model):
         max_length=GENDER_MAX_LENGTH,
         choices=GenderChoices.choices,
         default=GenderChoices.UNSPECIFIED,
-        unique=True,
     )
 
     bio = models.TextField(
@@ -81,5 +80,5 @@ class Profile(models.Model):
     class Meta: 
         permissions = [
             ("confirmed_journalist", "Automatically approve all posts by this user"),
-            ("moderator", "This user has moderation permissions")
+            ("moderator", "This user has moderation permissions"),
         ]
