@@ -9,7 +9,7 @@
         <a href="" class="login-btn">Log out</a>
         <a href="" class="signup-btn">Profile</a>
         {% else %}
-        <a href="" class="login-btn">Sign in</a>
+        <a href="{% url 'sign_in' %}" class="login-btn">Sign in</a>
         <a href="{% url 'register' %}" class="signup-btn">Register</a>
         {% endif %}
     </nav>

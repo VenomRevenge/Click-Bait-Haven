@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+        <main>
+
+
+            <section class="register-form-container">
+
+                
+                <h2>Sign in</h2>
+                {% if message %}
+                <p class="attention-text">
+                    Wrong username or password!
+                </p>
+                {% endif %}
+                <form action="/sign-in/" method="post" class="register-form">
+                    
+                    {{ form }}
+                    {% csrf_token %}
+
+                    <button type="submit" class="register-btn">Sign in</button>
+                </form>
+
+                <p>Don't have an account? <a href="{% url 'register' %}" class="signup-btn">Register</a></p>
+
+            </section>
+
+
+        </main>
+
+        {% endblock %}

@@ -1,8 +1,9 @@
 from django.shortcuts import redirect, render
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
 from django.views.generic import FormView
-from home.forms import RegisterForm
+from django.contrib.auth.views import LoginView
+from home.forms import RegisterForm, SignInForm
 from profiles.models import Profile
 
 
@@ -11,7 +12,7 @@ def index(request):
 
 
 class Register(FormView):
-    template_name = 'profiles/register.html'
+    template_name = 'home/register.html'
     form_class = RegisterForm
     success_url = reverse_lazy('index')
 
@@ -27,3 +28,18 @@ class Register(FormView):
         if self.request.user.is_authenticated:
             return redirect(self.success_url)
         return super().dispatch(*args, **kwargs)
+    
+
+class SignIn(LoginView):
+    template_name = 'home/sign-in.html'
+    form_class = SignInForm
+    redirect_authenticated_user = True
+
+    def get_redirect_url(self):
+        return reverse_lazy('index')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.method == "POST":
+            context["message"] = True
+        return context

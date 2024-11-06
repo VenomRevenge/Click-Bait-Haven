@@ -16,12 +16,12 @@
                 <form action="{% url 'register' %}" method="post" class="register-form">
                     {{ form }}
                     {% csrf_token %}
-                    <p class="pw-help-text">
+                    <p class="attention-text">
                         Password needs to be minimum 8 symobols and cannot consist of only numbers!
                     </p>
                     <button type="submit" class="register-btn">Register</button>
                 </form>
-                <p>Already have an account? <a href="" class="login-btn">Sign in</a></p>
+                <p>Already have an account? <a href="{% url 'sign_in' %}" class="login-btn">Sign in</a></p>
 
 
             </section>
