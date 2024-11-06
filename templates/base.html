@@ -27,6 +27,9 @@
         {% include 'footer.html' %}
     </div>
 
+    {% if user.is_authenticated %}
+        <script type="text/javascript" src="{% static 'js/sign-out-submit.js' %}" defer></script>
+    {% endif %}
     {% block javascript %}
     {% endblock %}
     

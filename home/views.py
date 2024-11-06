@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 from django.contrib.auth.views import LoginView
@@ -43,3 +43,10 @@ class SignIn(LoginView):
         if self.request.method == "POST":
             context["message"] = True
         return context
+    
+
+def sign_out(request): 
+    if request.method == "POST":
+        logout(request)
+
+    return redirect('index')
