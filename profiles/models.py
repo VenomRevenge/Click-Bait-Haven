@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from profiles.field_choices import GenderChoices, Roles
-from profiles.validators import validate_image_size
+from profiles.validators import validate_date_of_birth, validate_image_size
 from PIL import Image
 
 
@@ -43,6 +43,12 @@ class Profile(models.Model):
         null=True,
         validators=[validate_image_size],
         upload_to='profile_pictures',
+    )
+
+    date_of_birth = models.DateField(
+        blank=True,
+        null=True,
+        validators=[validate_date_of_birth]
     )
 
     # TODO: Make this assign automatically on user and profile change

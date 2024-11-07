@@ -18,9 +18,8 @@ class Register(FormView):
 
 
     def form_valid(self, form):
-        user = form.save()   
-        Profile.objects.create(user=user)
-        login(self.request, user)
+        user = form.save()
+        login(self.request, user, backend='django.contrib.auth.backends.ModelBackend')
         return super().form_valid(form)
 
 
