@@ -10,7 +10,7 @@
         <form action="{% url 'sign_out' %}" method="post" id="sign-out-form" style="display: none;">
             {% csrf_token %}
         </form>
-        <a href="" class="signup-btn">Profile</a>
+        <a href="{% url 'profile_details' user.profile.pk %}" class="signup-btn">Profile</a>
         {% else %}
         <a href="{% url 'sign_in' %}" class="login-btn">Sign in</a>
         <a href="{% url 'register' %}" class="signup-btn">Register</a>

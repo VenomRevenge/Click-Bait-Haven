@@ -1,0 +1,138 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.site {
+    justify-content: space-between;
+    height: 100vh; 
+}
+
+header {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-header {
+    display: flex;
+    background-color: white;
+    width:60%;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+     max-width: 150px; 
+     overflow: hidden; 
+     border-radius: 50%; 
+     object-fit: cover;
+     object-position: center;
+     border: 3px solid #333333;
+}
+
+
+.profile-content {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+
+}
+
+.details-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-details {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.btn-details:hover {
+    cursor: pointer;
+    background-color: #0056b3;
+}
+
+.details-title {
+    color: rgb(74, 144, 226);
+    margin-bottom: 1rem;
+}
+
+.basic-info {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bio {
+    background-color: white;
+    padding: 2rem;
+    min-width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bio p {
+    max-width: 70ch;
+}
+
+
+@media screen and (max-width: 1600px) {
+    .profile-header,
+    .profile-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .profile-header,
+    .profile-content {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    
+    main {
+        padding: 2rem 0;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .profile-header {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .details-buttons {
+        flex-direction: column;
+    }
+
+    .btn-details {
+        width: 33%
+    }
+}

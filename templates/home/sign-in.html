@@ -19,10 +19,14 @@
                     Wrong username or password!
                 </p>
                 {% endif %}
-                <form action="/sign-in/" method="post" class="register-form">
+                <form method="post" class="register-form">
                     
                     {{ form }}
                     {% csrf_token %}
+
+                    {% if request.GET.next %}
+                        <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    {% endif %}
 
                     <button type="submit" class="register-btn">Sign in</button>
                 </form>

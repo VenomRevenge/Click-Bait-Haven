@@ -4,7 +4,6 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView
 from django.contrib.auth.views import LoginView
 from home.forms import RegisterForm, SignInForm
-from profiles.models import Profile
 
 
 def index(request):
@@ -35,6 +34,9 @@ class SignIn(LoginView):
     redirect_authenticated_user = True
 
     def get_redirect_url(self):
+        next_url = self.request.POST.get('next')
+        if next_url:
+            return next_url
         return reverse_lazy('index')
 
     def get_context_data(self, **kwargs):

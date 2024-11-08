@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+        <main>
+
+            <div class="profile-header">
+                <div class="profile-info">
+
+                    {% if profile.profile_picture %}
+                    <div class="profile-pic">
+                        <img src="{{ profile.profile_picture.url }}" alt="Profile Picture">
+                    </div>
+                    {% else %}
+                    <div class="profile-pic">
+                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="Profile Picture">
+                    </div>
+                    {% endif %}
+
+                    <div class="user-details">
+                        <h1 class="username">{{ profile.user.username }}</h1>
+                        <p class="role">{{ profile.role }}</p>
+                    </div>
+                </div>
+                {% if buttons %}
+                <div class="details-buttons">
+                    <button class="btn-details">Edit Profile</button>
+                    <button class="btn-details">My Articles</button>
+                    <button class="btn-details">My Notifications </button>
+                </div>
+                {% endif %}
+            </div>
+        
+            <div class="profile-content">
+                <section class="basic-info">
+                    <h2 class="details-title">Basic Information</h2>
+                    <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                    <p><strong>Gender:</strong> {{ profile.gender }}</p>
+                    <p><strong>Date of Birth:</strong>
+                        {% if profile.date_of_birth %}
+                         {{ profile.date_of_birth|date:"F j, Y" }}
+                        {% else %}
+                         Unspecified
+                        {% endif %}
+                        </p>
+                </section>
+        
+                <section class="bio">
+                    <h2 class="details-title">Bio</h2>
+                    {% if profile.bio %}
+                    <p>{{ profile.bio }}</p>
+                    {% else %}
+                    <p><strong>No bio provided.</strong></p>
+                    {% endif %}
+                </section>
+        
+            </div>
+
+
+        </main>
+
+
+        {% endblock %}
