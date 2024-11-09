@@ -65,6 +65,8 @@ main {
     border: none;
     border-radius: 3px;
     font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn-details:hover {

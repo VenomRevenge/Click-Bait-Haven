@@ -43,6 +43,7 @@ class Profile(models.Model):
         null=True,
         validators=[validate_image_size],
         upload_to='profile_pictures',
+        help_text=PROFILE_PIC_HELP_TEXT
     )
 
     date_of_birth = models.DateField(

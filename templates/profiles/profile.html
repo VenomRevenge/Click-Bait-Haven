@@ -29,9 +29,9 @@
                 </div>
                 {% if buttons %}
                 <div class="details-buttons">
-                    <button class="btn-details">Edit Profile</button>
-                    <button class="btn-details">My Articles</button>
-                    <button class="btn-details">My Notifications </button>
+                    <a href="{% url 'profile_edit' profile.pk %}" class="btn-details">Edit Profile</a>
+                    <a href="" class="btn-details">Articles</a>
+                    <a href="" class="btn-details">Notifications </a>
                 </div>
                 {% endif %}
             </div>

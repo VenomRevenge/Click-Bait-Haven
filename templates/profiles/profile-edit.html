@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/profile-edit.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+        <main>
+            <h1 class="edit-profile-title">Edit Profile</h1>
+
+            <section class="edit-form-container">
+
+                <form action="{% url 'profile_edit' profile.pk %}" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="info-group">
+                        <p><strong>Username:</strong> {{ profile.user.username }}</p>
+                        <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                        <p><strong>Role:</strong> {{ profile.role }}</p>
+                    </div>
+                    {% if profile.profile_picture %}
+                    <div class="profile-pic">
+                        <img src="{{ profile.profile_picture.url }}" alt="Current Profile Picture">
+                    </div>
+                    {% else %}
+                    <div class="profile-pic">
+                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="Current Profile Picture">
+                    </div>
+                    {% endif %}
+
+                    <!-- form here -->
+                     {{ form }}
+                     {% csrf_token %}
+                    
+                    <button type="submit" class="edit-btn">Save Changes</button>
+                </form>
+            </section>
+        </main>
+        {% endblock %}
