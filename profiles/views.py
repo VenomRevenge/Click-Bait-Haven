@@ -24,6 +24,7 @@ def profile_edit(request, pk):
     user = request.user
 
     if not (user.profile.pk == profile.pk or staff_or_superuser(user)):
+        # TODO: make an access denied page and redirect there instead. also can clean logic up
         return redirect('index')
     
     form = ProfileEditForm(request.POST or None,request.FILES or None, instance=profile)
