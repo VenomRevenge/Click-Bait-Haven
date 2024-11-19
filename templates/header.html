@@ -6,6 +6,7 @@
         <a href="">Users</a>
         <a href="">Articles</a>
         {% if user.is_authenticated %}
+        <a href="{% url 'article_create' %}">Publish Article</a>
         <a href="{% url 'sign_out' %}" class="login-btn" id="sign-out">Sign out</a>
         <form action="{% url 'sign_out' %}" method="post" id="sign-out-form" style="display: none;">
             {% csrf_token %}

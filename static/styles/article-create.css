@@ -1,0 +1,135 @@
+body {
+    background-color: #F4F4F4;
+}
+
+
+.site {
+    justify-content: space-between;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 7rem 0 2rem 0;
+}
+
+.article-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 2rem;
+    padding:2rem;
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-form-title {
+    color: rgb(74, 144, 226);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+form div label {
+    display: block;
+    padding-bottom: 0.5rem;
+}
+
+.helptext {
+    color: tomato;
+    text-decoration: underline;
+    padding-bottom: 0.5rem;
+}
+
+form div input {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+textarea input {
+    border-radius: 5px;
+}
+
+fieldset {
+    padding: 1rem;
+}
+
+fieldset div {
+    display: flex;
+    flex-wrap: wrap;
+    gap:0.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+fieldset div div label {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 0.3rem 0.8rem;
+    background-color: rgb(238, 238, 238);
+}
+
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label:has(input[type="checkbox"]:checked) {
+    background-color: #ffcc00;
+    color: white;
+}
+
+fieldset div div label:hover {
+    background-color: #ddd;
+}
+
+.submit-btn {
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border-color: #007BFF;
+    width: 50%;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+    .article-form-container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .article-form-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .article-form-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/article-create.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+
+        <main>
+            <div class="article-form-container">
+                <h1 class="article-form-title">Post an Article</h1>
+                <form action="{% url 'article_create'%}" method="post" enctype="multipart/form-data">
+
+                    {{ form.as_div }}
+                    {% csrf_token %}
+                    
+                    <button class="submit-btn">
+                        {% if perms %}
+                        Post Article!
+                        {% else %}
+                        Submit for review!
+                        {% endif %}
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        {% endblock %}
