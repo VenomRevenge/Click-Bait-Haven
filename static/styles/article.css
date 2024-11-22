@@ -1,0 +1,251 @@
+body {
+    background-color: #F4F4F4;
+}
+
+
+.site {
+    justify-content: space-between;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 7rem 0 2rem 0;
+}
+
+.article-container {
+    width: 60%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding:1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mod-btns {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-moderation {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-moderation:hover {
+    background-color: #0056b3;
+}
+
+.article-metadata {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.author-profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.article-image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.article-content {
+    padding: 2rem 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article-content pre {
+    overflow: scroll;
+    padding: 1rem;
+}
+
+.tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border: 2px dotted black;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+}
+
+.article-reactions {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.reaction-btn {
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid grey;
+}
+
+.reaction-btn.liked {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+}
+
+.reaction-btn.disliked {
+    background-color: tomato;
+    color: white;
+    font-weight: bold;
+}
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.comment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comment-form form textarea {
+    width: 70%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.submit-comment-btn {
+    padding: 0.6rem 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 20%;
+}
+
+.submit-comment-btn:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+.login-btn {
+    text-decoration: none;
+    color: white;
+}
+
+.comments-list {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comment {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.comment-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.comment-user-profile-picture {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comment-date {
+    color: gray;
+    margin-left: auto;
+}
+
+.comment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.comment-like, .comment-dislike, .comment-report {
+    text-decoration: none;
+    color: #333;
+}
+
+.comment-like.liked, .comment-dislike.disliked {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1600px) {
+    .article-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .article-container {
+        width: 85%;
+    }
+
+    .article-heading {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .mod-btns {
+        flex-direction: column;
+    }
+    .btn-moderation {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .article-container {
+        width: 100%;
+    }
+    .comment-form form textarea{
+        width: 100%;
+    }
+    .submit-comment-btn {
+        width: 40%;
+    }
+}
