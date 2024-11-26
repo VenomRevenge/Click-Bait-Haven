@@ -30,3 +30,38 @@ class ArticleCreateForm(forms.ModelForm):
                 }
             ),
         }
+
+
+class ArticleSearchForm(forms.Form):
+
+    title = forms.CharField(
+        label="Search by title",
+        required=False,
+        widget=forms.TextInput(attrs={"placeholder": "Article title..."})
+    )
+    username = forms.CharField(
+        label="From author",
+        required=False,
+        widget=forms.TextInput(attrs={"placeholder": "Author's username..."})
+    )
+    order_by = forms.ChoiceField(
+        label="Sort by",
+        required=False,
+        choices=[
+            ("-created_at", "Date (Newest)"),
+            ("created_at", "Date (Oldest)"),
+            # ("likes", "Likes"),
+            # ("dislikes", "Dislikes"),
+        ],
+        widget=forms.Select()
+    )
+    tag = forms.MultipleChoiceField(
+        label="Tags",
+        required=False,
+        widget=forms.CheckboxSelectMultiple,
+        choices=[]  
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['tag'].choices = [(tag.name, tag.name) for tag in Tag.objects.all().order_by('name')]

@@ -78,7 +78,7 @@ main {
 }
 
 .article-content pre {
-    overflow: scroll;
+    overflow: auto;
     padding: 1rem;
 }
 

@@ -4,8 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.http import Http404
 from django.core.exceptions import PermissionDenied
-from articles.forms import ArticleCreateForm
-from articles.models import Article
+from django.core.paginator import Paginator
+from articles.forms import ArticleCreateForm, ArticleSearchForm
+from articles.models import Article, Tag
 from profiles.helpers import has_confirmed_journalist_perms, is_admin_staff_mod, is_profile_owner_or_permission
 
 
@@ -64,3 +65,47 @@ def article_view(request, pk):
         'edit_button': is_profile_owner_or_permission(user, author)
     }
     return render(request, 'articles/article.html', context)
+
+
+def article_search(request):
+    form = ArticleSearchForm(request.GET or None)
+
+    articles = (
+        Article.objects
+            .active_articles()
+            .select_related('author__user')
+            .prefetch_related('tags')
+            .only(
+                'id',
+                'author__id',
+                'author__user__username', 
+                'picture', 
+                'title', 
+                'created_at',
+            )
+    )
+    title_to_search = request.GET.get('title', None)
+    author_to_search = request.GET.get('username', None)
+    tags_to_search = request.GET.getlist('tag', None)
+    ordering = request.GET.get('order_by', '-created_at')
+
+    if title_to_search:
+        articles = articles.filter(title__icontains=title_to_search)
+    if author_to_search:
+        articles = articles.filter(author__user__username__icontains=author_to_search)
+    if tags_to_search:
+        for tag in tags_to_search:
+            articles = articles.filter(tags__name=tag)
+    
+    articles = articles.order_by(ordering)
+
+    paginator = Paginator(articles, 1)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_number': page_number,
+        'articles': page_obj,
+        'form': form,
+    }
+    return render(request, 'articles/article-search.html', context)

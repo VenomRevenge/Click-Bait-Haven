@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load query_pages %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/article-search.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+
+        <main>
+            <aside class="search-form">
+                <h1>Search articles:</h1>
+                <form action="{% url 'article_search' %}" method="get">
+                    <button type="submit" class="search-btn">Search</button>
+                    {{ form }}
+                </form>
+            </aside>
+            <div class="dashboard">
+                {% for article in articles %}
+                <article>
+                    {% if article.picture %}
+                        <div class="article-img">
+                            <a href="{% url 'article' article.id %}">
+                            <img src="{{ article.picture.url }}" alt="Article Image">
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="article-img">
+                            <a href="{% url 'article' article.id %}">
+                            <img src="{% static 'images/default-article-pic.jpg' %}" alt="Article Image">
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="article-info">
+                        <h2 class="article-title"><a href="{% url 'article' article.id %}">{{ article.title }}</a> </h2>
+                        <p class="article-author">by <a href="{% url 'profile_details' article.author.id %}">{{ article.author.user.username }}</a></p>
+                    </div>
+                </article>
+                {% empty %}
+                <h1 style="color: tomato; text-decoration: underline;">No articles match your search!</h1>
+                {% endfor %}
+
+                
+                <div class="pagination-btns">
+                <a href=" 
+                        {% if articles.has_previous %}
+                            ?{% query_pages request 'page' articles.previous_page_number %}
+                        {% else %}
+                            ?{% query_pages request 'page' 1 %}
+                        {% endif %}
+                        "
+                 class="btn-pag" 
+                ><- Previous</a>
+                <span>Page {{ page_number }} of {{ articles.paginator.num_pages }}</span>
+                <a href="
+                        {% if articles.has_next %}
+                            ?{% query_pages request 'page' articles.next_page_number %}
+                        {% else %}
+                            ?{% query_pages request 'page' articles.paginator.num_pages %}
+                        {% endif %}
+                        "
+                 class="btn-pag">Next Page -></a>
+                </div>
+            </div>
+
+        </main>
+
+        {% endblock %}
