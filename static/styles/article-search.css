@@ -203,3 +203,19 @@ article {
         width: 50%;
     }
 }
+
+@media screen and (max-width: 550px) {
+    main {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .dashboard {
+        width: 100%;
+        margin: 0;
+    }
+}

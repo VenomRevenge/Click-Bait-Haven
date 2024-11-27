@@ -105,3 +105,9 @@ main {
         max-width: 90%;
     }
 }
+
+@media screen and (max-width: 420px) {
+    .signup-btn {
+        display: inline-block;
+    }
+}

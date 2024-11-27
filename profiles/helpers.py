@@ -4,6 +4,10 @@ from functools import wraps
 CONFIRMED_JOURNALIST = 'profiles.confirmed_journalist'
 MODERATOR = 'profiles.moderator'
 def is_profile_owner_or_permission(user, profile) -> bool:
+
+    if not user.is_authenticated:
+        return False
+    
     return user.profile.pk == profile.pk or user.is_staff or user.is_superuser
 
 

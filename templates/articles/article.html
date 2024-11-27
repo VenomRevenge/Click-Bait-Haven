@@ -21,7 +21,7 @@
                             <a href="" class="btn-moderation">Edit Article</a>
                         {% endif %}
                         {% if approval_phase %}
-                            <a href="" class="btn-moderation">Approve</a>
+                            <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Approve</a>
                             <a href="" class="btn-moderation">Reject</a>
                         {% endif %}
                     </div>
@@ -60,149 +60,151 @@
 
                 </div>
 
-                <div class="article-reactions">
-                    <a href="" class="reaction-btn liked">
-                        👍 Like (32)
-                    </a>
-                    <a href="" class="reaction-btn disliked">
-                        👎 Dislike (21)
-                    </a>
-                </div>
+                {% if article.is_approved %}
+                    <div class="article-reactions">
+                        <a href="" class="reaction-btn liked">
+                            👍 Like (32)
+                        </a>
+                        <a href="" class="reaction-btn disliked">
+                            👎 Dislike (21)
+                        </a>
+                    </div>
+                
+                    <div class="comments-section">
+                        <hr>
+                        <h2>Comments:</h2>
+                        {% if user.is_authenticated %}
+                            <div class="comment-form">
+                                <form action="" method="post">
+                                    <div>
+                                        <textarea name="content" rows="3" placeholder="Write a comment..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-comment-btn">Submit Comment</button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <p class="sign-in-prompt">You need to <a href="{% url 'sign_in' %}" class="login-btn">Sign In</a> to comment.</p>
+                        {% endif %}
 
-                <div class="comments-section">
-                    <hr>
-                    <h2>Comments:</h2>
-                    {% if user.is_authenticated %}
-                        <div class="comment-form">
-                            <form action="" method="post">
-                                <div>
-                                    <textarea name="content" rows="3" placeholder="Write a comment..." required></textarea>
+                        <div class="comments-list">
+
+                            <div class="comment">
+                                <div class="comment-user-info">
+                                    <div class="comment-user-profile-picture">
+                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                    </div>
+                                    <a href="" class="comment-user-username">Usercommenter</a>
+                                    <span class="comment-date">On 24/04/2005</span>
                                 </div>
-                                <button type="submit" class="submit-comment-btn">Submit Comment</button>
-                            </form>
-                        </div>
-                    {% else %}
-                        <p class="sign-in-prompt">You need to <a href="{% url 'sign_in' %}" class="login-btn">Sign In</a> to comment.</p>
-                    {% endif %}
-
-                    <div class="comments-list">
-
-                        <div class="comment">
-                            <div class="comment-user-info">
-                                <div class="comment-user-profile-picture">
-                                    <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                <p class="comment-content">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
+                                    dicta facere fugiat numquam 
+                                    dolorem amet incidunt veritatis, 
+                                    animi distinctio maxime voluptates. Minima!
+                                </p>
+                                <div class="comment-actions">
+                                    <a href="" 
+                                    class="comment-like liked">
+                                        👍 Like (21)
+                                    </a>
+                                    <a href="" 
+                                    class="comment-dislike disliked">
+                                        👎 Dislike (33)
+                                    </a>
+                                    <a href="" class="comment-report">⚠️ Report</a>
                                 </div>
-                                <a href="" class="comment-user-username">Usercommenter</a>
-                                <span class="comment-date">On 24/04/2005</span>
                             </div>
-                            <p class="comment-content">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                dicta facere fugiat numquam 
-                                dolorem amet incidunt veritatis, 
-                                animi distinctio maxime voluptates. Minima!
-                            </p>
-                            <div class="comment-actions">
-                                <a href="" 
-                                   class="comment-like liked">
-                                    👍 Like (21)
-                                </a>
-                                <a href="" 
-                                   class="comment-dislike disliked">
-                                    👎 Dislike (33)
-                                </a>
-                                <a href="" class="comment-report">⚠️ Report</a>
-                            </div>
-                        </div>
 
-                        <div class="comment">
-                            <div class="comment-user-info">
-                                <div class="comment-user-profile-picture">
-                                    <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                            <div class="comment">
+                                <div class="comment-user-info">
+                                    <div class="comment-user-profile-picture">
+                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                    </div>
+                                    <a href="" class="comment-user-username">Usercommenter</a>
+                                    <span class="comment-date">On 24/04/2005</span>
                                 </div>
-                                <a href="" class="comment-user-username">Usercommenter</a>
-                                <span class="comment-date">On 24/04/2005</span>
-                            </div>
-                            <p class="comment-content">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                dicta facere fugiat numquam 
-                                dolorem amet incidunt veritatis, 
-                                animi distinctio maxime voluptates. Minima!
-                            </p>
-                            <div class="comment-actions">
-                                <a href="" 
-                                   class="comment-like liked">
-                                    👍 Like (21)
-                                </a>
-                                <a href="" 
-                                   class="comment-dislike">
-                                    👎 Dislike (33)
-                                </a>
-                                <a href="" class="comment-report">⚠️ Report</a>
-                            </div>
-                        </div>
-
-                        <div class="comment">
-                            <div class="comment-user-info">
-                                <div class="comment-user-profile-picture">
-                                    <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                <p class="comment-content">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
+                                    dicta facere fugiat numquam 
+                                    dolorem amet incidunt veritatis, 
+                                    animi distinctio maxime voluptates. Minima!
+                                </p>
+                                <div class="comment-actions">
+                                    <a href="" 
+                                    class="comment-like liked">
+                                        👍 Like (21)
+                                    </a>
+                                    <a href="" 
+                                    class="comment-dislike">
+                                        👎 Dislike (33)
+                                    </a>
+                                    <a href="" class="comment-report">⚠️ Report</a>
                                 </div>
-                                <a href="" class="comment-user-username">Usercommenter</a>
-                                <span class="comment-date">On 24/04/2005</span>
                             </div>
-                            <p class="comment-content">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                dicta facere fugiat numquam 
-                                dolorem amet incidunt veritatis, 
-                                animi distinctio maxime voluptates. Minima!
-                            </p>
-                            <div class="comment-actions">
-                                <a href="" 
-                                   class="comment-like">
-                                    👍 Like (21)
-                                </a>
-                                <a href="" 
-                                   class="comment-dislike disliked">
-                                    👎 Dislike (33)
-                                </a>
-                                <a href="" class="comment-report">⚠️ Report</a>
-                            </div>
-                        </div>
 
-                        <div class="comment">
-                            <div class="comment-user-info">
-                                <div class="comment-user-profile-picture">
-                                    <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                            <div class="comment">
+                                <div class="comment-user-info">
+                                    <div class="comment-user-profile-picture">
+                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                    </div>
+                                    <a href="" class="comment-user-username">Usercommenter</a>
+                                    <span class="comment-date">On 24/04/2005</span>
                                 </div>
-                                <a href="" class="comment-user-username">Usercommenter</a>
-                                <span class="comment-date">On 24/04/2005</span>
+                                <p class="comment-content">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
+                                    dicta facere fugiat numquam 
+                                    dolorem amet incidunt veritatis, 
+                                    animi distinctio maxime voluptates. Minima!
+                                </p>
+                                <div class="comment-actions">
+                                    <a href="" 
+                                    class="comment-like">
+                                        👍 Like (21)
+                                    </a>
+                                    <a href="" 
+                                    class="comment-dislike disliked">
+                                        👎 Dislike (33)
+                                    </a>
+                                    <a href="" class="comment-report">⚠️ Report</a>
+                                </div>
                             </div>
-                            <p class="comment-content">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                dicta facere fugiat numquam 
-                                dolorem amet incidunt veritatis, 
-                                animi distinctio maxime voluptates. Minima!
-                            </p>
-                            <div class="comment-actions">
-                                <a href="" 
-                                   class="comment-like">
-                                    👍 Like (21)
-                                </a>
-                                <a href="" 
-                                   class="comment-dislike">
-                                    👎 Dislike (33)
-                                </a>
-                                <a href="" class="comment-report">⚠️ Report</a>
-                            </div>
-                        </div>
 
+                            <div class="comment">
+                                <div class="comment-user-info">
+                                    <div class="comment-user-profile-picture">
+                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                    </div>
+                                    <a href="" class="comment-user-username">Usercommenter</a>
+                                    <span class="comment-date">On 24/04/2005</span>
+                                </div>
+                                <p class="comment-content">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
+                                    dicta facere fugiat numquam 
+                                    dolorem amet incidunt veritatis, 
+                                    animi distinctio maxime voluptates. Minima!
+                                </p>
+                                <div class="comment-actions">
+                                    <a href="" 
+                                    class="comment-like">
+                                        👍 Like (21)
+                                    </a>
+                                    <a href="" 
+                                    class="comment-dislike">
+                                        👎 Dislike (33)
+                                    </a>
+                                    <a href="" class="comment-report">⚠️ Report</a>
+                                </div>
+                            </div>
+
+
+                        </div>
 
                     </div>
-
-                </div>
+                {% endif %}
 
             </div>
 
