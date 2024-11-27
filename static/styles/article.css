@@ -75,6 +75,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .article-content pre {

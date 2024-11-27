@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/article-review.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+        <main>
+            <h1 class="review-title">There are {{ num_articles }} articles up for review!</h1>
+            <div class="current-articles-container">
+                {% for article in articles %}
+                <article>
+                    {% if article.picture %}
+                        <div class="article-img">
+                            <a href="{% url 'article' article.id %}">
+                            <img src="{{ article.picture.url }}" alt="Article Image">
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="article-img">
+                            <a href="{% url 'article' article.id %}">
+                            <img src="{% static 'images/default-article-pic.jpg' %}" alt="Article Image">
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    <div class="article-metadata">
+                        <h2 class="article-title"><a href="{% url 'article' article.id %}">{{ article.title }}</a></h2>
+                        <p class="article-author">by <a href="">{{ article.author.user.username }}</a></p>
+                        <p class="article-date-publication">Published on: {{ article.created_at|date:"j F, Y" }}</p>
+                        <p class="article-current-status">Status: <strong>Not Reviewed!</strong></p>
+                    </div>
+                    <a href="{% url 'article' article.id %}" class="article-review-btn">Review!</a>
+                </article>
+                {% empty %}
+                    <h1 style="color: tomato; text-decoration: underline;">No articles to review, time to take a break!</h1>
+                {% endfor %}
+
+                <!-- <article>
+                    <div class="article-img">
+                        <a href="">
+                            <img src="{% static 'images/default-article-pic.jpg' %}" alt="Article Picture">
+                        </a>
+                    </div>
+                    <div class="article-metadata">
+                        <h2 class="article-title"><a href="">This articles title</a></h2>
+                        <p class="article-author">by <a href="">JohnDoe</a></p>
+                        <p class="article-date-publication">Deleted at: 19 August 2020</p>
+                        <p class="article-current-status deleted">Status: <strong>Deleted!</strong></p>
+                    </div>
+                    <a href="" class="article-review-btn">View!</a>
+                </article> -->
+
+            </div>
+
+            <div class="pagination-btns">
+                <a class="btn-pag" href=
+                "
+                    {% if articles.has_previous %}
+                        ?page={{ articles.previous_page_number }}
+                    {% else %}
+                        ?page=1
+                    {% endif %}
+                        
+                "
+                ><- Previous</a>
+                <span>Page {{ page_number }} of {{ articles.paginator.num_pages }}</span>
+                <a class="btn-pag" href=
+                "
+                    {% if articles.has_next %}
+                        ?page={{ articles.next_page_number }}
+                    {% else %}
+                        ?page={{ articles.paginator.num_pages }}
+                    {% endif %}
+
+                ">Next Page -></a>
+            </div>
+
+            <div class="admin-greetings">
+                <h3 class="greeting-superuser">Hello Admin! There are currently 10 deleted articles!</h3>
+                <a href="" class="deleted-articles">View deleted articles!</a>
+            </div>
+
+        </main>
+
+        {% endblock %}

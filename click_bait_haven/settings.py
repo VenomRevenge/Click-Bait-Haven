@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'profiles',
     'articles',
+    'moderation_system',
 ]
 
 MIDDLEWARE = [

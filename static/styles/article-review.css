@@ -1,0 +1,146 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.site {
+    justify-content: space-between;
+    height: 100vh; 
+}
+
+header {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.review-title {
+    color: tomato;
+    font-weight: 900;
+    text-decoration: double;
+    text-align: center;
+}
+
+.current-articles-container {
+    display: flex;
+    gap: 2rem;
+    width: 90%;
+    align-items: center;
+}
+
+article {
+    padding:1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 40%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.article-img {
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.article-metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.article-title a, 
+.article-author a {
+    text-decoration: none;
+    color:black;
+}
+
+.article-title a:hover, 
+.article-author a:hover {
+    text-decoration: underline;
+}
+
+.article-current-status strong {
+    color: tomato;
+}
+
+.article-current-status.deleted strong {
+    color: grey;
+    text-decoration: underline;
+}
+
+.article-review-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    width: 30%;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+.article-review-btn:hover {
+    cursor: pointer;
+    background-color: #0056b3;
+}
+
+.btn-pag {
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border-color: #007BFF;
+    align-self: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 0.25rem;
+}
+
+.btn-pag:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+.deleted-articles {
+    padding: 0.75rem;
+    text-decoration: none;
+    background-color: tomato;
+    color: black;
+    font-weight: 900;
+    display: block;
+    width: 50%;
+    margin: 1rem auto;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.deleted-articles:hover {
+    background-color: rgb(225, 96, 73);
+}
+
+@media screen and (max-width: 1000px) {
+    .current-articles-container {
+        flex-direction: column;
+    }
+
+    article {
+        max-width: 100%;
+    }
+    
+    .deleted-articles {
+        margin-bottom: 1rem;
+    }
+}

@@ -99,7 +99,7 @@ def article_search(request):
     
     articles = articles.order_by(ordering)
 
-    paginator = Paginator(articles, 1)
+    paginator = Paginator(articles, 6)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
 
