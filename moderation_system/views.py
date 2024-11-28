@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from articles.models import Article
 from django.core.paginator import Paginator
+from moderation_system.models import Notification
 from profiles.helpers import check_for_mod_or_admin_permissions
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
@@ -95,7 +96,12 @@ def approve_article(request, pk):
     article.approved_by = user.profile
     article.save()
 
-    ## TODO: notify user of approved article
-
+    Notification.objects.create(
+        profile=article.author,
+        reviewer=user.profile,
+        is_positive_review=True,
+        article_title=article.title,
+        article_id=article.id,
+    )
 
     return redirect('review_page')

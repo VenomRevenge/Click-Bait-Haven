@@ -218,6 +218,66 @@ main {
     text-decoration: underline;
 }
 
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+
+#close-btn {
+    justify-self: flex-end;
+    padding: 0.5rem 1rem;
+    color: tomato;
+   
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.popup form button {
+    width: 50%;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    background-color: tomato;
+}
+
+#close-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.popup form button:hover {
+    text-decoration: underline;
+    background-color: rgb(253, 75, 44);
+
+}
+
+#reason-rejection {
+    width: 100%;
+    height: 140px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
 @media screen and (max-width: 1600px) {
     .article-container {
         width: 70%;
@@ -228,7 +288,6 @@ main {
     .article-container {
         width: 85%;
     }
-
     .article-heading {
         flex-direction: column;
         gap: 2rem;
@@ -238,6 +297,9 @@ main {
     }
     .btn-moderation {
         width: 30%;
+    }
+    .popup {
+        width: 60%;
     }
 }
 
@@ -250,5 +312,8 @@ main {
     }
     .submit-comment-btn {
         width: 40%;
+    }
+    .popup {
+        width: 80%
     }
 }
