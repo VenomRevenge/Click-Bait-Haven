@@ -10,6 +10,10 @@
 
         <main>
 
+            {% if article.deleted_at %}
+                <h1 style="color: tomato">This article has been rejected!</h1>
+            {% endif %}
+
             <div class="article-container">
 
                 <div class="article-heading">
@@ -22,15 +26,16 @@
                         {% endif %}
                         {% if approval_phase %}
                             <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Approve</a>
-                            <a href="" class="btn-moderation" id="reject-btn">Reject</a>
+                            <a href="#" class="btn-moderation" id="reject-btn">Reject</a>
                             <div id="overlay" class="overlay">
                                 <div class="popup" id="popup">
                                     <h1 id="close-btn">X</h1>
-                                    <form method="post" action="" id="rejection-form">
+                                    <form method="post" action="{% url 'reject_article' article.pk %}" id="rejection-form">
                                         <h2>Enter a reason for rejection!</h2> 
                                         <textarea name="reason_for_rejection" id="reason-rejection"
                                         placeholder="Please give your reasons here..." required></textarea>
                                         <br>
+                                        {% csrf_token %}
                                         <button type="submit" class="btn-moderation" id="submit-rejection">Reject Article!</button>
                                     </form>
                                 </div>

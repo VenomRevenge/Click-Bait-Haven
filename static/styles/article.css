@@ -268,7 +268,7 @@ main {
 .popup form button:hover {
     text-decoration: underline;
     background-color: rgb(253, 75, 44);
-
+    cursor: pointer;
 }
 
 #reason-rejection {
