@@ -1,0 +1,216 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.site {
+    justify-content: space-between;
+    height: 100vh; 
+}
+
+header {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.notifications-container {
+    width: 50%;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 500px;
+    align-self: flex-start;
+    width: 100%;
+    
+}
+
+.notification-mods-review,
+.notification-negative,
+.notification-positive {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-mods-review {
+    border-left: 4px solid rgb(216, 216, 46);
+}
+
+.mod-info {
+    color: tomato;
+    text-align: center;
+}
+
+.review-btn {
+    width: 50%;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    margin: 1rem auto;
+    background-color: tomato;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.review-btn:hover {
+    text-decoration: underline;
+    background-color: rgb(225, 96, 73);
+}
+
+.notification-positive {
+    border-left: 4px solid #28a745;
+}
+
+.notification-negative {
+    border-left: 4px solid tomato;
+}
+
+.review-metadata,
+.article-decision-data {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    
+}
+.article-title-data,
+.reject-decision-data {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin-bottom: 0.75rem;
+}
+
+.rejection-reason {
+    color: tomato;
+    font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding: 1rem;
+}
+
+.approved-article-title {
+    text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    color: #28a745;
+}
+
+.rejected-article-title {
+    color: tomato;
+}
+
+.decision-approve {
+    color: #28a745;
+    text-decoration: underline;
+}
+
+.date {
+    color: gray;
+}
+
+.reviewer-name {
+    color: black;
+    font-weight: bold;
+}
+
+.notifications-container {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+form {
+    display: flex;
+    width: 100%;
+}
+
+.btn-delete {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: tomato;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.btn-delete:hover {
+    background-color: rgb(225, 96, 73);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.no-notifications {
+    text-align: center;
+    color: #777;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.btn-pag {
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border-color: #007BFF;
+    align-self: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 0.25rem;
+}
+
+.btn-pag:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+    .notifications-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .notifications-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .btn-pag {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .notifications-container {
+        width: 100%;
+    }
+}

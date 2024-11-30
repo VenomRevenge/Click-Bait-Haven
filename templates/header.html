@@ -1,3 +1,5 @@
+{% load num_notifications %}
+
 <header>
     <h2 class="header-title"><a href="{% url 'index' %}">Click-Bait Haven</a></h2>
 
@@ -6,12 +8,21 @@
         <a href="">Users</a>
         <a href="{% url 'article_search' %}">Articles</a>
         {% if user.is_authenticated %}
-        <a href="{% url 'article_create' %}">Publish Article</a>
-        <a href="{% url 'sign_out' %}" class="login-btn" id="sign-out">Sign out</a>
-        <form action="{% url 'sign_out' %}" method="post" id="sign-out-form" style="display: none;">
-            {% csrf_token %}
-        </form>
-        <a href="{% url 'profile_details' user.profile.pk %}" class="signup-btn">Profile</a>
+            <a href="{% url 'article_create' %}">Publish Article</a>
+            <a href="{% url 'my_notifications' %}" class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="30" height="30">
+                    <path d="M224 512c35.35 0 63.1-28.65 63.1-64H160c0 35.35 28.7 64 64 64zM439.4 362.7c-19.25-20.62-55.4-52.62-55.4-154.7c0-77.25-54.5-139.8-127.1-155.2V32c0-17.62-14.4-32-31.1-32S192 14.38 192 32v20.75C118.5 68.25 64 130.8 64 208c0 102.1-36.12 134.1-55.37 154.7C2.875 368.1 0 374.2 0 380.5C0 392.4 10.62 400 23.1 400h400c12.37 0 23.1-7.562 23.1-19.5C448 374.2 445.1 368.1 439.4 362.7z"/>
+                </svg>
+                {% get_user_notifications_count user as notification_count %}
+                {% if notification_count %}
+                <span class="notification-badge">{{ notification_count }}</span>
+                {% endif %}
+            </a>
+            <a href="{% url 'sign_out' %}" class="login-btn" id="sign-out">Sign out</a>
+            <form action="{% url 'sign_out' %}" method="post" id="sign-out-form" style="display: none;">
+                {% csrf_token %}
+            </form>
+            <a href="{% url 'profile_details' user.profile.pk %}" class="signup-btn">Profile</a>
         {% else %}
         <a href="{% url 'sign_in' %}" class="login-btn">Sign in</a>
         <a href="{% url 'register' %}" class="signup-btn">Register</a>

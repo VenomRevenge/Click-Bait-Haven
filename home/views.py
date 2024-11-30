@@ -1,9 +1,14 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login, logout
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from articles.models import Article
 from home.forms import RegisterForm, SignInForm
+from moderation_system.models import Notification
+from profiles.helpers import is_admin_staff_mod
 
 
 def index(request):
@@ -51,3 +56,66 @@ def sign_out(request):
         logout(request)
 
     return redirect('index')
+
+@login_required
+def my_notifications(request):
+
+    user = request.user
+    profile = request.user.profile 
+    is_mod_or_admin = is_admin_staff_mod(user)
+
+    # when page is opened mark all notifications as viewed
+    profile.notifications.filter(viewed=False).update(viewed=True)
+
+    notifications = (
+        profile.notifications
+        .select_related('reviewer__user')
+        .only(
+            'time_of_review',
+            'is_positive_review',
+            'reason_for_rejection',
+            'article_title',
+            'reviewer_id', 
+            'reviewer__user__username'
+        )
+        .order_by('-time_of_review')
+    )
+    num_notifications = notifications.count()
+
+    paginator = Paginator(notifications, 3)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+
+    
+    context = {
+        'page_number': page_number,
+        'is_only_1_page': num_notifications <= 3,
+        'is_moderator_or_admin': is_mod_or_admin,
+        'notifications': page_obj,
+        'num_notifications': num_notifications,
+    }
+    
+    # mods and admin notifications also should consist of articles that havent been approved
+    if is_mod_or_admin:
+        num_unnaproved_articles = Article.objects.articles_that_need_approval().count()
+        context['num_unnaproved_articles'] = num_unnaproved_articles
+        context['num_notifications'] += num_unnaproved_articles
+
+    return render(request,'home/my-notifications.html', context)
+
+
+@login_required
+def delete_notification(request, pk):
+
+    referer_url = request.META.get("HTTP_REFERER", None)
+
+    if request.method != 'POST' or not referer_url:
+        return redirect('my_notifications')
+    
+    user = request.user
+    profile = user.profile
+    
+    notification = get_object_or_404(Notification, pk=pk, profile=profile)
+    notification.delete()
+
+    return redirect(referer_url)

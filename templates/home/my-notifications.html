@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'styles/my-notifications.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+        <main>
+            <div class="notifications-container">
+                <h1>My notifications{% if num_notifications > 0 %} ({{ num_notifications }}){% endif %}</h1>
+                <div class="messages">
+                    
+                    
+                    {% if is_moderator_or_admin %}
+                        <div class="notification-mods-review">
+                            <h2 class="mod-info">There are {{ num_unnaproved_articles }} articles to review!</h2>
+                            <a href="{% url 'review_page' %}" class="review-btn">Go to review page!</a>
+                        </div>
+                    {% endif %}
+
+                    {% if not num_notifications %}
+                        <div class="no-notifications">
+                            You don't have any notifications at the moment.
+                        </div>
+                    {% endif %}
+
+                    {% for notification in notifications %}
+                        {% if notification.is_positive_review %}
+                            <div class="notification-positive">
+                                <div class="article-title-data">
+                                    <p>Your article:</p> 
+                                    <h3 class="approved-article-title">"{{ notification.article_title }}"</h3>
+                                </div>
+                                <div class="review-metadata">
+                                    <p>Was reviewed by:</p>
+                                    {% if notification.reviewer %}
+                                        <a href="{% url 'profile_details' notification.reviewer.pk %}" class="reviewer-name">{{ notification.reviewer.user.username }}</a>
+                                    {% else %}
+                                        <p class="reviewer_name">Unknown User</p>
+                                    {% endif %}
+
+                                    <p>on</p>
+                                    <p class="date">{{ notification.time_of_review|date:"j F Y, H:i" }}</p>
+                                </div>
+                                <div class="article-decision-data">
+                                    <p class="decision-text">Has been<p/>
+                                    <h4 class="decision-approve">Approved!</h4>
+                                </div>
+                                <form action="{% url 'delete_notification' notification.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn-delete">Delete Notification</button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <div class="notification-negative">
+                                <div class="article-title-data">
+                                    <p>Your article:</p> 
+                                    <h3 class="rejected-article-title">"{{ notification.article_title }}"</h3>
+                                </div>
+                                <div class="review-metadata">
+                                    <p>Was reviewed by:</p>
+                                    {% if notification.reviewer %}
+                                        <a href="{% url 'profile_details' notification.reviewer.pk %}" class="reviewer-name">{{ notification.reviewer.user.username }}</a>
+                                    {% else %}
+                                        <p class="reviewer_name">Unknown User</p>
+                                    {% endif %}
+
+                                    <p>on</p>
+                                    <p class="date">{{ notification.time_of_review|date:"j F Y, H:i" }}</p>
+                                </div>
+                                <div class="article-decision-data">
+                                    <p class="decision-text">Has been<p/>
+                                    <h4 class="decision-reject">Rejected!</h4>
+                                </div>
+                                <div class="reject-decision-data">
+                                    <p>The reason given for rejection is:</p>
+                                    <p class="rejection-reason">" {{ notification.reason_for_rejection }} "</p>
+                                </div>
+                                <form action="{% url 'delete_notification' notification.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn-delete">Delete Notification</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    
+
+                </div>
+                {% if not is_only_1_page %}
+                    <div class="pagination">
+                        <a class="btn-pag" href=
+                    "
+                        {% if notifications.has_previous %}
+                            ?page={{ notifications.previous_page_number }}
+                        {% else %}
+                            ?page=1
+                        {% endif %}
+                            
+                    "
+                    ><- Previous</a>
+                    <span>Page {{ page_number }} of {{ notifications.paginator.num_pages }}</span>
+                    <a class="btn-pag" href=
+                    "
+                        {% if notifications.has_next %}
+                            ?page={{ notifications.next_page_number }}
+                        {% else %}
+                            ?page={{ notifications.paginator.num_pages }}
+                        {% endif %}
+
+                    ">Next Page -></a>
+                    </div>
+                {% endif %}
+            </div>
+        </main>
+
+        {% endblock %}

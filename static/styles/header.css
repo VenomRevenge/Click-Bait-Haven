@@ -68,6 +68,33 @@ nav > *:not(:nth-last-child(-n+2)):hover {
     color: black;
 }
 
+.icon-wrapper {
+position: relative;
+font-size: 24px; 
+cursor: pointer;
+}
+
+.icon-wrapper svg path {
+    fill: white; 
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: tomato;
+    color: black;
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 4px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem; 
+    font-weight: bold;
+  }
+
 @media screen and (max-width: 800px) {
     header {
         flex-direction: column;
