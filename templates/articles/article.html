@@ -78,7 +78,7 @@
                 </div>
 
                 {% if article.is_approved %}
-                    <div class="article-reactions">
+                    <div class="article-reactions" id="reactions">
                         <a href="" class="reaction-btn liked">
                             👍 Like (32)
                         </a>
@@ -92,9 +92,10 @@
                         <h2>Comments:</h2>
                         {% if user.is_authenticated %}
                             <div class="comment-form">
-                                <form action="" method="post">
+                                <form action="{% url 'post_comment' article.pk %}" method="post">
+                                    {% csrf_token %}
                                     <div>
-                                        <textarea name="content" rows="3" placeholder="Write a comment..." required></textarea>
+                                        <textarea name="content" rows="3" placeholder="Write a comment..." required minlength="1" maxlength="500"></textarea>
                                     </div>
                                     <button type="submit" class="submit-comment-btn">Submit Comment</button>
                                 </form>
@@ -103,7 +104,7 @@
                             <p class="sign-in-prompt">You need to <a href="{% url 'sign_in' %}" class="login-btn">Sign In</a> to comment.</p>
                         {% endif %}
 
-                        <div class="comments-list">
+                        <div class="comments-list" id="comments">
 
                             <div class="comment">
                                 <div class="comment-user-info">
@@ -129,7 +130,11 @@
                                     class="comment-dislike disliked">
                                         👎 Dislike (33)
                                     </a>
-                                    <a href="" class="comment-report">⚠️ Report</a>
+                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                                        <button>Delete Comment</button>
+                                    </form>
                                 </div>
                             </div>
 
@@ -157,7 +162,8 @@
                                     class="comment-dislike">
                                         👎 Dislike (33)
                                     </a>
-                                    <a href="" class="comment-report">⚠️ Report</a>
+                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
+                                    <form action="" method="post"><button>Delete Comment</button></form>
                                 </div>
                             </div>
 
@@ -170,11 +176,11 @@
                                     <span class="comment-date">On 24/04/2005</span>
                                 </div>
                                 <p class="comment-content">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                    dicta facere fugiat numquam 
-                                    dolorem amet incidunt veritatis, 
-                                    animi distinctio maxime voluptates. Minima!
+                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
                                 </p>
                                 <div class="comment-actions">
                                     <a href="" 
@@ -185,7 +191,8 @@
                                     class="comment-dislike disliked">
                                         👎 Dislike (33)
                                     </a>
-                                    <a href="" class="comment-report">⚠️ Report</a>
+                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
+                                    <form action="" method="post"><button>Delete Comment</button></form>
                                 </div>
                             </div>
 
@@ -213,7 +220,8 @@
                                     class="comment-dislike">
                                         👎 Dislike (33)
                                     </a>
-                                    <a href="" class="comment-report">⚠️ Report</a>
+                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
+                                    <form action="" method="post"><button>Delete Comment</button></form>
                                 </div>
                             </div>
 

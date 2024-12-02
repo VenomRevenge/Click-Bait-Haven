@@ -1,12 +1,13 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 from django.http import Http404
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
 from articles.forms import ArticleCreateForm, ArticleSearchForm
-from articles.models import Article, Tag
+from articles.models import Article, Comment
 from profiles.helpers import has_confirmed_journalist_perms, is_admin_staff_mod, is_profile_owner_or_permission
 
 
@@ -109,3 +110,47 @@ def article_search(request):
         'form': form,
     }
     return render(request, 'articles/article-search.html', context)
+
+@login_required
+def post_comment(request, pk):
+
+    article = get_object_or_404(Article, pk=pk)
+    user = request.user
+    profile = user.profile
+
+    # This is for some better UX
+    url = f"{reverse('article', kwargs={'pk':pk})}#comments"
+
+    content = request.POST.get('content')
+
+    if request.method != 'POST':
+        return redirect(url)
+    
+    # soft deleted and unapproved articles cannot be commented on
+    if article.deleted_at or not article.is_approved:
+        raise PermissionDenied
+
+    if content and (Comment.CONTENT_MIN_LENGTH <= len(content) <= Comment.CONTENT_MAX_LENGTH):
+        Comment.objects.create(article=article, author=profile, content=content)
+
+    
+    return redirect(url)
+
+
+@login_required
+def delete_comment(request, comment_pk):
+
+    comment = get_object_or_404(Comment, pk=comment_pk)
+    comment_author_profile = comment.author
+    user = request.user
+    url = f"{reverse('article', kwargs={'pk':comment.article.pk})}#comments"
+
+    # raising error if its not the author of the comment or no perms to delete
+    if not is_profile_owner_or_permission(user, comment_author_profile):
+        raise PermissionDenied
+    
+    # only delete on a POST request 
+    if request.method == 'POST':
+        comment.delete()
+    
+    return redirect(url)

@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django.db import models
 from django.core.validators import MinLengthValidator
+from articles.field_choices import ReactionChoices
 from articles.managers import ArticleManager
 from profiles.models import Profile
 from profiles.validators import validate_image_size
@@ -101,6 +102,14 @@ class Article(models.Model):
 
     objects = ArticleManager()
 
+    @property
+    def likes(self):
+        return self.reactions.filter(reaction_type=ReactionChoices.LIKE).count()
+
+    @property
+    def dislikes(self):
+        return self.reactions.filter(reaction_type=ReactionChoices.DISLIKE).count()
+
     def soft_delete(self):
         self.deleted_at = timezone.now()
         self.save()
@@ -127,3 +136,102 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    CONTENT_MAX_LENGTH = 500
+    CONTENT_MIN_LENGTH = 1
+
+    article = models.ForeignKey(
+        to=Article,
+        on_delete=models.CASCADE,
+        related_name='comments',
+    )
+
+    author = models.ForeignKey(
+        to=Profile,
+        on_delete=models.CASCADE,
+        related_name='comments',
+    )
+
+    content = models.TextField(
+        max_length=CONTENT_MAX_LENGTH,
+        validators=[
+            MinLengthValidator(limit_value=CONTENT_MIN_LENGTH),
+        ]
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    @property
+    def likes(self):
+        return self.reactions.filter(reaction_type=ReactionChoices.LIKE).count()
+
+    @property
+    def dislikes(self):
+        return self.reactions.filter(reaction_type=ReactionChoices.DISLIKE).count()
+
+    def __str__(self):
+        return f"Comment by {self.author} on {self.article}"
+    
+
+class BaseReaction(models.Model):
+    REACTION_TYPE_MAX_LENGTH = 10
+
+    class Meta:
+        abstract = True
+
+    profile = models.ForeignKey(
+        to=Profile,
+        on_delete=models.CASCADE,
+        related_name="reactions"
+    )
+
+    reaction_type = models.CharField(
+        max_length=REACTION_TYPE_MAX_LENGTH,
+        choices=ReactionChoices.choices,
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+
+class ArticleReaction(BaseReaction):
+
+    class Meta:
+        unique_together = ('profile', 'article')
+
+
+    profile = models.ForeignKey(
+        to=Profile,
+        on_delete=models.CASCADE,
+        related_name="article_reactions"
+    )
+
+    article = models.ForeignKey(
+        to=Article,
+        on_delete=models.CASCADE,
+        related_name='reactions'
+    )
+    
+
+class CommentReaction(BaseReaction):
+
+    class Meta:
+        unique_together = ('profile', 'comment')
+
+
+    profile = models.ForeignKey(
+        to=Profile,
+        on_delete=models.CASCADE,
+        related_name="comment_reactions"
+    )
+
+    comment = models.ForeignKey(
+        to=Comment,
+        on_delete=models.CASCADE,
+        related_name='reactions'
+    )
