@@ -4,9 +4,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 from django.http import Http404
+from django.db.models import Prefetch
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
-from articles.forms import ArticleCreateForm, ArticleSearchForm
+from articles.forms import ArticleCreateForm, ArticleSearchForm, CommentEditForm
 from articles.models import Article, Comment
 from profiles.helpers import has_confirmed_journalist_perms, is_admin_staff_mod, is_profile_owner_or_permission
 
@@ -40,15 +41,32 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
 def article_view(request, pk):
 
     user = request.user
-    article = get_object_or_404(Article, pk=pk)
+    article = Article.objects.prefetch_related(
+        Prefetch(
+            'comments',
+            queryset=Comment.objects.select_related('author'),
+            to_attr='prefetched_comments'
+        ),
+        'tags'
+    ).select_related('author').filter(pk=pk)
+
+    if not article:
+        raise Http404
+        
+    article = article[0]
     author = article.author
     tags = article.tags.all()
     approval_phase = False
+    is_deleted_article = False
 
     # only superusers can view soft-deleted articles
     if article.deleted_at and not user.is_superuser:
         raise Http404
     
+    # if the article is deleted and user is admin then he can view it in full
+    elif article.deleted_at and user.is_superuser:
+        is_deleted_article = True
+
     # if user doesn't have perms then he cant view article under approval
     elif not article.is_approved and not is_admin_staff_mod(user):
         raise PermissionDenied
@@ -57,13 +75,20 @@ def article_view(request, pk):
     elif not article.is_approved:
         approval_phase = True
 
+    comments = article.comments.all()
+
+    for comment in comments:
+        comment.is_author_or_has_perms = is_profile_owner_or_permission(user, comment.author)
+
 
     context = {
         'author': author,
         'article': article,
         'tags': tags,
         'approval_phase': approval_phase,
-        'edit_button': is_profile_owner_or_permission(user, author)
+        'is_deleted_article': is_deleted_article,
+        'edit_button': is_profile_owner_or_permission(user, author),
+        'comments': comments,
     }
     return render(request, 'articles/article.html', context)
 
@@ -130,6 +155,7 @@ def post_comment(request, pk):
     if article.deleted_at or not article.is_approved:
         raise PermissionDenied
 
+    # checking if the content is between the allowed length
     if content and (Comment.CONTENT_MIN_LENGTH <= len(content) <= Comment.CONTENT_MAX_LENGTH):
         Comment.objects.create(article=article, author=profile, content=content)
 
@@ -138,13 +164,19 @@ def post_comment(request, pk):
 
 
 @login_required
-def delete_comment(request, comment_pk):
+def delete_comment(request, pk,  comment_pk):
 
+    article = get_object_or_404(Article, pk=pk)
     comment = get_object_or_404(Comment, pk=comment_pk)
+
     comment_author_profile = comment.author
     user = request.user
-    url = f"{reverse('article', kwargs={'pk':comment.article.pk})}#comments"
+    url = f"{reverse('article', kwargs={'pk':pk})}#comments"
 
+    # raise 404 here cause only superusers can delete soft-deleted article's comments
+    if article.deleted_at and not user.is_superuser:
+        raise Http404
+    
     # raising error if its not the author of the comment or no perms to delete
     if not is_profile_owner_or_permission(user, comment_author_profile):
         raise PermissionDenied
@@ -154,3 +186,33 @@ def delete_comment(request, comment_pk):
         comment.delete()
     
     return redirect(url)
+
+@login_required
+def edit_comment(request, pk, comment_pk):
+
+    article = get_object_or_404(Article, pk=pk)
+    comment = get_object_or_404(Comment, pk=comment_pk)
+    form = CommentEditForm(request.POST or None, instance=comment)
+
+    comment_author_profile = comment.author
+    user = request.user
+    url = f"{reverse('article', kwargs={'pk':pk})}#comments"
+
+    # comments on soft-deleted articles cannot be edited
+    if article.deleted_at:
+        raise Http404
+
+    # only superusers and staff can edit another user's comment
+    if not is_profile_owner_or_permission(user, comment_author_profile):
+        raise PermissionDenied
+
+    if form.is_valid():
+        form.save()
+        return redirect(url)
+    
+    context = {
+        'article': article,
+        'comment': comment,
+        'form': form,
+    }
+    return render(request, 'articles/edit-comment.html', context)

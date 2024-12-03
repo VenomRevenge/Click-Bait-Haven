@@ -1,5 +1,5 @@
 from django import forms
-from articles.models import Article, Tag
+from articles.models import Article, Comment, Tag
 
 class ArticleCreateForm(forms.ModelForm):
     tags = forms.ModelMultipleChoiceField(
@@ -65,3 +65,15 @@ class ArticleSearchForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['tag'].choices = [(tag.name, tag.name) for tag in Tag.objects.all().order_by('name')]
+
+
+class CommentEditForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+
+        fields = ['content']
+
+        labels = {
+            'content': 'Comment',
+        }

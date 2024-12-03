@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/profile-edit.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+        <main>
+            <h1 class="edit-profile-title">Edit comment:</h1>
+            <section class="edit-form-container">
+                <form action="{% url 'edit_comment' article.pk comment.pk %}" method="post">
+                    <div class="info-group">
+                        <p><strong>On article:</strong></p>
+                        <p><a href="{% url 'article' article.pk %}" target="_blank">{{ article.title }}</a></p>
+                    </div>
+                    {{ form }}
+                    {% csrf_token %}
+                    <button class="edit-btn">Edit comment!</button>
+                </form>
+            </section>
+
+        </main>
+
+        {% endblock %}

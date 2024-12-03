@@ -10,7 +10,7 @@
 
         <main>
 
-            {% if article.deleted_at %}
+            {% if is_deleted_article %}
                 <h1 style="color: tomato">This article has been rejected!</h1>
             {% endif %}
 
@@ -24,19 +24,30 @@
                         {% if edit_button %}
                             <a href="" class="btn-moderation">Edit Article</a>
                         {% endif %}
-                        {% if approval_phase %}
-                            <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Approve</a>
-                            <a href="#" class="btn-moderation" id="reject-btn">Reject</a>
+                        {% if approval_phase or is_deleted_article %}
+                            {% if approval_phase %}
+                                <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Approve</a>
+                                <a href="#" class="btn-moderation" id="reject-btn">Reject</a>
+                            {% else %}
+                                <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Re-Approve</a>
+                                <a href="#" class="btn-moderation" id="reject-btn">Delete</a>
+                            {% endif %}
                             <div id="overlay" class="overlay">
                                 <div class="popup" id="popup">
                                     <h1 id="close-btn">X</h1>
                                     <form method="post" action="{% url 'reject_article' article.pk %}" id="rejection-form">
-                                        <h2>Enter a reason for rejection!</h2> 
-                                        <textarea name="reason_for_rejection" id="reason-rejection"
-                                        placeholder="Please give your reasons here..." required></textarea>
-                                        <br>
                                         {% csrf_token %}
-                                        <button type="submit" class="btn-moderation" id="submit-rejection">Reject Article!</button>
+                                        {% if approval_phase %}
+                                            <h2>Enter a reason for rejection!</h2> 
+                                            <textarea name="reason_for_rejection" id="reason-rejection"
+                                            placeholder="Please give your reasons here..." required></textarea>
+                                            <br>
+                                            <button type="submit" class="btn-moderation" id="submit-rejection">Reject Article!</button>
+                                        {% else %}
+                                            <h2>Confirm deletion of article!</h2> 
+                                            <br>
+                                            <button type="submit" class="btn-moderation" id="submit-rejection">Delete Article!</button>
+                                        {% endif %}
                                     </form>
                                 </div>
                             </div>
@@ -45,9 +56,17 @@
                 </div>
 
                 <div class="article-metadata">
-                    <div class="author-profile-picture">
-                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="Author's Profile Picture">
-                    </div>
+
+                    {% if author.profile_picture %}
+                        <div class="author-profile-picture">
+                            <img src="{{ author.profile_picture.url }}" alt="Author's Profile Picture">
+                        </div>
+                    {% else %}
+                        <div class="author-profile-picture">
+                            <img src="{% static 'images/default-profile-pic.jpg' %}" alt="Author's Profile Picture">
+                        </div>
+                    {% endif%}
+
                     <span class="author-name">By <a href="{% url 'profile_details' author.pk %}">{{ author.user.username }}</a></span>
                     <span class="publish-date">Published on {{ article.created_at|date:"F j, Y" }}</span>
                 </div>
@@ -77,7 +96,7 @@
 
                 </div>
 
-                {% if article.is_approved %}
+                {% if article.is_approved or is_deleted_article %}
                     <div class="article-reactions" id="reactions">
                         <a href="" class="reaction-btn liked">
                             👍 Like (32)
@@ -90,7 +109,7 @@
                     <div class="comments-section">
                         <hr>
                         <h2>Comments:</h2>
-                        {% if user.is_authenticated %}
+                        {% if user.is_authenticated and not is_deleted_article %}
                             <div class="comment-form">
                                 <form action="{% url 'post_comment' article.pk %}" method="post">
                                     {% csrf_token %}
@@ -100,131 +119,95 @@
                                     <button type="submit" class="submit-comment-btn">Submit Comment</button>
                                 </form>
                             </div>
-                        {% else %}
+                        {% elif not user.is_authenticated %}
                             <p class="sign-in-prompt">You need to <a href="{% url 'sign_in' %}" class="login-btn">Sign In</a> to comment.</p>
                         {% endif %}
 
                         <div class="comments-list" id="comments">
 
-                            <div class="comment">
-                                <div class="comment-user-info">
-                                    <div class="comment-user-profile-picture">
-                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
-                                    </div>
-                                    <a href="" class="comment-user-username">Usercommenter</a>
-                                    <span class="comment-date">On 24/04/2005</span>
-                                </div>
-                                <p class="comment-content">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                    dicta facere fugiat numquam 
-                                    dolorem amet incidunt veritatis, 
-                                    animi distinctio maxime voluptates. Minima!
-                                </p>
-                                <div class="comment-actions">
-                                    <a href="" 
-                                    class="comment-like liked">
-                                        👍 Like (21)
-                                    </a>
-                                    <a href="" 
-                                    class="comment-dislike disliked">
-                                        👎 Dislike (33)
-                                    </a>
-                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
-                                    <form action="" method="post">
-                                        {% csrf_token %}
-                                        <button>Delete Comment</button>
-                                    </form>
-                                </div>
-                            </div>
+                        {% if user.is_authenticated %}
 
-                            <div class="comment">
-                                <div class="comment-user-info">
-                                    <div class="comment-user-profile-picture">
-                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
-                                    </div>
-                                    <a href="" class="comment-user-username">Usercommenter</a>
-                                    <span class="comment-date">On 24/04/2005</span>
-                                </div>
-                                <p class="comment-content">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                    dicta facere fugiat numquam 
-                                    dolorem amet incidunt veritatis, 
-                                    animi distinctio maxime voluptates. Minima!
-                                </p>
-                                <div class="comment-actions">
-                                    <a href="" 
-                                    class="comment-like liked">
-                                        👍 Like (21)
-                                    </a>
-                                    <a href="" 
-                                    class="comment-dislike">
-                                        👎 Dislike (33)
-                                    </a>
-                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
-                                    <form action="" method="post"><button>Delete Comment</button></form>
-                                </div>
-                            </div>
+                            {% for comment in comments %}
 
-                            <div class="comment">
-                                <div class="comment-user-info">
-                                    <div class="comment-user-profile-picture">
-                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                <div class="comment">
+                                    <div class="comment-user-info">
+                                        {% if comment.author.profile_picture %}
+                                            <div class="comment-user-profile-picture">
+                                                <img src="{{ comment.author.profile_picture }}" alt="User profile picture">
+                                            </div>
+                                        {% else %}
+                                            <div class="comment-user-profile-picture">
+                                                <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                            </div>
+                                        {% endif %}
+                                        <a href="{% url 'profile_details' author.pk %}" class="comment-user-username">{{ comment.author.user.username }}</a>
+                                        <span class="comment-date">On {{ comment.created_at|date:"d/m/Y" }}</span>
                                     </div>
-                                    <a href="" class="comment-user-username">Usercommenter</a>
-                                    <span class="comment-date">On 24/04/2005</span>
-                                </div>
-                                <p class="comment-content">
-                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-                                    1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-                                </p>
-                                <div class="comment-actions">
-                                    <a href="" 
-                                    class="comment-like">
-                                        👍 Like (21)
-                                    </a>
-                                    <a href="" 
-                                    class="comment-dislike disliked">
-                                        👎 Dislike (33)
-                                    </a>
-                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
-                                    <form action="" method="post"><button>Delete Comment</button></form>
-                                </div>
-                            </div>
-
-                            <div class="comment">
-                                <div class="comment-user-info">
-                                    <div class="comment-user-profile-picture">
-                                        <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                    <p class="comment-content">
+                                        {{ comment.content }}
+                                    </p>
+                                    <div class="comment-actions">
+                                        <a href="" 
+                                        class="comment-like liked">
+                                            👍 Like (21)
+                                        </a>
+                                        <a href="" 
+                                        class="comment-dislike disliked">
+                                            👎 Dislike (33)
+                                        </a>
+                                        {% if comment.is_author_or_has_perms %}
+                                            {% if not article.deleted_at %}
+                                                <a href="{% url 'edit_comment' article.pk comment.pk %}" 
+                                                class="comment-edit" style="margin-left: auto;">Edit</a>
+                                            {% endif %}
+                                            <form action="{% url 'delete_comment' article.pk comment.pk %}" method="post">
+                                                {% csrf_token %}
+                                                <button>Delete Comment</button>
+                                            </form>
+                                        {% endif %}
                                     </div>
-                                    <a href="" class="comment-user-username">Usercommenter</a>
-                                    <span class="comment-date">On 24/04/2005</span>
                                 </div>
-                                <p class="comment-content">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                    Quam qui dicta laudantium totam amet. Ipsa explicabo ad, 
-                                    dicta facere fugiat numquam 
-                                    dolorem amet incidunt veritatis, 
-                                    animi distinctio maxime voluptates. Minima!
-                                </p>
-                                <div class="comment-actions">
-                                    <a href="" 
-                                    class="comment-like">
-                                        👍 Like (21)
-                                    </a>
-                                    <a href="" 
-                                    class="comment-dislike">
-                                        👎 Dislike (33)
-                                    </a>
-                                    <a href="" class="comment-edit" style="margin-left: auto;">Edit</a>
-                                    <form action="" method="post"><button>Delete Comment</button></form>
-                                </div>
-                            </div>
+                            {% empty %}
+                            <h1>There aren't any comments yet, Be the first to comment!</h1>
+                            {% endfor %}
 
+                        {% else %}
+
+                            {% for comment in comments %}
+
+                                <div class="comment">
+                                    <div class="comment-user-info">
+                                        {% if comment.author.profile_picture %}
+                                            <div class="comment-user-profile-picture">
+                                                <img src="{{ comment.author.profile_picture }}" alt="User profile picture">
+                                            </div>
+                                        {% else %}
+                                            <div class="comment-user-profile-picture">
+                                                <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
+                                            </div>
+                                        {% endif %}
+                                        <a href="{% url 'profile_details' author.pk %}" class="comment-user-username">{{ comment.author.user.username }}</a>
+                                        <span class="comment-date">On {{ comment.created_at|date:"d/m/Y" }}</span>
+                                    </div>
+                                    <p class="comment-content">
+                                        {{ comment.content }}
+                                    </p>
+                                    <div class="comment-actions">
+                                        <a href="" 
+                                        class="comment-like">
+                                            👍 Like (21)
+                                        </a>
+                                        <a href="" 
+                                        class="comment-dislike">
+                                            👎 Dislike (33)
+                                        </a>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <h1>There aren't any comments yet, Be the first to comment!</h1>
+                            {% endfor %}
+
+                        {% endif %}
 
                         </div>
 

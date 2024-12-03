@@ -126,13 +126,6 @@ def reject_article(request, pk):
     article = get_object_or_404(Article, pk=pk)
     reason = request.POST.get('reason_for_rejection', None)
 
-    # in case a mod/admin tries to reject an already approved article
-    if article.is_approved:
-        return redirect('article', pk)
-    # if the request is not POST or there is no reason given then redirect back to article page
-    elif request.method != 'POST' or not reason or len(reason) == 0:
-        return redirect('article', pk)
-    
     # only superusers can actually delete articles but they need to be soft deleted first
     # also there doesnt need to be a new notification for actual deletion
     if article.deleted_at and user.is_superuser:
@@ -143,7 +136,14 @@ def reject_article(request, pk):
     elif article.deleted_at and not user.is_superuser:
         raise Http404
 
-
+    # in case a mod/admin tries to reject an already approved article
+    if article.is_approved:
+        return redirect('article', pk)
+    # if the request is not POST or there is no reason given then redirect back to article page
+    elif request.method != 'POST' or not reason or len(reason) == 0:
+        return redirect('article', pk)
+    
+    
     article.soft_delete()
     
     Notification.objects.create(
