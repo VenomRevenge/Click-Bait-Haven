@@ -113,6 +113,8 @@ main {
     text-decoration: none;
     color: #333;
     border: 2px solid grey;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .reaction-btn.liked {
@@ -208,14 +210,28 @@ main {
     gap: 1rem;
 }
 
-.comment-like, .comment-dislike, .comment-report {
+.comment-like, .comment-dislike, .comment-edit, .comment-delete {
     text-decoration: none;
     color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 1rem;
 }
 
 .comment-like.liked, .comment-dislike.disliked {
     font-weight: bold;
     text-decoration: underline;
+}
+
+.comment-edit:hover {
+    color: #007bff;
+}
+
+.comment-delete:hover {
+    color:red
 }
 
 .overlay {

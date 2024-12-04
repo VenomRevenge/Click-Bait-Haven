@@ -97,15 +97,34 @@
                 </div>
 
                 {% if article.is_approved or is_deleted_article %}
-                    <div class="article-reactions" id="reactions">
-                        <a href="" class="reaction-btn liked">
-                            👍 Like (32)
-                        </a>
-                        <a href="" class="reaction-btn disliked">
-                            👎 Dislike (21)
-                        </a>
-                    </div>
-                
+                    {% if user.is_authenticated %}
+                        <div class="article-reactions" id="reactions">
+                            <form action="{% url 'article_react' article.pk %}" method="post">
+                                <input type="hidden" name="reaction_type" value="Like">
+                                {% csrf_token %}
+                                <button type="submit" class="reaction-btn {% if user_reaction and user_reaction.reaction_type == 'Like' %}liked{% endif %}">
+                                    👍 Like ({{ article.likes }})
+                                </button>
+                            </form>
+                            <form action="{% url 'article_react' article.pk %}" method="post">
+                                <input type="hidden" name="reaction_type" value="Dislike">
+                                {% csrf_token %}
+                                <button type="submit" class="reaction-btn {% if user_reaction and user_reaction.reaction_type == 'Dislike' %}disliked{% endif %}">
+                                    👎 Dislike ({{ article.dislikes }})
+                                </button>
+                            </form>
+                            
+                        </div>
+                    {% else %}
+                        <div class="article-reactions" id="reactions">
+                            <a href="{% url 'article_react' article.pk %}" class="reaction-btn">
+                                👍 Like ({{ article.likes }})
+                            </a>
+                            <a href="{% url 'article_react' article.pk %}" class="reaction-btn">
+                                👎 Dislike ({{ article.dislikes }})
+                            </a>
+                        </div>
+                    {% endif %}
                     <div class="comments-section">
                         <hr>
                         <h2>Comments:</h2>
@@ -129,7 +148,7 @@
 
                             {% for comment in comments %}
 
-                                <div class="comment">
+                                <div class="comment" id="comment{{ comment.pk }}">
                                     <div class="comment-user-info">
                                         {% if comment.author.profile_picture %}
                                             <div class="comment-user-profile-picture">
@@ -147,22 +166,31 @@
                                         {{ comment.content }}
                                     </p>
                                     <div class="comment-actions">
-                                        <a href="" 
-                                        class="comment-like liked">
-                                            👍 Like (21)
-                                        </a>
-                                        <a href="" 
-                                        class="comment-dislike disliked">
-                                            👎 Dislike (33)
-                                        </a>
+                                        <form action="{% url 'comment_react' article.pk comment.pk %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="reaction_type" value="Like">
+                                            <button type="submit" 
+                                                class="comment-like {% if comment.user_reaction and comment.user_reaction.reaction_type == 'Like' %}liked{% endif %}">
+                                                👍 Like ({{ comment.likes }})
+                                            </button>
+                                        </form>
+                                        <form action="{% url 'comment_react' article.pk comment.pk %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="reaction_type" value="Dislike">
+                                            <button type="submit" 
+                                                class="comment-dislike {% if comment.user_reaction and comment.user_reaction.reaction_type == 'Dislike' %}disliked{% endif %}">
+                                                👎 Dislike ({{ comment.dislikes }})
+                                            </button>
+                                        </form>
+                                        
                                         {% if comment.is_author_or_has_perms %}
                                             {% if not article.deleted_at %}
                                                 <a href="{% url 'edit_comment' article.pk comment.pk %}" 
-                                                class="comment-edit" style="margin-left: auto;">Edit</a>
+                                                class="comment-edit" style="margin-left: auto;">✍Edit</a>
                                             {% endif %}
                                             <form action="{% url 'delete_comment' article.pk comment.pk %}" method="post">
                                                 {% csrf_token %}
-                                                <button>Delete Comment</button>
+                                                <button class="comment-delete">🗑Delete</button>
                                             </form>
                                         {% endif %}
                                     </div>
@@ -175,7 +203,7 @@
 
                             {% for comment in comments %}
 
-                                <div class="comment">
+                                <div class="comment" id="comment{{ comment.pk }}">
                                     <div class="comment-user-info">
                                         {% if comment.author.profile_picture %}
                                             <div class="comment-user-profile-picture">
@@ -193,13 +221,13 @@
                                         {{ comment.content }}
                                     </p>
                                     <div class="comment-actions">
-                                        <a href="" 
+                                        <a href="{% url 'comment_react' article.pk comment.pk %}" 
                                         class="comment-like">
-                                            👍 Like (21)
+                                            👍 Like ({{ comment.likes }})
                                         </a>
-                                        <a href="" 
+                                        <a href="{% url 'comment_react' article.pk comment.pk %}" 
                                         class="comment-dislike">
-                                            👎 Dislike (33)
+                                            👎 Dislike ({{ comment.dislikes }})
                                         </a>
                                     </div>
                                 </div>

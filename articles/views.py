@@ -7,8 +7,9 @@ from django.http import Http404
 from django.db.models import Prefetch
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
+from articles.field_choices import ReactionChoices
 from articles.forms import ArticleCreateForm, ArticleSearchForm, CommentEditForm
-from articles.models import Article, Comment
+from articles.models import Article, ArticleReaction, Comment, CommentReaction
 from profiles.helpers import has_confirmed_journalist_perms, is_admin_staff_mod, is_profile_owner_or_permission
 
 
@@ -41,23 +42,32 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
 def article_view(request, pk):
 
     user = request.user
-    article = Article.objects.prefetch_related(
+    # im not gonna lie its 2 AM im trying to optimize queries and this way less queries appear on the log
+    # so im probably doing something right
+    article_query = Article.objects.prefetch_related(
         Prefetch(
             'comments',
-            queryset=Comment.objects.select_related('author'),
+            queryset=Comment.objects.select_related('author').prefetch_related(
+                Prefetch(
+                    'reactions',
+                    queryset=CommentReaction.objects.filter(profile=user.profile) if user.is_authenticated else CommentReaction.objects.none(),
+                    to_attr='user_reactions'
+                )
+            ),
             to_attr='prefetched_comments'
         ),
         'tags'
     ).select_related('author').filter(pk=pk)
 
-    if not article:
+    if not article_query:
         raise Http404
-        
-    article = article[0]
+    
+    article = article_query[0]
     author = article.author
     tags = article.tags.all()
     approval_phase = False
     is_deleted_article = False
+    user_reaction = None
 
     # only superusers can view soft-deleted articles
     if article.deleted_at and not user.is_superuser:
@@ -75,11 +85,15 @@ def article_view(request, pk):
     elif not article.is_approved:
         approval_phase = True
 
-    comments = article.comments.all()
+    # this returns Like or Dislike or None 
+    if user.is_authenticated:
+        user_reaction = article.reactions.filter(profile=user.profile).first()
+
+    comments = article.prefetched_comments
 
     for comment in comments:
         comment.is_author_or_has_perms = is_profile_owner_or_permission(user, comment.author)
-
+        comment.user_reaction = comment.user_reactions[0] if comment.user_reactions else None
 
     context = {
         'author': author,
@@ -88,6 +102,7 @@ def article_view(request, pk):
         'approval_phase': approval_phase,
         'is_deleted_article': is_deleted_article,
         'edit_button': is_profile_owner_or_permission(user, author),
+        'user_reaction': user_reaction,
         'comments': comments,
     }
     return render(request, 'articles/article.html', context)
@@ -135,6 +150,81 @@ def article_search(request):
         'form': form,
     }
     return render(request, 'articles/article-search.html', context)
+
+@login_required
+def react_to_article(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    profile = request.user.profile
+    url = f"{reverse('article', kwargs={'pk':pk})}#reactions"
+    reaction_type = request.POST.get('reaction_type', None)
+
+    # soft-deleted articles cannot be reacted on 
+    if article.deleted_at:
+        raise Http404
+    
+    # non-approved or rejected articles cannot be reacted on 
+    elif not article.is_approved:
+        raise PermissionDenied
+    
+    # if any of these checks passes then either someone tried to enter the
+    # form action url without a post request or tampering with the payload
+    # to see for potential bugs, Im just redirecting him back to the article, lol 
+    elif not reaction_type or request.method != 'POST':
+        return redirect(url)
+    elif reaction_type not in [choice[0] for choice in ReactionChoices.choices]:
+        return redirect(url)
+
+    reaction, is_created = ArticleReaction.objects.get_or_create(profile=profile, article=article)
+
+    # if the same reaction exists then remove it
+    if not is_created and reaction.reaction_type == reaction_type:
+        reaction.delete()
+    # if this passes then either user wants to change his reaction or
+    # its the first time hes reacting to the article 
+    else:
+        reaction.reaction_type = reaction_type
+        reaction.save()
+
+    return redirect(url)
+
+
+@login_required
+def react_to_comment(request, pk, comment_pk):
+    article = get_object_or_404(Article, pk=pk)
+    comment = get_object_or_404(Comment, pk=comment_pk)
+
+    profile = request.user.profile
+    url = f"{reverse('article', kwargs={'pk':pk})}#comment{comment_pk}"
+    reaction_type = request.POST.get('reaction_type', None)
+
+    # soft-deleted articles' comments cannot be reacted on 
+    if article.deleted_at:
+        raise Http404
+    # non-approved or rejected articles' comments cannot be reacted on 
+    elif not article.is_approved:
+        raise PermissionDenied
+    
+    # if any of these checks passes then either someone tried to enter the
+    # form action url without a post request or tampering with the payload
+    # to see for potential bugs, Im just redirecting him back to the article, lol 
+    elif not reaction_type or request.method != 'POST':
+        return redirect(url)
+    elif reaction_type not in [choice[0] for choice in ReactionChoices.choices]:
+        return redirect(url)
+
+    reaction, is_created = CommentReaction.objects.get_or_create(profile=profile, comment=comment)
+
+    # if the same reaction exists then remove it
+    if not is_created and reaction.reaction_type == reaction_type:
+        reaction.delete()
+    # if this passes then either user wants to change his reaction or
+    # its the first time hes reacting to the article 
+    else:
+        reaction.reaction_type = reaction_type
+        reaction.save()
+
+    return redirect(url)
+
 
 @login_required
 def post_comment(request, pk):
