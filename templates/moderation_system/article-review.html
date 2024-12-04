@@ -32,8 +32,8 @@
                         {% endif %}
 
                         <div class="article-metadata">
-                            <h2 class="article-title"><a href="{% url 'article' article.id %}">{{ article.title }}</a></h2>
-                            <p class="article-author">by <a href="{% url 'profile_details' article.author.id %}">{{ article.author.user.username }}</a></p>
+                            <h2 class="article-title"><a href="{% url 'article' article.id %}">{{ article.title|truncatechars:35 }}</a></h2>
+                            <p class="article-author">by <a href="{% url 'profile_details' article.author.id %}">{{ article.author.user.username|truncatechars:20 }}</a></p>
                             <p class="article-date-publication">Published on: {{ article.created_at|date:"j F, Y" }}</p>
                             <p class="article-current-status">Status: <strong>Not Reviewed!</strong></p>
                         </div>
@@ -62,8 +62,8 @@
                         {% endif %}
 
                         <div class="article-metadata">
-                            <h2 class="article-title"><a href="{% url 'article' article.id %}">{{ article.title }}</a></h2>
-                            <p class="article-author">by <a href="{% url 'profile_details' article.author.id %}">{{ article.author.user.username }}</a></p>
+                            <h2 class="article-title"><a href="{% url 'article' article.id %}">{{ article.title|truncatechars:35 }}</a></h2>
+                            <p class="article-author">by <a href="{% url 'profile_details' article.author.id %}">{{ article.author.user.username|truncatechars:20 }}</a></p>
                             <p class="article-date-publication">Deleted at: {{ article.deleted_at|date:"j F, Y" }}</p>
                             <p class="article-current-status deleted">Status: <strong>Deleted!</strong></p>
                         </div>

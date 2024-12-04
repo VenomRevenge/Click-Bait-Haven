@@ -11,7 +11,7 @@
             <div class="home-1-container">
                 <h1>Stay Informed with the Latest News</h1>
                 <p>Explore trending articles, in-depth analysis, and opinion pieces on your favorite topics.</p>
-                <a href="#"><span class="btn-explore">Explore Articles</span></a>
+                <a href="{% url 'article_search' %}"><span class="btn-explore">Explore Articles</span></a>
             </div>
         </section>
 
@@ -21,55 +21,31 @@
 
                 <div class="articles-box">
 
+                {% for article in featured_articles %}
                     <article class="article-item">
-                        
-                        <div class="article-img">
-                            <a href="#">
-                            <img src="https://images5.alphacoders.com/878/878056.jpg" alt="Article Image 1">
-                            </a>
-                        </div>
-                        
+                        {% if article.picture %}
+                            <div class="article-img">
+                                <a href="{% url 'article' article.id %}">
+                                <img src="{{ article.picture.url }}" alt="Article Image">
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="article-img">
+                                <a href="{% url 'article' article.id %}">
+                                <img src="{% static 'images/default-article-pic.jpg' %}" alt="Article Image">
+                                </a>
+                            </div>
+                        {% endif %}
 
-                        <h4>Breaking News: Major Event Shakes the World</h4>
+                        <h4>{{ article.title|truncatechars:35 }}</h4>
 
-                        <p>Author: John Doe | 12th October 2024</p>
+                        <p>Author: {{ article.author__user__username|truncatechars:20 }} | {{ article.created_at|date:"jS F Y" }}</p>
 
-                        <a href="#" class="btn-read-more">Read More</a>
+                        <a href="{% url 'article' article.id %}" class="btn-read-more">Read More</a>
                     </article>
-
-
-                    <article class="article-item">
-                        
-                        <div class="article-img">
-                            <a href="#">
-                            <img src="https://images5.alphacoders.com/878/878056.jpg" alt="Article Image 1">
-                            </a>
-                        </div>
-                        
-
-                        <h4>Breaking News: Major Event Shakes the World</h4>
-
-                        <p>Author: John Doe | 12th October 2024</p>
-
-                        <a href="#" class="btn-read-more">Read More</a>
-                    </article>
-
-
-                    <article class="article-item">
-                        
-                        <div class="article-img">
-                            <a href="#">
-                            <img src="https://images5.alphacoders.com/878/878056.jpg" alt="Article Image 1">
-                            </a>
-                        </div>
-                        
-
-                        <h4>Breaking News: Major Event Shakes the World</h4>
-
-                        <p>Author: John Doe | 12th October 2024</p>
-
-                        <a href="#" class="btn-read-more">Read More</a>
-                    </article>
+                {% empty %}
+                    <h1 style="margin: 2rem auto;">There arent any articles published yet, be the first to <a href="{% url 'article_create' %}" class="btn-read-more">Publish!</a></h1>
+                {% endfor %}
 
                 </div>
 
@@ -82,82 +58,20 @@
             <h3>Latest Articles</h3>
             <div class="latest-article-box">
 
-                <article class="latest-article-item">
+                {% for article in recent_articles %}
+                    <article class="latest-article-item">
 
-                    <a href="#">
-                        <h4>New Policies in the Tech Industry</h4>
-                        <p>Author: Sarah Wilson | 18th October 2024</p>
-                    </a>
+                        <a href="{% url 'article' article.id %}">
+                            <h4>{{ article.title|truncatechars:35 }}</h4>
+                            <p>Author: {{ article.author__user__username|truncatechars:20 }} | {{ article.created_at|date:"jS F Y" }}</p>
+                        </a>
 
-                </article>
-
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>AI Innovations: What You Need to Know</h4>
-                        <p>Author: Alex Lee | 17th October 2024</p>
-                    </a>
-
-                </article>
-
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-
-                </article>
-
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-                    
-                </article>
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-                    
-                </article>
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-                    
-                </article>
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-                    
-                </article>
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-                    
-                </article>
-                <article class="latest-article-item">
-
-                    <a href="#">
-                        <h4>How to Build a News Website</h4>
-                        <p>Author: Michael Brown | 16th October 2024</p>
-                    </a>
-                    
-                </article>
-                
+                    </article>
+                {% empty %}
+                    <article class="latest-article-item">
+                        <h3 style="text-align: center;">No recent articles!</h3>
+                    </article>
+                {% endfor %}
             </div>
 
         </section>

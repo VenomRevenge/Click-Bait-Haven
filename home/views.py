@@ -7,13 +7,31 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from articles.models import Article
 from home.forms import RegisterForm, SignInForm
+from home.helpers import get_featured_articles, get_random_article_pk, get_recent_articles
 from moderation_system.models import Notification
 from profiles.helpers import is_admin_staff_mod
 
 
 def index(request):
-    return render(request, 'home/index.html')
+    featured_articles = get_featured_articles()
+    recent_articles = get_recent_articles()
 
+    context = {
+        'featured_articles': featured_articles,
+        'recent_articles': recent_articles,
+    }
+
+    print(context)
+
+    return render(request, 'home/index.html', context)
+
+def random_article(request):
+    article_pk = get_random_article_pk()
+
+    if not article_pk:
+        return redirect('home')
+    
+    return redirect('article', pk=article_pk)
 
 class Register(FormView):
     template_name = 'home/register.html'

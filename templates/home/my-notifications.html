@@ -36,7 +36,7 @@
                                 <div class="review-metadata">
                                     <p>Was reviewed by:</p>
                                     {% if notification.reviewer %}
-                                        <a href="{% url 'profile_details' notification.reviewer.pk %}" class="reviewer-name">{{ notification.reviewer.user.username }}</a>
+                                        <a href="{% url 'profile_details' notification.reviewer.pk %}" class="reviewer-name">{{ notification.reviewer.user.username|truncatechars:20 }}</a>
                                     {% else %}
                                         <p class="reviewer_name">Unknown User</p>
                                     {% endif %}
