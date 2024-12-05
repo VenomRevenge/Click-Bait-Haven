@@ -20,9 +20,6 @@ def index(request):
         'featured_articles': featured_articles,
         'recent_articles': recent_articles,
     }
-
-    print(context)
-
     return render(request, 'home/index.html', context)
 
 def random_article(request):

@@ -30,8 +30,13 @@
                 {% if buttons %}
                 <div class="details-buttons">
                     <a href="{% url 'profile_edit' profile.pk %}" class="btn-details">Edit Profile</a>
-                    <a href="" class="btn-details">Articles</a>
-                    <a href="" class="btn-details">Notifications </a>
+                    <a href="{% url 'article_search' %}?username={{ profile.user.username }}" class="btn-details">Articles</a>
+                    {% if is_owner %}
+                        <a href="{% url 'profile_delete' profile.pk %}" class="btn-details">Delete Profile</a>
+                    {% elif is_admin_or_staff %}
+                        <a href="{% url 'profile_delete' profile.pk %}" class="btn-details">Ban user</a>
+                    {% endif %}
+                    
                 </div>
                 {% endif %}
             </div>

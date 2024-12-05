@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'styles/profile-delete-ban.css' %}">
+    {% endblock %}
+
+        {% block content %}
+
+            <main>
+                <div class="last-message-container">
+                    {% if error %}
+                        <p style="color: red;">{{ error }}</p>
+                    {% endif %}
+
+                    {% if is_owner %}
+                        <h2 class="question-title">Delete your profile?</h2>
+                        <hr>
+                        <p>Are you sure you want to delete your profile?</p>
+                    {% elif is_admin_or_staff %}
+                        <h2 class="question-title">Permaban this user?</h2>
+                        <hr>
+                        <p>Are you sure you want to ban this user profile?</p>
+                        <p>Banning a user deletes his profile.</p>
+                    {% endif %}
+
+                    
+                    <div class="profile-info">
+                        <h2>Profile info:</h2>
+                        <p>Username: <strong>{{ profile.user.username }}</strong></p>
+                        <p>Email: <strong>{{ profile.user.email }}</strong></p>
+                    </div>
+                    <p class="warning-message">
+                        Once a profile is deleted the all of its articles and comments will be lost,
+                        also the current username and email will be blacklisted from Click-Bait Haven!
+                    </p>
+                    {% if is_owner %}
+                        <h3 id="agree-btn">I agree!</h3>
+                    {% elif is_admin_or_staff %}
+                        <h3 id="agree-btn">Ban user!</h3>
+                    {% endif %}
+                </div>
+                <div id="overlay" class="overlay">
+                    <div class="popup" id="popup">
+                        <h1 id="close-btn">X</h1>
+                        <form method="post" action="" id="profile-delete-form">
+                            {% csrf_token %}
+                            {% if is_owner %}
+                                <h2>Confirm profile deletion!</h2>
+                                <label for="password">Enter your password:</label> 
+                                <input type="password" name="password" required>
+                                <br>
+                                <button type="submit">Delete my profile!</button>
+                            {% elif is_admin_or_staff %}
+                                <h2>Confirm ban!</h2>
+                                <br>
+                                <button type="submit">Ban user!</button>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+        {% endblock %}
+
+        {% block javascript %}
+            <script type="text/javascript" src="{% static 'js/profile-delete-ban.js' %}" defer></script>
+        {% endblock %}
