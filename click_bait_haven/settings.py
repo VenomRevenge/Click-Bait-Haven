@@ -42,15 +42,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # bonus libraries
+    'rest_framework',
+    'drf_spectacular',
+    'corsheaders',
+    'django_filters',
 
     # My Apps
     'home',
     'profiles',
     'articles',
     'moderation_system',
+    'api',
 ]
 
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,6 +70,22 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'click_bait_haven.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Click-Bait Haven API',
+    'DESCRIPTION': 'This is the api of Click-Bait Haven allowing users to fetch articles!',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
