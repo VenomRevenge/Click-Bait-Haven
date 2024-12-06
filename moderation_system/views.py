@@ -93,7 +93,7 @@ def approve_article(request, pk):
     if article.deleted_at and not user.is_superuser:
         raise Http404
     # in case mod or admin tries to approve an already approved article so notif doesnt get created
-    elif article.is_approved:
+    elif article.is_approved and not article.deleted_at:
         return redirect('article', pk)
 
     article.is_approved = True

@@ -62,7 +62,6 @@ main {
     margin: 0.5rem 0;
     width: 100%;
     display: block;
-    display: block;
     width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -99,7 +98,6 @@ main {
     background-color: #4CAE4C; 
 }
 
-/* Overlay to dim the background */
 .overlay {
     display: none;
     position: fixed;
@@ -113,13 +111,12 @@ main {
     align-items: center;
 }
 
-/* Popup form styling */
 .popup {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 500px;
+    width: 30%;
 }
 
 #close-btn {
@@ -162,15 +159,28 @@ main {
     cursor: pointer;
 }
 
+@media screen and (max-width: 1600px) {
+    .popup {
+        width: 50%;
+    }
+}
+
+
 @media screen and (max-width: 1100px) {
     .last-message-container {
         max-width: 70%;
+    }
+    .popup {
+        width: 60%;
     }
 }
 
 @media screen and (max-width: 800px) {
     .last-message-container {
         max-width: 80%;
+    }
+    .popup {
+        width: 80%;
     }
 }
 

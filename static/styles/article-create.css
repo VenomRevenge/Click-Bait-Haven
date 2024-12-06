@@ -116,9 +116,86 @@ fieldset div div label:hover {
     cursor: pointer;
 }
 
+#delete-btn {
+    background-color: tomato; 
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#delete-btn:hover {
+    background-color: rgb(253, 75, 44);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 30%;
+}
+
+#close-btn {
+    justify-self: flex-end;
+    padding: 0.5rem 1rem;
+    color: tomato;
+   
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.popup form button {
+    width: 50%;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    background-color: tomato;
+}
+
+#close-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.popup form button:hover {
+    text-decoration: underline;
+    background-color: rgb(253, 75, 44);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1600px) {
     .article-form-container {
         width: 60%;
+    }
+    .popup {
+        width: 50%;
     }
 }
 
@@ -126,10 +203,16 @@ fieldset div div label:hover {
     .article-form-container {
         width: 70%;
     }
+    .popup {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 800px) {
     .article-form-container {
         width: 90%;
+    }
+    .popup {
+        width: 80%;
     }
 }

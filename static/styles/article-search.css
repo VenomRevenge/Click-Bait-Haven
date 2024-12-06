@@ -125,6 +125,10 @@ article {
 .article-author a {
     text-decoration: underline;
     color: black;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .pagination-btns {

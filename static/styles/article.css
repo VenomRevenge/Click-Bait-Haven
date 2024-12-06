@@ -32,6 +32,14 @@ main {
     justify-content: space-between;
 }
 
+.article-title {
+    display: block;
+    width: 60%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
 .mod-btns {
     text-align: center;
     align-items: center;
@@ -307,6 +315,9 @@ main {
     .article-heading {
         flex-direction: column;
         gap: 2rem;
+    }
+    .article-title {
+        width: 100%;
     }
     .mod-btns {
         flex-direction: column;

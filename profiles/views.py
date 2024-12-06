@@ -80,6 +80,10 @@ class ProfileDeleteOrBan(LoginRequiredMixin, View):
 
         is_owner = profile.user == user
 
+        # staff cant ban superusers
+        if not is_owner and profile.user.is_superuser:
+            raise PermissionDenied
+
         # if the user is deleting their own profile
         if is_owner:
             password = request.POST.get('password', None)

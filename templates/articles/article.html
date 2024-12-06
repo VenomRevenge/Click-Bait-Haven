@@ -11,8 +11,15 @@
         <main>
 
             {% if is_deleted_article %}
-                <h1 style="color: tomato">This article has been rejected!</h1>
+                <h1 style="color: tomato">This article has been deleted!</h1>
+                {% if article.is_approved %}
+                    <h1 style="color: green">This article was previously approved!</h1>
+                {% else %}
+                    <h1 style="color: tomato">This article was rejected!</h1>
+                {% endif %}
             {% endif %}
+
+            
 
             <div class="article-container">
 
@@ -22,12 +29,15 @@
                     <div class="mod-btns">
 
                         {% if edit_button %}
-                            <a href="" class="btn-moderation">Edit Article</a>
+                            <a href="{% url 'article_edit' article.pk %}" class="btn-moderation">Edit Article</a>
                         {% endif %}
                         {% if approval_phase or is_deleted_article %}
                             {% if approval_phase %}
                                 <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Approve</a>
                                 <a href="#" class="btn-moderation" id="reject-btn">Reject</a>
+                            {% elif article.is_approved %}
+                                <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Reinstate</a>
+                                <a href="#" class="btn-moderation" id="reject-btn">Delete</a>
                             {% else %}
                                 <a href="{% url 'approve_article' article.pk %}" class="btn-moderation">Re-Approve</a>
                                 <a href="#" class="btn-moderation" id="reject-btn">Delete</a>
@@ -152,7 +162,7 @@
                                     <div class="comment-user-info">
                                         {% if comment.author.profile_picture %}
                                             <div class="comment-user-profile-picture">
-                                                <img src="{{ comment.author.profile_picture }}" alt="User profile picture">
+                                                <img src="{{ comment.author.profile_picture.url }}" alt="User profile picture">
                                             </div>
                                         {% else %}
                                             <div class="comment-user-profile-picture">
@@ -207,7 +217,7 @@
                                     <div class="comment-user-info">
                                         {% if comment.author.profile_picture %}
                                             <div class="comment-user-profile-picture">
-                                                <img src="{{ comment.author.profile_picture }}" alt="User profile picture">
+                                                <img src="{{ comment.author.profile_picture.url }}" alt="User profile picture">
                                             </div>
                                         {% else %}
                                             <div class="comment-user-profile-picture">

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/article-create.css' %}">
+    {% endblock %}
+
+        {% block content %}
+        <main>
+            <div class="article-form-container">
+
+                {% if warning_message %}
+                    <p style="color: tomato">Warning: Editing an article will submit it for review again.</p>
+                {% endif %}
+
+                <h1 class="article-form-title">Edit Article</h1>
+                <form action="{% url 'article_edit' article.pk %}" method="post" enctype="multipart/form-data">
+
+                    {{ form }}
+                    {% csrf_token %}
+                    <button class="submit-btn">Edit!</button>
+                </form>
+                <p>Or</p>
+                <h4 id="delete-btn">Delete this article!</h4>
+            </div>
+            <div id="overlay" class="overlay">
+                <div class="popup" id="popup">
+                    <h1 id="close-btn">X</h1>
+                    <form method="post" action="{% url 'article_delete' article.pk %}" id="profile-delete-form">
+                        <h2>Confirm delete</h2> 
+                        {% csrf_token %}
+                        <br>
+                        <button type="submit" class="btn-moderation" id="submit-rejection">Delete Article!</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        {% endblock %}
+
+    
+    {% block javascript %}
+        <script type="text/javascript" src="{% static 'js/article-edit.js' %}" defer></script>
+    {% endblock %}

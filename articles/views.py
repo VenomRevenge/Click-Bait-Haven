@@ -8,7 +8,7 @@ from django.db.models import Prefetch
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
 from articles.field_choices import ReactionChoices
-from articles.forms import ArticleCreateForm, ArticleSearchForm, CommentEditForm
+from articles.forms import ArticleCreateForm, ArticleEditForm, ArticleSearchForm, CommentEditForm
 from articles.models import Article, ArticleReaction, Comment, CommentReaction
 from profiles.helpers import has_confirmed_journalist_perms, is_admin_staff_mod, is_profile_owner_or_permission
 
@@ -38,6 +38,75 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
         context['perms'] = has_confirmed_journalist_perms(self.request.user)
         return context
     
+
+@login_required
+def article_edit(request, pk):
+
+    article = get_object_or_404(Article, pk=pk)
+    user = request.user
+
+    # only superusers can view and edit deleted articles
+    if article.deleted_at and not user.is_superuser:
+        raise Http404
+    # if its not the article's author or a superuser raise error    
+    if not user.is_superuser and not user.profile == article.author:
+        raise PermissionDenied
+    # only superusers can edit unapproved or rejected articles
+    if not article.is_approved and not user.is_superuser:
+        raise PermissionDenied
+    
+    form = ArticleEditForm(request.POST or None, request.FILES or None, instance=article)
+
+    if request.method == 'POST' and form.is_valid():
+        article = form.save(commit=False)
+        # If the user editind the article lacks perms, then article needs to be
+        # reapproved
+        if not has_confirmed_journalist_perms(request.user):
+            article.is_approved = False
+
+        article.save()
+        form.save_m2m()
+        url = f'{reverse("article_search")}?title={article.title}'
+
+        if not article.is_approved and user.is_superuser:
+            url = reverse('article', kwargs={'pk': article.pk})
+
+        return redirect(url)
+    
+    context = {
+        'warning_message': not has_confirmed_journalist_perms(request.user),
+        'form': form,
+        'article': article,
+    }
+    return render(request, 'articles/article-edit.html', context)
+
+
+
+@login_required
+def article_delete(request, pk):
+    user = request.user
+    article = get_object_or_404(Article, pk=pk)
+    url = f'{reverse("article_search")}?title={article.title}'
+
+    if article.deleted_at and not user.is_superuser:
+        raise Http404
+    if not user.is_superuser and not user.profile == article.author:
+        raise PermissionDenied
+    if not article.is_approved and not user.is_superuser:
+        raise PermissionDenied
+    
+    if request.method == 'POST':
+        # if passed all checks above and this its implied a superuser
+        # is trying to hard delete a soft deleted article
+        if article.deleted_at:
+            article.delete()
+            return redirect('deleted_articles')
+        else:
+            article.soft_delete()
+            return redirect(url)
+    # if deletion doesn't happen then just return to the article edit
+    return redirect(reverse('article_edit', kwargs={'pk': article.pk}))
+
 
 def article_view(request, pk):
 
@@ -101,7 +170,7 @@ def article_view(request, pk):
         'tags': tags,
         'approval_phase': approval_phase,
         'is_deleted_article': is_deleted_article,
-        'edit_button': is_profile_owner_or_permission(user, author),
+        'edit_button': user.is_superuser or user.profile == article.author,
         'user_reaction': user_reaction,
         'comments': comments,
     }

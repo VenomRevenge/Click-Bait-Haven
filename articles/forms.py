@@ -32,6 +32,17 @@ class ArticleCreateForm(forms.ModelForm):
         }
 
 
+class ArticleEditForm(ArticleCreateForm):
+
+    class Meta(ArticleCreateForm.Meta):
+        labels = {
+            'picture': 'Change cover picture',
+            'title': 'Edit title',
+            'content': 'Edit content',
+            'tags': 'Edit tags',
+        }
+
+
 class ArticleSearchForm(forms.Form):
 
     title = forms.CharField(
