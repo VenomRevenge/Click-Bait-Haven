@@ -176,7 +176,7 @@ def article_view(request, pk):
         'tags': tags,
         'approval_phase': approval_phase,
         'is_deleted_article': is_deleted_article,
-        'edit_button': user.is_superuser or user.profile == article.author,
+        'edit_button': user.is_superuser or user.profile == article.author if user.is_authenticated else False,
         'user_reaction': user_reaction,
         'comments': comments,
     }

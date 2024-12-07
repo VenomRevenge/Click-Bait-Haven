@@ -1,0 +1,124 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.site {
+    justify-content: space-between;
+    height: 100vh; 
+}
+
+header {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+
+.contact-us-content {
+    width: 40%;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.contact-us-title {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 1rem;
+}
+
+.info-text {
+    background: #f9f9f9;
+    border: 5px solid #4caf50; 
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-text p {
+    font-weight: 500;
+    color: #555555;
+}
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-us-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-us-form label {
+    font-weight: bold;
+    color: #444444;
+}
+
+
+.contact-us-form input,
+.contact-us-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    width: 100%;
+    background: #fafafa;
+    transition: border-color 0.3s;
+}
+
+.contact-us-form input:focus,
+.contact-us-form textarea:focus {
+    outline: none;
+    border-color: #4caf50; 
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.contact-us-form textarea {
+    resize: vertical;
+    min-height: 9rem;
+}
+
+.contact-us-form button {
+    background: #4caf50;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-us-form button:hover {
+    background: #45a049;
+}
+
+@media screen and (max-width: 1600px) {
+    .contact-us-content {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-us-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contact-us-content {
+        width: 95%;
+    }
+}

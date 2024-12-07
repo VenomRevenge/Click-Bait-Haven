@@ -29,7 +29,7 @@ main {
     gap: 2rem;
 }
 
-.messages {
+.messages-notifs {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;

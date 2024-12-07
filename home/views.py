@@ -5,11 +5,14 @@ from django.views.generic import FormView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.contrib import messages
 from articles.models import Article
-from home.forms import RegisterForm, SignInForm
+from home.forms import ContactUsForm, RegisterForm, SignInForm
 from home.helpers import get_featured_articles, get_random_article_pk, get_recent_articles
+from home.send_contact_us_email import send_email
 from moderation_system.models import Notification
 from profiles.helpers import is_admin_staff_mod
+from asgiref.sync import async_to_sync
 
 
 def index(request):
@@ -134,3 +137,33 @@ def delete_notification(request, pk):
     notification.delete()
 
     return redirect(referer_url)
+
+@login_required
+def contact_us(request):
+    user = request.user
+    user_data = {
+        'name': user.username,
+        'email': user.email,
+    }
+    result = None
+
+    form = ContactUsForm(request.POST or None, initial=user_data)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            try:
+                result = async_to_sync(send_email)(**form.cleaned_data, user_info=user_data)
+                if result == 200:
+                    messages.success(request, 'Thank you for sending us an email! We will contact you soon!')
+                else:
+                    messages.error(request, 'Something went wrong with sending your email! Please try again later.')
+            except Exception:
+                messages.error(request, f'An error occurred:')
+
+            return redirect('index')
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'home/contact-us.html', context)

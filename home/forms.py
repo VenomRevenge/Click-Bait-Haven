@@ -27,3 +27,26 @@ class SignInForm(AuthenticationForm):
         self.fields['username'].label = 'Username or Email'
         for field_name in self.fields:
             self.fields[field_name].help_text = None
+
+class ContactUsForm(forms.Form):
+
+    name = forms.CharField(
+        label='Your username:',
+        max_length=150,
+        widget=forms.TextInput(attrs={
+            'required': True,
+        })
+    )
+    email = forms.EmailField(
+        label='Your contact email:',
+        widget=forms.EmailInput(attrs={
+            'required': True,
+        })
+    )
+    message = forms.CharField(
+        label='Message:',
+        widget=forms.Textarea(attrs={
+            'placeholder': 'Your message here...',
+            'required': True,
+        })
+    )

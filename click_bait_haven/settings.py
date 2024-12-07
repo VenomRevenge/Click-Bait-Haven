@@ -190,6 +190,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy('index')
 LOGIN_URL = reverse_lazy('sign_in')
 
+# Email API key
+WEB3FORMS_EMAIL_ACCESS_KEY = os.getenv('WEB3FORMS_EMAIL_ACCESS_KEY')
+
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,

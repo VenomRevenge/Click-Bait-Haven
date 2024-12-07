@@ -1,5 +1,5 @@
 from django.urls import path, include
-from home.views import Register, SignIn, delete_notification, index, my_notifications, random_article, sign_out
+from home.views import Register, SignIn, contact_us, delete_notification, index, my_notifications, random_article, sign_out
 
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
     path('sign-in/', SignIn.as_view(), name='sign_in'),
     path('sign-out/', sign_out, name='sign_out'),
     path('random/', random_article, name='random_article'),
+    path('contact-us/', contact_us, name='contact_us'),
     path('my-notifications/',include([
         path('', my_notifications, name='my_notifications'),
         path('<int:pk>/delete/', delete_notification, name='delete_notification'),
