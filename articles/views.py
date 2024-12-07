@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.views.generic.edit import CreateView
 from django.http import Http404
 from django.db.models import Prefetch
@@ -18,6 +19,7 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
     form_class = ArticleCreateForm
     template_name = 'articles/article-create.html'
     success_url = reverse_lazy('index')
+    DEFAULT_SUCCESS_MESSAGE = 'Your article has been published for review!'
 
     def form_valid(self, form):
         user = self.request.user
@@ -26,10 +28,11 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
         article = form.save(commit=False)
         article.author = profile
         if has_confirmed_journalist_perms(user):
+            self.DEFAULT_SUCCESS_MESSAGE = 'Your article has been published!'
             article.is_approved = True
         article.save()
         form.save_m2m()
-
+        messages.success(self.request, self.DEFAULT_SUCCESS_MESSAGE)
         return super().form_valid(form)
 
 
@@ -44,6 +47,7 @@ def article_edit(request, pk):
 
     article = get_object_or_404(Article, pk=pk)
     user = request.user
+    default_success_message = 'The article has been successfully edited!'
 
     # only superusers can view and edit deleted articles
     if article.deleted_at and not user.is_superuser:
@@ -63,14 +67,16 @@ def article_edit(request, pk):
         # reapproved
         if not has_confirmed_journalist_perms(request.user):
             article.is_approved = False
+            default_success_message = 'Your article has been successfully edited and resubmitted for review.'
 
         article.save()
         form.save_m2m()
-        url = f'{reverse("article_search")}?title={article.title}'
+        url = reverse("index")
 
         if not article.is_approved and user.is_superuser:
             url = reverse('article', kwargs={'pk': article.pk})
 
+        messages.success(request, default_success_message)
         return redirect(url)
     
     context = {
@@ -86,7 +92,6 @@ def article_edit(request, pk):
 def article_delete(request, pk):
     user = request.user
     article = get_object_or_404(Article, pk=pk)
-    url = f'{reverse("article_search")}?title={article.title}'
 
     if article.deleted_at and not user.is_superuser:
         raise Http404
@@ -96,6 +101,7 @@ def article_delete(request, pk):
         raise PermissionDenied
     
     if request.method == 'POST':
+        messages.success(request, 'Article deleted successfully!')
         # if passed all checks above and this its implied a superuser
         # is trying to hard delete a soft deleted article
         if article.deleted_at:
@@ -103,7 +109,7 @@ def article_delete(request, pk):
             return redirect('deleted_articles')
         else:
             article.soft_delete()
-            return redirect(url)
+            return redirect('index')
     # if deletion doesn't happen then just return to the article edit
     return redirect(reverse('article_edit', kwargs={'pk': article.pk}))
 

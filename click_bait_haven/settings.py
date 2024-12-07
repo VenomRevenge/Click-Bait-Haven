@@ -36,6 +36,12 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # django unfold setup needs to be first
+    "unfold",
+    "unfold.contrib.filters",
+    "unfold.contrib.forms",
+
+    # inherent django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -157,6 +163,11 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+UNFOLD = {
+    "SITE_TITLE": "Click-Bait Haven Administration",
+    "SITE_HEADER": "Click-Bait Haven Admin",
+}
 
 
 # Static files (CSS, JavaScript, Images)

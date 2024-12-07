@@ -10,7 +10,6 @@ body {
 main {
     width: 100%;
     display: flex;
-    margin-top: 5rem;
     padding: 1rem;
     justify-content: space-around;
 }

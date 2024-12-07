@@ -17,7 +17,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fields = ['name',]
+        fields = ['name']
 
 class ArticleSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, read_only=True)

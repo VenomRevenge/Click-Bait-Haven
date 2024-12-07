@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import View, DetailView, edit
+from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.hashers import check_password, make_password
@@ -101,7 +102,9 @@ class ProfileDeleteOrBan(LoginRequiredMixin, View):
         # logout the user if they deleted their own profile
         if is_owner:
             logout(request)
-
+        else:
+            messages.success(request, 'You have successfully banned the user!')
+            
         return redirect('index')
 
     def get_context_data(self, user, profile):
