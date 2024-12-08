@@ -110,4 +110,7 @@ main {
     .signup-btn {
         display: inline-block;
     }
+    .login-btn {
+        display: inline-block;
+    }
 }

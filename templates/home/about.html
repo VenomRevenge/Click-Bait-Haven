@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+    {% endblock %}
+
+    {% block content %}
+
+    <main>
+
+        <aside class="site-info">
+            <h1>About Click-Bait Haven</h1>
+            <div class="site-info-text">
+                <p>Hello and welcome to my little web app!</p>
+                <hr>
+                <p>
+                    This is supposed to be a journalism-style website in which
+                    you can submit articles for review, tag articles, comment, like
+                    or dislike articles and manage your personal profile.
+                </p>
+                <hr>
+                <p>
+                    The article content of this site support the 
+                    <a class="markdown-link" href="https://www.markdownguide.org/basic-syntax/">
+                        MarkDown Markup Language
+                    </a> 
+                    but keep in mind that the available tags are:
+                </p>
+                <p class="available-tags">
+                    'p', 'b', 'strong', 'em', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'code'
+                </p>
+                <hr>
+                <p>
+                    I also built my own <a class="api-link" href="{% url 'swagger-ui' %}" target="_blank">REST API</a> which allows for anyone to 
+                    dynamically fetch articles programatically! No key needed!
+                </p>
+                <p>
+                    The main idea for making this project was seeing if 
+                    I could develop a realistic web application with user privileges,
+                    moderation and custom logic.
+                </p>
+                <p>
+                    Its a culmination of techniques I learned through lectures,
+                     studies, and my own experimentation.
+                </p>
+                <p>
+                    Since im also hobby-watching a lot of scripting and cybersecurity
+                    content I made sure to include a lot of checks in my code and custom
+                    scripts for various purposes.
+                </p>
+                <p>
+                    
+                </p>
+            </div>
+        </aside>
+        <div class="dev-info">
+            <h1>About the developer</h1>
+            <div class="dev-info-text">
+                <p>My name is Plamen Panayotov</p>
+                <hr>
+                <p>
+                    I am a student at SoftUni and I started studying there because
+                    of the free course that was advertised and because of a recommendation 
+                    from a friend or two. They know who they are.
+                </p>
+                <p>
+                    The free course helped ignite my love for learning coding and I 
+                    couldn't be more grateful for being shown something that I very much
+                    enjoy doing and studying.
+                </p>
+                <p>
+                    Right now im at the final course of the Web Programming curriculum 
+                    and this is my final project for the Project Defense exam.
+                </p>
+                <p>
+                    I very much enjoyed learning python, javascript and programming as a 
+                    whole and as I look over this project im pretty happy what all of 
+                    my studying and work amounted to.
+                </p>
+                <p>
+                    Its the end of the carriculum but Im still eager to learn 
+                    lots of new technologies and tools such as React, TypeScript,
+                    FastAPI, different types of databases and much more.
+                </p>
+                <hr>
+                <p>
+                    You can find me on github here: <a class="github-link" href="https://github.com/VenomRevenge" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                        <path d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"></path>
+                    </svg>https://github.com/VenomRevenge</a>
+                </p>
+                <p>
+                    I haven't been using github a lot since before this project
+                    but locally I have a lot of scripts and mini-project I have been
+                    doing since starting softuni and I think I will be uploading some
+                    on there pretty soon.
+                </p>
+                <p>
+                    The repository for this project will remain open-source and will
+                    be open for PR once the exam is finished.
+                </p>
+                <p>
+                    Check out the repository here:
+                    <a class="github-link" href="https://github.com/VenomRevenge/Click-Bait-Haven" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                        <path d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"></path>
+                    </svg>
+                        https://github.com/VenomRevenge/Click-Bait-Haven
+                    </a>
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    {% endblock %}

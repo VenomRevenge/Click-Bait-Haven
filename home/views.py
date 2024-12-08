@@ -167,3 +167,9 @@ def contact_us(request):
     }
 
     return render(request, 'home/contact-us.html', context)
+
+def privacy_policy(request):
+    return render(request, 'home/privacy-policy.html')
+
+def about(request):
+    return render(request, 'home/about.html')

@@ -1,0 +1,94 @@
+body {
+    background-color: #F4F4F4;
+}
+
+.site {
+    justify-content: space-between;
+    height: 100vh; 
+}
+
+header {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    padding: 0.3rem;
+}
+
+body {
+    line-height: 1.6;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.site-info, .dev-info {
+    flex: 1 1 50%;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+}
+
+.site-info {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.dev-info {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.site-info h1, .dev-info h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.site-info-text p, .dev-info-text p {
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.available-tags {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.github-link svg {
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    fill: #333;
+    width: 2rem;
+}
+
+.github-link svg:hover {
+    fill: #0073e6;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    .site-info, .dev-info {
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/privacy-policy.css' %}">
+    {% endblock %}
+
+
+        {% block content %}
+        <main>
+            <div class="privacy-policy-container">
+                <h1 class="privacy-title">Privacy Policy</h1>
+                <div class="privacy-greeting-msg">
+                    <p>
+                        Welcome to Click-Bait Haven! 
+                        Your privacy is important to us. 
+                        This Privacy Policy explains how your 
+                        information is used when you use this app.
+                    </p>
+                </div>
+                <div class="privacy-policy-info">
+                    <p>
+                        Your information that is collected during registration
+                        is Username and Email, aside from displaying it in the
+                        app, I dont really use it for anything as this is just
+                        a personal project for Software University (softuni).
+                    </p>
+                    <p>
+                        Browser type, IP address, device information, is not collected.
+                    </p>
+                    <p>
+                        Cookies are only used for storing sessions and CSRF verification.
+                    </p>
+                    <p>
+                        User data is not sold or shared without consent from the user.
+                    </p>
+                    <p>
+                        As is the case with every other website, data is retained as long as 
+                        necessary to comply with legal obligations.
+                    </p>
+                    <p>
+                        As a user you can <a href="{% url 'contact_us' %}">contact me</a> to access, delete and or update 
+                        your information and data.
+                    </p>
+                </div>
+            </div>
+
+        </main>
+
+        {% endblock %}
