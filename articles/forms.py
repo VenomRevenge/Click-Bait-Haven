@@ -24,9 +24,10 @@ class ArticleCreateForm(forms.ModelForm):
 
         widgets = {
             'content': forms.Textarea(attrs={
-                'placeholder': 'Write your article here...',
+                'placeholder': 'Write your article here...(minimum 500 characters)',
                 'cols': 40,
                 'rows': 40,
+                'minlength': Article.CONTENT_MIN_LENGTH,
                 }
             ),
         }
@@ -61,8 +62,6 @@ class ArticleSearchForm(forms.Form):
         choices=[
             ("-created_at", "Date (Newest)"),
             ("created_at", "Date (Oldest)"),
-            # ("likes", "Likes"),
-            # ("dislikes", "Dislikes"),
         ],
         widget=forms.Select()
     )

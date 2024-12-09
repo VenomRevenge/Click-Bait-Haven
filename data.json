@@ -1,0 +1,1657 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-12-09T01:38:39.154Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "4",
+      "object_repr": "ClickBaitStaff",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$wPXV8Om8MnhB7iXVTstbn2$Jv3ebCiIggWBhS+atl6igsu+TOzGarhCIjFWRqVT5lg=",
+      "last_login": "2024-12-09T00:24:57.011Z",
+      "is_superuser": true,
+      "username": "ClickBaitAdmin",
+      "first_name": "",
+      "last_name": "",
+      "email": "clickbaitadmin@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-12-08T23:34:14.971Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$h8vmT6DgyRQ5awga5NKJpH$sD6z6t+Xz0sXAigquU1tNkoscn4ogDdnDAZ2ql3QUHA=",
+      "last_login": "2024-12-09T02:38:06.271Z",
+      "is_superuser": false,
+      "username": "ivan",
+      "first_name": "",
+      "last_name": "",
+      "email": "ivan@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-09T00:13:17.496Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$5uKUHRXdLvzOCByIIkov0C$qbOdR6UR5Nf8yXi8+VgLvkp63qZ/VTciRr3y/Tci2i4=",
+      "last_login": "2024-12-09T01:14:37.827Z",
+      "is_superuser": false,
+      "username": "John",
+      "first_name": "",
+      "last_name": "",
+      "email": "john@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-09T01:14:36.652Z",
+      "groups": [],
+      "user_permissions": [
+        29
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$ehJQ31WsnmNfa77fu08fDB$Im7q2A+rEL1sGoUIl5veBhZcdisDy+vzrxkOV2X2BRw=",
+      "last_login": "2024-12-09T01:36:23Z",
+      "is_superuser": false,
+      "username": "ClickBaitStaff",
+      "first_name": "",
+      "last_name": "",
+      "email": "clickbaitstaff@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-12-09T01:36:22Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$T8H358sRjVzylBfvXXwGBA$MoIPqvRi4th7DFwe+9ZWRc1GIfRURNDNiaWaqTK1Hto=",
+      "last_login": "2024-12-09T02:37:50.210Z",
+      "is_superuser": false,
+      "username": "plamen",
+      "first_name": "",
+      "last_name": "",
+      "email": "plamen@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-09T02:22:39.510Z",
+      "groups": [],
+      "user_permissions": [
+        30
+      ]
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "profiles",
+      "model": "profile"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "articles",
+      "model": "tag"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "articles",
+      "model": "article"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "articles",
+      "model": "comment"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "articles",
+      "model": "articlereaction"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "articles",
+      "model": "commentreaction"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "moderation_system",
+      "model": "notification"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "504ypah87oi7952b4riyoj49ox51k4jd",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGllaQ2wvJT1nsPZjkwCypTipIu6OIqWA9s3M20yidRnT2vOcJjVXA-b0uzHJK9cd6JPqo1lpdZkntrtiD9rtvWl-3w7372CkPu61OA4eMCgV5oIQGAqyDogaYokOgpA44jMUT6JefObhMgBGCpnRfL4QsjkI:1tKRa5:RYgOzeRkRr9kMMMlGVtdbfiV33IId4Z79RfAVWR3baw",
+      "expire_date": "2024-12-23T00:24:57.035Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "fkkbs52o8qthpaozt0104fx4cuhmvmy2",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAURP-FtSFyA5S6dO83kPsAqRpISrsy_rtt0oXOcs6ZeauI61Li2tMcJ1EXBer02xHyM9UdyAPrvWludZkn0ruiD9r1rUl6XQ_376BgL9uaAdmQuGzYjMRgMIzkxDrZEkByCmKAz-g8eLCOLQ7irc3sZQgk6vMFEOo46A:1tKTew:niJA0myYcEZBSGw9B06FG4BRiz1FTNLEUbSWJ0scTH4",
+      "expire_date": "2024-12-23T02:38:06.325Z"
+    }
+  },
+  {
+    "model": "profiles.profile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "gender": "Male",
+      "bio": "I am the admin of the website, I can do things you couldn't imagine.",
+      "profile_picture": "profile_pictures/admin-user-icon.webp",
+      "date_of_birth": "1999-02-09",
+      "role": "Admin"
+    }
+  },
+  {
+    "model": "profiles.profile",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "gender": "Male",
+      "bio": "Hello, I am a novice journalist! Looking to learn and improve my craft!",
+      "profile_picture": "profile_pictures/ivan.jpg",
+      "date_of_birth": "1995-02-09",
+      "role": "Citizen Journalist"
+    }
+  },
+  {
+    "model": "profiles.profile",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "gender": "Male",
+      "bio": "Your neighborhood hard-boiled journalist detective.",
+      "profile_picture": "profile_pictures/john.jpg",
+      "date_of_birth": "1974-08-14",
+      "role": "Confirmed Journalist"
+    }
+  },
+  {
+    "model": "profiles.profile",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "gender": "Female",
+      "bio": "I am a staff user of this website.",
+      "profile_picture": "",
+      "date_of_birth": "1994-03-25",
+      "role": "Moderator"
+    }
+  },
+  {
+    "model": "profiles.profile",
+    "pk": 5,
+    "fields": {
+      "user": 5,
+      "gender": "Male",
+      "bio": "Hello, I am a moderator and I have some interesting articles....",
+      "profile_picture": "profile_pictures/github-icon.png",
+      "date_of_birth": "1999-02-09",
+      "role": "Moderator"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Politics"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Comedy"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Science"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Fight"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 6,
+    "fields": {
+      "name": "Shooting"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 7,
+    "fields": {
+      "name": "War"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 8,
+    "fields": {
+      "name": "Invention"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 9,
+    "fields": {
+      "name": "Discovery"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 10,
+    "fields": {
+      "name": "Crime"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 11,
+    "fields": {
+      "name": "Economy"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 12,
+    "fields": {
+      "name": "Environment"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 13,
+    "fields": {
+      "name": "Health"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 14,
+    "fields": {
+      "name": "Technology"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 15,
+    "fields": {
+      "name": "Espionage"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 16,
+    "fields": {
+      "name": "Finance"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 17,
+    "fields": {
+      "name": "Corruption"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 18,
+    "fields": {
+      "name": "Activism"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 19,
+    "fields": {
+      "name": "Government"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 20,
+    "fields": {
+      "name": "Celebrity"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 21,
+    "fields": {
+      "name": "Music"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 22,
+    "fields": {
+      "name": "Movies"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 23,
+    "fields": {
+      "name": "Sports"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 24,
+    "fields": {
+      "name": "Art"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 25,
+    "fields": {
+      "name": "Food"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 26,
+    "fields": {
+      "name": "Research"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 27,
+    "fields": {
+      "name": "Space"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 28,
+    "fields": {
+      "name": "Innovation"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 29,
+    "fields": {
+      "name": "Analysis"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 30,
+    "fields": {
+      "name": "Interview"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 31,
+    "fields": {
+      "name": "Business"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 32,
+    "fields": {
+      "name": "Disaster"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 33,
+    "fields": {
+      "name": "Accident"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 34,
+    "fields": {
+      "name": "Terrorism"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 35,
+    "fields": {
+      "name": "Investigation"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 36,
+    "fields": {
+      "name": "Scam"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 37,
+    "fields": {
+      "name": "Satire"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 38,
+    "fields": {
+      "name": "History"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 39,
+    "fields": {
+      "name": "Anime"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 40,
+    "fields": {
+      "name": "Vigilante"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 41,
+    "fields": {
+      "name": "Meme"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 42,
+    "fields": {
+      "name": "Crypto"
+    }
+  },
+  {
+    "model": "articles.tag",
+    "pk": 43,
+    "fields": {
+      "name": "Controversy"
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 1,
+    "fields": {
+      "author": 1,
+      "title": "Click Bait Haven Website Launch!",
+      "content": "# Click Bait Haven Website Launch!\r\n\r\n**Breaking News:** The internet's ultimate destination for tantalizing headlines and irresistibly clickable stories has arrivedΓÇöwelcome to *Click Bait Haven*! This brand-new platform promises to revolutionize the way we consume engaging, sensational content.\r\n\r\n## What is Click Bait Haven?\r\n\r\nClick Bait Haven is a website designed to deliver the most eye-catching articles, captivating stories, and attention-grabbing headlines on the web. Whether you're in search of celebrity gossip, shocking revelations, or bizarre \"you won't believe what happened next\" moments, Click Bait Haven has it all.\r\n\r\n### Features of Click Bait Haven\r\n\r\n- **Endless Scrolling:** Enjoy a never-ending feed of the most compelling clickbait headlines youΓÇÖll ever see.\r\n- **Diverse Categories:** From entertainment and lifestyle to science and mystery, thereΓÇÖs something for everyone.\r\n- **Community Engagement:** Readers can react, comment, and even share their own clickbait-worthy stories.\r\n\r\n## Why Does It Matter?\r\n\r\nIn a digital age where attention spans are shorter than ever, Click Bait Haven embraces the art of crafting compelling narratives that hook readers instantly. This platform isn't just about the headlinesΓÇöit's about delivering entertainment and sparking curiosity in a way that keeps users coming back for more.\r\n\r\n### Join the Fun Today!\r\n\r\nDon't miss out on the internet's most addictive new hub. Visit Click Bait Haven and discover why everyone's talking about it. But bewareΓÇöyou might just lose track of time as you dive into this treasure trove of clickable content!\r\n\r\nStay tuned for updates and new features as Click Bait Haven continues to grow. Happy clicking!",
+      "picture": "",
+      "created_at": "2024-12-08T23:43:16.006Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        4,
+        8,
+        9,
+        14,
+        28,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 2,
+    "fields": {
+      "author": 1,
+      "title": "Recent Crimes in Pernik, Bulgaria",
+      "content": "**Pernik**, a city nestled in western Bulgaria, has recently been grappling with a series of criminal incidents that have stirred public concern. Known for its rich history and cultural heritage, the city is facing challenges as it deals with an uptick in crime rates. HereΓÇÖs an overview of the most notable cases and their broader implications for the community.\r\n\r\n## A Spike in Property Crimes\r\n\r\nOne of the most pressing issues in Pernik has been the increase in property crimes, including burglaries and car thefts. Over the past month, several neighborhoods reported nighttime break-ins, with thieves targeting residential homes and small businesses. \r\n\r\n- **High-Risk Areas:** The districts of Iztok and Tsurkovna have seen the highest number of reported incidents.\r\n- **Targeted Goods:** Electronics, cash, and personal valuables have been the primary targets for thieves.\r\n- **Community Response:** Residents are organizing neighborhood watch groups and collaborating with local authorities to enhance surveillance.\r\n\r\nLocal police have responded by increasing patrols, but many citizens believe that more comprehensive measures are needed, such as the installation of CCTV cameras and better street lighting.\r\n\r\n## Violent Crime: A Growing Concern\r\n\r\nIn addition to property crimes, violent incidents have also made headlines. A particularly shocking case occurred last week in the city center:\r\n\r\n- **Incident Details:** A brawl outside a popular bar escalated, leaving one individual hospitalized with serious injuries. Witnesses reported that the altercation involved multiple parties and likely stemmed from an argument over personal matters.\r\n- **Police Investigation:** Authorities are working to identify and apprehend all those involved. Two suspects have been detained for questioning.\r\n\r\nThis incident highlights a growing trend of public altercations in social spaces, leading residents to question the adequacy of law enforcement presence during peak hours.\r\n\r\n## Cybercrime and Scams\r\n\r\nCybercrime has also emerged as a new front in Pernik's battle against crime. Several residents recently reported falling victim to online scams:\r\n\r\n- **Common Scams:** Fraudulent online marketplace transactions and phishing emails requesting personal financial information.\r\n- **Impacted Groups:** Elderly citizens and those unfamiliar with digital safety practices have been disproportionately affected.\r\n- **Preventive Measures:** Police have issued public advisories, urging citizens to remain vigilant when conducting online transactions and to verify the legitimacy of communications claiming to be from banks or government institutions.\r\n\r\n## WhatΓÇÖs Behind the Rise in Crime?\r\n\r\nExperts suggest several underlying factors contributing to the recent rise in crime in Pernik:\r\n\r\n1. **Economic Pressures:** The lingering effects of global economic uncertainty have created financial strains for many families, potentially driving some toward illegal activities.\r\n2. **Population Dynamics:** An influx of individuals from surrounding rural areas has led to increased urban challenges, including higher crime rates.\r\n3. **Resource Constraints:** Local law enforcement agencies face resource limitations, making it difficult to maintain a strong presence across the city.\r\n\r\n## Community and Government Action\r\n\r\nIn response to these challenges, both the community and the government have taken steps to improve safety and security in Pernik:\r\n\r\n- **Enhanced Policing:** The Ministry of Interior has allocated additional officers to the region to bolster crime prevention efforts.\r\n- **Public Awareness Campaigns:** Educational programs aimed at teaching citizens how to avoid becoming victims of cybercrime and property theft are being rolled out in schools and community centers.\r\n- **Community Engagement:** Grassroots organizations are working closely with residents to foster a sense of collective responsibility for public safety.\r\n\r\n### A Call for Long-Term Solutions\r\n\r\nWhile immediate actions are being taken, experts argue that long-term solutions are essential. These include improving economic opportunities, investing in youth education programs, and strengthening the judicial system to ensure swift and fair handling of criminal cases.\r\n\r\n---\r\n\r\nPernikΓÇÖs citizens remain resilient in the face of these challenges, drawing on their strong sense of community to address the current crime wave. However, sustained effort and collaboration between residents, local authorities, and the government will be crucial to restoring the cityΓÇÖs reputation as a safe and welcoming place to live.\r\n\r\n**Stay Updated:** Residents are encouraged to stay informed about safety measures and report any suspicious activity to local law enforcement. Together, the community can work towards a safer Pernik for everyone.",
+      "picture": "article_pictures/pernik-article.jpeg",
+      "created_at": "2024-12-08T23:56:06.023Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        35,
+        36,
+        5,
+        10,
+        17,
+        19,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 3,
+    "fields": {
+      "author": 1,
+      "title": "Scientists Make Groundbreaking Space Discovery",
+      "content": "# Scientists Make Groundbreaking Discovery: New Findings Could Manipulate Spacetime  \r\n\r\nIn a discovery that could reshape our understanding of the universe, a team of physicists and researchers has made a groundbreaking breakthrough in the manipulation of **spacetime**. The findings suggest a method by which the fabric of spacetime itself can be influenced, offering potential pathways to time travel, advanced space travel, and new technologies.\r\n\r\n## The Discovery: Manipulating the Fabric of Reality  \r\n\r\nScientists have recently uncovered a method of interacting with the properties of spacetime through advanced quantum physics. This discovery comes from combining cutting-edge gravitational studies with quantum mechanics, enabling researchers to explore ways to alter spacetime in ways previously thought to be science fiction.\r\n\r\nThe breakthrough stems from theoretical predictions validated through cutting-edge experiments, leveraging gravitational anomalies and quantum fields. Researchers believe that the manipulation could involve subtle distortions in spacetime, allowing objects to move through time or space with previously unimaginable precision.\r\n\r\n### How They Made the Discovery  \r\n\r\nThe discovery is the result of decades of research combining **general relativity**, **quantum field theory**, and advanced astrophysical observations. Through mathematical modeling, combined with recent experiments using advanced gravitational wave detection tools and quantum particle observations, researchers identified conditions that could lead to controlled spacetime manipulation.\r\n\r\nThe method involves **distorting gravitational waves** and employing specific interactions with dark matter-like phenomena to alter the fabric of spacetime locally.\r\n\r\n## What Does This Mean for the Future?  \r\n\r\nThe implications of this discovery are staggering. Manipulating spacetime would represent one of the most exciting advancements in physics, space exploration, and even fundamental philosophical questions about the nature of time and causality. Some potential applications could include:\r\n\r\n1. **Space Travel Revolution:** Spacecraft equipped with this technology could potentially \"warp\" or move through the fabric of spacetime, dramatically reducing travel time across vast interstellar distances.  \r\n2. **Time Manipulation Possibilities:** Although this remains purely theoretical, some researchers are speculating about the potential for time travel or temporal manipulation using localized spacetime distortions.  \r\n3. **Advanced Energy Harnessing:** Spacetime manipulation could lead to the creation of new energy sources by tapping into gravitational fields or using controlled spacetime pathways to generate power.  \r\n\r\n### Ethical Concerns and Philosophical Ramifications  \r\n\r\nWhile the scientific possibilities are thrilling, they are not without their ethical implications. Manipulating spacetime could have unintended consequences, potentially altering timelines, creating paradoxes, or even destabilizing regions of space. Researchers are urging policymakers and ethicists to begin discussions about the responsibility that comes with such power.\r\n\r\nFurthermore, the discovery raises existential questions about time itself. Could tampering with spacetime lead to unforeseen dangers? Could the manipulation of time change the course of human history? These questions remain unanswered as scientists explore the bounds of their discovery.\r\n\r\n## The Role of Experimental Tools  \r\n\r\nThis discovery would not have been possible without technological advancements in areas such as gravitational wave detection and quantum experimentation. Instruments like the **LIGO (Laser Interferometer Gravitational-Wave Observatory)** and other quantum physics labs have enabled researchers to capture the subtle interactions of spacetime with unprecedented precision.\r\n\r\nThese technologies allow scientists to detect minute gravitational anomalies and observe how these perturbations interact with the fabric of reality. Through the use of gravitational observations and quantum manipulation experiments, this research team was able to uncover a pattern of spacetime alteration never before observed.\r\n\r\n## WhatΓÇÖs Next?  \r\n\r\nScientists are now focusing on testing the viability of this discovery through experimentation. Efforts are currently underway to:\r\n\r\n- **Create Controlled Experiments:** Reproducing controlled spacetime distortions in laboratory settings to validate theoretical predictions.  \r\n- **Explore Dark Matter Connections:** Investigating how dark matter might play a role in spacetime manipulation, given its mysterious gravitational effects on the universe.  \r\n- **Theoretical Modeling:** Expanding the mathematical models to understand the long-term effects and limitations of spacetime manipulation.\r\n\r\nWhile the immediate practical application of this discovery may remain far off, the exploration into these ideas promises to usher in a new age of physics, technology, and space exploration.\r\n\r\n## Conclusion: A New Chapter in Physics  \r\n\r\nThe ability to manipulate spacetime remains at the cutting edge of theoretical physics. While much work remains to be done, this discovery marks a pivotal moment in our understanding of the universe and our technological future. Scientists around the globe will now race to investigate the potential applications and risks of this discovery.\r\n\r\nThis breakthrough reminds us that the universe is far more complex and mysterious than we ever imaginedΓÇöand the possibilities for exploration and innovation are limitless. From interstellar voyages to new methods of energy and exploration, this discovery is a promising first step toward a future that could forever change humanityΓÇÖs place in the cosmos.",
+      "picture": "article_pictures/space-discovery.webp",
+      "created_at": "2024-12-09T00:09:18.803Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        4,
+        8,
+        14,
+        26,
+        27,
+        28,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 4,
+    "fields": {
+      "author": 2,
+      "title": "Exploring My City of Vidin's Corruption",
+      "content": "Growing up in **Vidin**, a historic city located in the northwest of Bulgaria, I always thought my hometown was a beautiful, peaceful, and unique place. With its cobblestone streets, iconic landmarks, and rich history, Vidin has always felt like home to me. But as I started my journey into journalism and began to dig deeper into the story behind my city, I came across something that unsettled meΓÇöcorruption.  \r\n\r\nCorruption is a word that carries weight in many communities, and for Vidin, it seems to be an issue embedded in various aspects of the local administration and economy. As a novice journalist just starting out, I wanted to explore this issue to better understand how it affects everyday life in my city. This is my perspective on what I discovered.  \r\n\r\n---\r\n\r\n## The Signs of Corruption in Vidin  \r\n\r\nCorruption can take many forms, from small acts of bribery to more systemic issues that influence public decision-making. While it's difficult to pin down every instance of corruption, it is evident that Vidin has struggled with challenges that suggest underlying issues of mismanagement, bribery, and systemic inefficiency.  \r\n\r\nOne thing that stands out is the apparent misuse of public resources and government funding. Vidin's economic struggles, particularly in recent years, have created opportunities for corruption to thrive. From public contracts to local development initiatives, there are signs that misallocated resources are impeding progress in the city.\r\n\r\n### 1. **Misuse of Public Funds**  \r\n\r\nLocal government initiatives are essential for maintaining and improving the infrastructure of any city. However, residents and community leaders have long raised concerns about how public funds are spent in Vidin. From schools to roads to local services, there is a growing feeling that projects are either delayed or mismanaged, and funds that should benefit the community are instead disappearing into bureaucratic gaps.  \r\n\r\nOne of the most pressing examples of this is the incomplete public works projects. Many roads and public buildings remain unfinished, despite large investments from government budgets and European Union development funds.\r\n\r\n### 2. **Public Contracts and Favoritism**  \r\n\r\nAnother sign of corruption is the way contracts are awarded in Vidin. Public contracts are meant to be transparent and fair, but many locals believe they are being granted to well-connected companies or individuals with ties to local officials. This has created resentment among small business owners and other local residents, who struggle to compete in an uneven playing field.\r\n\r\nWhen transparency is absent, favoritism creeps into decision-making. Contracts are awarded not on merit but connections, and this has led to inefficiencies, unfinished projects, and wasted money.\r\n\r\n### 3. **Influence in Local Government**  \r\n\r\nLocal officials in any city are meant to represent the citizens' best interests. However, in Vidin, reports of backroom deals and political maneuvering have created a sense of mistrust among residents. Decisions that impact local policiesΓÇöwhether concerning urban development, public safety, or social programsΓÇöare often tied to personal interests or political affiliations, rather than the needs of the community.\r\n\r\nThe lack of oversight and transparency has only fueled the growing distrust among residents, leaving many feeling powerless to demand accountability from their elected officials.\r\n\r\n---\r\n\r\n## How Corruption Affects Daily Life in Vidin  \r\n\r\nCorruption isn't just a political problem; it has real-world consequences for the residents of Vidin. IΓÇÖve come to understand that corruption affects daily life in subtle yet impactful ways:\r\n\r\n1. **Economic Hardships:** Small business owners and individuals often struggle because opportunities are given to well-connected entities rather than those with merit or need.  \r\n2. **Infrastructure Struggles:** Roads are poorly maintained, bridges remain in disrepair, and essential services like water and electricity infrastructure face unnecessary delaysΓÇöall of which can stem from mismanagement.  \r\n3. **Social Inequality:** The divide between wealthy individuals and the general population has widened as a result of corruption. Many residents feel excluded from the economic recovery and social programs meant to lift up struggling communities.  \r\n\r\nFor example, I recently spoke with a local teacher in Vidin's school system who shared how promises of investment have frequently turned into stalled projects. Schools lack proper resources, but funds are often delayed or misallocated.\r\n\r\n---\r\n\r\n## A Personal Journey into the Heart of the Issue  \r\n\r\nAs IΓÇÖve begun my exploration into VidinΓÇÖs struggles with corruption, IΓÇÖve learned that this is a complex problem deeply rooted in systemic issues, lack of oversight, and historical economic challenges. However, as a new journalist, itΓÇÖs important for me to acknowledge that I don't yet have all the answers. My exploration has merely scratched the surface of a much larger, complex story.\r\n\r\nThrough interviews with local residents, politicians, and community activists, I've come to see how many citizens in Vidin feel caught between apathy and hope. Some believe that change is impossible, while others are working tirelessly to expose corruption and demand accountability.\r\n\r\n### My Conversations  \r\n\r\nIΓÇÖve had the chance to speak to a few residents directly. One common sentiment among the community is frustration. A local business owner explained how they had lost access to opportunities because of opaque government dealings. Meanwhile, young people in Vidin are wondering if their hometown will ever recover and become a fairer, more equitable place to live.\r\n\r\nThese stories are compelling but heartbreakingΓÇöproof that corruption affects not just infrastructure, economics, or government but real, everyday lives.\r\n\r\n---\r\n\r\n## Steps Towards Transparency  \r\n\r\nEfforts are being made by civil society groups, activists, and politicians to address these systemic issues. There have been calls for increased transparency in public projects, improved oversight, and more active community involvement in governance. Many local organizations are working to educate citizens about their rights and provide tools for reporting instances of corruption.\r\n\r\nSome key initiatives include:  \r\n\r\n- **Community Watchdog Groups:** These groups monitor public contracts, spending, and decision-making processes to ensure transparency.  \r\n- **Transparency Campaigns:** Local civil society organizations are pushing for clear communication between the government and its citizens.  \r\n- **Youth Involvement:** There is a strong push to involve young people in political advocacy, hoping to inspire the next generation to demand fairness and accountability.  \r\n\r\nWhile these initiatives are still in their early stages, they represent hope that change is possible. It's clear that the road to rebuilding trust and addressing corruption is long, but it begins with dialogue, action, and accountability.\r\n\r\n---\r\n\r\n## My Perspective: A Novice JournalistΓÇÖs Reflection  \r\n\r\nAs I continue my journey as a journalist and as someone deeply connected to this community, I recognize the weight of telling stories like these. My exploration into VidinΓÇÖs struggles with corruption is just beginning, and though IΓÇÖm still learning the ins and outs of investigative reporting, IΓÇÖve come to believe that exposing these issues is an important first step.\r\n\r\nCorruption may be a daunting, complex problem, but itΓÇÖs not an unsolvable one. With the right amount of citizen engagement, transparency, and pressure, I believe Vidin can move toward a brighter, fairer, and more prosperous future.\r\n\r\nThis is just the start of my story, and I hope to continue learning, growing, and sharing insights as I explore these complex issues further. Journalism is about curiosity, honesty, and persistenceΓÇöand this is my first attempt at using my voice to uncover the truth about my hometown.\r\n\r\n### Final Thought  \r\n\r\nThe journey has just begun, but I remain hopeful. Vidin deserves better. And as citizens, activists, and journalists, we can all play a role in shaping the change we wish to see.",
+      "picture": "article_pictures/vidin-corruption.jpg",
+      "created_at": "2024-12-09T00:22:15.725Z",
+      "is_approved": true,
+      "approved_by": 1,
+      "approved_at": "2024-12-09T00:26:58.938Z",
+      "deleted_at": null,
+      "tags": [
+        1,
+        35,
+        40,
+        43,
+        17,
+        18,
+        19
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 5,
+    "fields": {
+      "author": 2,
+      "title": "Dead Internet Theory, Its the truth",
+      "content": "As a young journalist just beginning my journey into the world of reporting and investigation, IΓÇÖve come across some truly strange and fascinating theories. One of the most intriguingΓÇöand perhaps eerieΓÇöis the **Dead Internet Theory**. This theory has been gaining attention online, spreading among tech enthusiasts, conspiracy theorists, and those of us who find ourselves pondering the darker possibilities of technology.  \r\n\r\nThe idea that the internet may no longer be \"alive\" or is under some kind of control has piqued my curiosity. As someone just stepping into the world of investigative reporting, I knew I had to dive into this idea to explore what it means, where it came from, and whether there could be any truth to it. HereΓÇÖs what I found.  \r\n\r\n---\r\n\r\n## What is the Dead Internet Theory?  \r\n\r\nThe **Dead Internet Theory** is a concept that suggests the internet, as we know it, is no longer a free, open space full of human interaction. According to the theory, the internet has become dominated by artificial intelligence, bots, and government control, leading to a situation where most of what we see online is pre-programmed, manipulated, or controlled by algorithms.\r\n\r\nIn other words, the theory argues that **humans are no longer the primary driving force of online content**, with AI-generated content and orchestrated online operations creating the illusion of a living, breathing online community.  \r\n\r\nThe theory itself raises unsettling questions. Is everything we read, watch, and share online truly human-generated? Are our online lives, social media interactions, and discussions driven by the intentions of humans, or have AI systems and powerful corporations hijacked our collective digital consciousness?\r\n\r\n---\r\n\r\n## The Origins of the Dead Internet Theory  \r\n\r\nWhile it might sound like something straight out of a science fiction novel, the Dead Internet Theory has roots in technological developments and societal trends. Many researchers trace the idea back to the rise of social media platforms, widespread use of algorithms, and the increasing dominance of artificial intelligence in shaping our online experiences.  \r\n\r\n### 1. **The Role of AI and Bots**  \r\nWith AI systems becoming more advanced, they can now create contentΓÇöarticles, conversations, and even entire social media threadsΓÇöthat is indistinguishable from that of humans. Social media platforms rely heavily on algorithms to prioritize content and ensure user engagement, and these algorithms are often fueled by AI. Some believe that AI-generated content has overtaken organic human interaction, leading to the metaphorical \"death\" of a free and open internet.  \r\n\r\n### 2. **Governmental Control and Online Surveillance**  \r\nAnother element that supports the Dead Internet Theory is the growing role of governments and large tech corporations in monitoring and controlling online spaces. Governments, through surveillance programs, and tech companies, through content moderation and targeted advertising, are capable of manipulating digital spaces and shaping how content is created and consumed. Some theorists argue that this has led to a type of \"death\" in the sense that human agency has been removed from many online interactions.\r\n\r\n### 3. **The Rise of Algorithm Dominance**  \r\nAlgorithms are great at predicting behavior and ensuring that the most engaging or most profitable content is promoted, but this has led to a homogenization of the internet. The idea is that AI-driven systems prioritize engagement metrics over diversity, creativity, or organic human interaction. Consequently, this could mean the internet feels less like a living, dynamic community and more like an echo chamber of similar, repetitive content.\r\n\r\n---\r\n\r\n## Is There Any Truth to the Dead Internet Theory?  \r\n\r\nNow that we've explored the basics of the theory, the question arises: Could there actually be truth to it? As a journalist, IΓÇÖve approached this question with skepticism but also curiosity. HereΓÇÖs what I found:  \r\n\r\n### Evidence Supporting the Theory  \r\n\r\n1. **AI Content Generation:** With AI like GPT models and other generative AI tools capable of creating entire articles, social media posts, and even creative writing pieces, it's easy to imagine a world in which bots dominate online interactions. AI-generated content is already being used to populate websites, forums, and social media platforms, creating content that can spread misinformation or align with certain biases.  \r\n\r\n2. **Social Media Algorithms:** Social media platforms like Facebook, Twitter, and TikTok are driven by algorithms that prioritize engagement. This means that content isn't always organic or diverse; rather, it's tailored to user behavior and engagement patterns, creating \"echo chambers\" where users see content that reinforces their beliefs or preferences.\r\n\r\n3. **Censorship and Information Control:** Governments and corporations have stepped in to moderate content on social media and search engines. While this is intended to combat harmful or illegal content, some argue it contributes to a lack of diversity and a narrowing of perspectives. In a sense, this control limits the organic development of ideas and online discourse.\r\n\r\n### Evidence Against the Theory  \r\n\r\nOf course, some skeptics argue that the Dead Internet Theory is nothing more than a conspiracy theory or a byproduct of growing distrust in technological systems. They point out that:\r\n\r\n- **Human Creativity Still Exists:** Despite the rise of AI, human-generated content continues to dominate much of the internet. Original stories, opinions, independent reporting, and creative writing are still being created by actual people.\r\n- **Algorithmic Failures:** If AI or algorithms controlled everything, the internet would likely be far more consistent and efficient than it is. The unpredictable, chaotic, and diverse nature of the modern internet suggests that humans are still in charge to a large extent.\r\n\r\nFor instance, countless independent journalists and creators are still publishing content outside of AI-generated frameworks, focusing on personal experiences, investigative journalism, or independent storytelling.\r\n\r\n---\r\n\r\n## The Ethical and Philosophical Implications  \r\n\r\nRegardless of the truth of the Dead Internet Theory, it raises significant ethical and philosophical questions about the future of technology, AI, and online interaction:\r\n\r\n1. **What happens if AI continues to replace human interaction online?**  \r\n   Will we lose the ability to connect with one another in genuine, organic ways? Social media, which was once intended to bring people together, could instead isolate us if bots and AI-generated interactions replace human ones.\r\n\r\n2. **How can governments and corporations be held accountable for the consequences of these technologies?**  \r\n   If governments are using these AI-driven technologies for surveillance, manipulation, or control, who will stop them? How much oversight is enough to balance national security, innovation, and individual freedom?  \r\n\r\n3. **Can we trust what we read anymore?**  \r\n   If AI-generated content and algorithms dictate the information we consume, how can individuals discern truth from fiction? The rise of fake news and misinformation could be exacerbated by AI's presence.\r\n\r\nThese questions, which stem from the Dead Internet Theory, could shape how we approach technology, democracy, and media in the coming decades.\r\n\r\n---\r\n\r\n## My Final Thoughts  \r\n\r\nAs a novice journalist, I donΓÇÖt claim to have all the answers. IΓÇÖm still learning how to dig through competing theories and question established norms. The Dead Internet Theory is fascinating because it reveals so much about our modern digital culture and the rapid developments in AI and technology.  \r\n\r\nWhether the theory holds any truth or is simply a reflection of our growing distrust in algorithms, social media, and tech companies, it serves as a stark reminder: technology has power, and with that power comes responsibility.  \r\n\r\nIn my exploration of this theory, IΓÇÖve found myself questioning the authenticity of my own online experiences. Am I seeing content shaped by algorithms, bots, and AI, or am I still connecting with real human voices? These questions will continue to haunt my exploration as a journalist.\r\n\r\nThe Dead Internet Theory may still be just a theory, but it highlights the ever-changing relationship between technology, media, and human beings. As I continue my journey into journalism, this will undoubtedly be one story IΓÇÖll return to again and again.",
+      "picture": "article_pictures/dead-internet-theory.jpg",
+      "created_at": "2024-12-09T00:39:36.581Z",
+      "is_approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": "2024-12-09T00:40:46.922Z",
+      "tags": [
+        32,
+        34,
+        36,
+        9,
+        11,
+        17,
+        19,
+        26
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 6,
+    "fields": {
+      "author": 2,
+      "title": "Rising Tensions Between Nordar and Virelia",
+      "content": "As a novice journalist, I find myself constantly drawn to the unfolding stories shaping our global landscape. The international stage has always been a volatile one, driven by conflicting interests, borders, and political ideologies. Recently, I came across a troubling and fascinating conflict involving **Nordar** and **Virelia**, two neighboring nations in the Northern Hemisphere. What began as a series of diplomatic disagreements has now escalated into a full-blown international crisis with global ramifications.  \r\n\r\nThe situation between these two countries has captured attention not just because of its immediate consequences but because of the implications it has on global trade, alliances, and the concept of national sovereignty. HereΓÇÖs my attempt to break down the latest developments in this growing international controversy.  \r\n\r\n---\r\n\r\n## A Brief Background: Nordar vs. Virelia  \r\n\r\nBefore diving into the events of the last few weeks, letΓÇÖs look at the two nations at the heart of this crisis:\r\n\r\n### **Nordar**  \r\nNordar is a technologically advanced, highly industrialized nation located on the northern plains of the continent. Known for its commitment to renewable energy innovation and strong economic position in industries like aerospace, Nordar has been a leader in setting technological policies across the region. However, its heavy reliance on its advanced tech economy and geopolitical alliances has made it a frequent target of disputes.  \r\n\r\n### **Virelia**  \r\nVirelia, on the other hand, is a resource-rich, mountainous country with a vast network of mineral reserves and strategic trade routes. It has been a regional power for decades, but internal struggles related to economic inequality and regional influence have strained its relationship with its neighbors. Virelia has increasingly pursued control over its natural resource exports, which has led to economic and political tension with Nordar.\r\n\r\nThese two countries have shared a rocky diplomatic history marked by competition over resources, border disputes, and conflicting strategic alliances. What was once a partnership based on shared trade agreements has now spiraled into a volatile situation.\r\n\r\n---\r\n\r\n## The Escalation: From Diplomatic Disagreements to Military Conflict  \r\n\r\nThe latest escalation between Nordar and Virelia began with a series of trade sanctions and accusations of military provocations. What was initially a war of words has now taken a much darker turn, with military mobilizations, border skirmishes, and significant civilian impact.  \r\n\r\n### **The Spark: Dispute Over Mineral Resources**  \r\n\r\nThe conflict began when Nordar accused Virelia of hoarding vital mineral resources essential to renewable energy technologies. Nordar relies on Virelia's exports for lithium and rare earth elements, necessary for constructing renewable batteries and advanced electronics. However, Virelia recently enacted trade restrictions to maintain a strategic hold on its own resources, citing economic concerns and national security.  \r\n\r\nNordar responded by imposing economic sanctions on Virelia, leading to a tense standoff that saw troops and military equipment being moved to border areas.  \r\n\r\n### **Border Clashes: The First Shots Fired**  \r\n\r\nOver the past month, military exchanges escalated dramatically. Reports indicate that Virelian forces crossed the shared border into Nordar-controlled territory in a series of calculated maneuvers. While both nations deny fully initiating these skirmishes, satellite images and military analyses show troops and supply convoys moving heavily along disputed areas.  \r\n\r\nSeveral towns on the border between Nordar and Virelia have experienced violence as a result. Civilians have been caught in the crossfire, with thousands being displaced as both nations mobilize their military forces. Humanitarian organizations are now scrambling to provide aid to those caught in the crisis.\r\n\r\n---\r\n\r\n## International Response  \r\n\r\nThe situation is becoming increasingly complex as other world powers weigh in. Although the conflict began as a bilateral dispute between Nordar and Virelia, it is now drawing the attention of global allies and trade organizations.  \r\n\r\n### **Alliances at Play**  \r\n\r\nNordar is supported by a coalition of technologically advanced and economically powerful nations. This includes the **United Federation of Allied States (UFAS)**, a coalition of democratic and economically stable nations committed to free trade and stability. The UFAS has called for sanctions against Virelia and has pledged military aid to Nordar.  \r\n\r\nOn the other hand, Virelia has aligned itself with **The Eastern Bloc Accord (EBA)**, a collection of countries that prioritize resource sovereignty and trade freedom. The EBA believes that Nordar's sanctions are unfair and are a strategic move to destabilize Virelia for economic gain. As such, the EBA has pledged military support to Virelia, as well as diplomatic efforts to mediate peace.  \r\n\r\n### **The Role of the United Nations and Diplomatic Mediation**  \r\n\r\nThe United Nations has also intervened, attempting to broker peace through a series of diplomatic efforts. However, early reports suggest that the peace talks are fraught with challenges. Both Nordar and Virelia view the otherΓÇÖs actions as provocative and refuse to back down from their respective positions.  \r\n\r\nDespite these efforts, peace remains elusive. The UN has called for a ceasefire, but both sides have shown unwillingness to make significant concessions as the military situation worsens.\r\n\r\n---\r\n\r\n## The Impacts of the Crisis  \r\n\r\nThis conflict is not just limited to Nordar and Virelia alone. Its ripple effects are being felt across international trade, energy resources, and global diplomacy.\r\n\r\n### 1. **Global Supply Chain Disruptions**  \r\nWith Nordar relying on Virelian resources to power its renewable energy programs, any prolonged disruption in supply could harm global access to essential materials. Lithium shortages could lead to significant delays in battery production, impacting industries like electric vehicles, renewable energy grids, and tech production.  \r\n\r\n### 2. **Civilian Suffering and Refugee Crises**  \r\nAs military activity intensifies, thousands of civilians have been forced to flee their homes. Refugee routes are overcrowded, and neighboring countries are struggling to cope with the influx of displaced individuals. Humanitarian organizations are warning that without swift international aid, the humanitarian crisis could become catastrophic.\r\n\r\n### 3. **Economic Fallout**  \r\nThe imposition of economic sanctions and the military standoff is already creating uncertainty in international markets. Many nations trading with Nordar or Virelia have seen stock market fluctuations, and global investors are wary of the geopolitical risks posed by the conflict.\r\n\r\n---\r\n\r\n## My Perspective: The Fragility of Global Peace  \r\n\r\nThe escalation between Nordar and Virelia is a stark reminder of how quickly tensions can spiral out of control. What began as economic disagreements over resources has now become a military confrontation with the potential to engulf larger powers and disrupt global stability.  \r\n\r\nAs someone just entering the world of reporting, I canΓÇÖt help but think about how interconnected the modern world has become. Every decisionΓÇöwhether driven by economic interest, resource control, or military ambitionΓÇöhas far-reaching consequences for millions of ordinary people who find themselves caught in the middle.\r\n\r\nThe idea that countries can rapidly descend into violence over resources, national pride, or power struggles serves as a sobering lesson about diplomacy and the fragile balance of peace.  \r\n\r\nI hope that peace negotiations can still prevail. However, with military movements and territorial claims being made, this conflict feels far from resolution. Watching it unfold from a journalist's perspective makes me realize that understanding the complexities of international relations is no simple task.  \r\n\r\nThe story of Nordar and Virelia is ongoing, and I will continue to follow this crisis as it develops. In the end, the question remains: Can diplomacy prevail over war, or are we witnessing the beginning of a drawn-out and devastating international conflict?  \r\n\r\nOnly time will tell.",
+      "picture": "article_pictures/warring-countries.jpg",
+      "created_at": "2024-12-09T00:45:35.240Z",
+      "is_approved": true,
+      "approved_by": 1,
+      "approved_at": "2024-12-09T01:02:45.449Z",
+      "deleted_at": null,
+      "tags": [
+        32,
+        7,
+        11,
+        43,
+        12
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 7,
+    "fields": {
+      "author": 2,
+      "title": "Terrorist Attack Strikes the Heart of Ravonia",
+      "content": "As a young journalist stepping into the unpredictable and often heartbreaking world of reporting, I never imagined covering a story as devastating as the recent events in **Ravonia**, a small but vibrant nation in the heart of Eastern Europe. What began as an ordinary morning quickly turned into a horrifying scene of destruction, chaos, and grief as a coordinated terrorist attack ripped through the capital city.  \r\n\r\nI first learned about this attack through breaking news reports on social media, with eyewitness accounts describing scenes of unimaginable terror. In the days that have passed since the tragedy, the shockwaves of this event have reverberated not only through Ravonia but across the globe as nations stand in solidarity with the victims and their families.  \r\n\r\nHereΓÇÖs everything IΓÇÖve learned about this disaster and the response efforts that have followed.  \r\n\r\n---\r\n\r\n## The Attack: What Happened?  \r\n\r\nOn the morning of **December 4th**, a series of coordinated and well-planned terrorist acts targeted key locations in **RavoniaΓÇÖs capital, Lystenbourg**. Early reports indicate that multiple bombings took place in densely populated areas, including government buildings, major markets, and a transportation hub. Witnesses described loud explosions and chaos as panic gripped the streets.  \r\n\r\n### **The Key Sites Targeted**  \r\n\r\n1. **Central Government Offices:**  \r\n   One of the primary targets was the seat of Ravonia's central government. A massive explosion destroyed key administrative buildings, severely impairing the nation's ability to coordinate emergency responses and maintain law and order.  \r\n\r\n2. **Lystenbourg Central Market:**  \r\n   The bustling Lystenbourg Central Market, a hub for daily trade and commerce, was another site hit by terrorists. Eyewitnesses describe how shoppers and vendors were caught off guard as multiple blasts tore through the marketplace, leading to dozens of casualties.  \r\n\r\n3. **The Main Train Station:**  \r\n   The Lystenbourg Train Station, a vital transportation link connecting the city to other regions, was targeted during peak commuting hours. The bombings trapped dozens of innocent commuters, complicating emergency responses as rescue efforts were hindered by destroyed infrastructure.\r\n\r\nReports estimate that **over 150 civilians were killed**, with hundreds more injured. Many survivors are grappling with trauma as they try to make sense of the horrific events that unfolded in their city.\r\n\r\n---\r\n\r\n## The Aftermath: Rescue Efforts and Rising Fear  \r\n\r\nSince the initial attacks, rescue efforts have been underway as emergency services and humanitarian organizations race to save lives and provide aid to the affected communities. The destruction has left entire neighborhoods without essential services, and thousands of families have lost their homes.  \r\n\r\n### **Humanitarian Response**  \r\nInternational aid organizations have already begun mobilizing resources to assist the victims. Relief workers are focusing on providing food, medical supplies, and temporary shelter to survivors. Efforts are particularly concentrated on treating the injured and addressing psychological trauma among children and vulnerable populations.  \r\n\r\nThe **United Nations**, **Red Cross**, and several non-profits have pledged assistance. However, given the scale of the devastation, relief efforts face logistical challenges, including damaged infrastructure and ongoing threats from instability.  \r\n\r\n### **The Rising Fear**  \r\nWith the shock of the attack still fresh, the people of Lystenbourg are now facing an uncertain and terrifying future. Public transportation is largely disrupted, businesses have closed, and schools are canceled indefinitely as citizens struggle to cope with the aftermath of the violence. Fear has permeated the city, as many worry about the possibility of further attacks.  \r\n\r\nThe government has implemented strict security measures to ensure the safety of its citizens, but trust in law enforcement and intelligence is fraying. Many residents are asking how such a well-coordinated and devastating attack could occur in a city that was considered relatively stable and secure.\r\n\r\n---\r\n\r\n## Who is Behind the Attack?  \r\n\r\nAt the time of writing this report, the authorities in Ravonia have yet to definitively identify the group responsible for the attack. However, intelligence experts suggest that the **Eastern Liberation Front (ELF)**, a known extremist insurgency operating in the region, may have orchestrated these bombings.  \r\n\r\n### **The Eastern Liberation Front (ELF): A History of Violence**  \r\nThe ELF is a radical militant group that has long sought to destabilize Eastern European governments for their political and ideological goals. The group has been linked to insurgencies in neighboring countries and has used violence to create fear and instability in regions it deems politically strategic.  \r\n\r\nThe group has previously targeted infrastructure, government installations, and civilian hubs to undermine governments and gain support from disenfranchised groups in the region. Experts believe that the ELF may have planned this recent attack to send a message to both the Ravonian government and its allies.  \r\n\r\n### **Political Ramifications**  \r\nIf the ELF is confirmed as the group behind the attack, the incident could lead to increased military responses, border tensions, and international involvement. Neighboring countries have already pledged their support to Ravonia to ensure regional stability, but the specter of retaliation or military escalation remains a looming concern.\r\n\r\nThe involvement of extremist groups raises questions about the international communityΓÇÖs ability to root out extremism through coordinated counter-terrorism strategies. With the United Nations and regional partners already intervening in neighboring conflicts, this recent attack signals just how interconnected and precariously unstable the region has become.\r\n\r\n---\r\n\r\n## Global Solidarity and the Path Forward  \r\n\r\nFollowing the attack, the global community has come together in a show of solidarity. World leaders from across the globe have condemned the violence and pledged support for Ravonia and its citizens.  \r\n\r\n### **Statements from World Leaders**  \r\nThe **United States**, **European Union**, and **United Nations Secretary-General** have issued official statements, offering condolences and humanitarian aid. The U.S. has promised intelligence sharing and support to assist with RavoniaΓÇÖs recovery efforts. Meanwhile, European leaders have called for stronger cooperation on counter-terrorism strategies to prevent such tragedies in the future.  \r\n\r\n### **The Importance of International Cooperation**  \r\nWhile support is crucial in the aftermath of such an event, it highlights the importance of international collaboration to combat terrorism. With transnational terrorist organizations exploiting weaknesses in border security, intelligence sharing, and military coordination, it is vital that nations put aside political differences and focus on the shared goal of ensuring peace and stability.  \r\n\r\nThe situation in Ravonia provides a stark reminder that in a globalized world, security is no longer just about borders or national interestsΓÇöitΓÇÖs a shared responsibility.\r\n\r\n---\r\n\r\n## Personal Reflection: What This Means for Our World  \r\n\r\nThis story has been harrowing to follow. As I report on these events from my perspective as a young journalist, I find it hard not to feel the weight of such tragedies. Events like theseΓÇöno matter how far removed from our own homesΓÇöforce us to confront difficult questions about global security, community resilience, and how nations respond to violence.  \r\n\r\nThe victims of this attack, most of them ordinary civilians trying to live their lives, now find themselves caught in a nightmare that no one could have imagined. Watching these stories unfold, I find myself hoping for peace and healing for the people of Lystenbourg and Ravonia.  \r\n\r\nIn the face of such overwhelming tragedy, the resilience of the human spirit will be what defines this crisis in the coming months. While the attack will leave scars that may take generations to heal, the global response could set the tone for how we tackle similar threats in the future.\r\n\r\nThe people of Ravonia are strong, and this disaster, though devastating, serves as a reminder of our collective responsibility to work towards a safer, more stable, and peaceful world.",
+      "picture": "article_pictures/terrorism-article.jpg",
+      "created_at": "2024-12-09T00:50:21.756Z",
+      "is_approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        32,
+        34,
+        35,
+        6,
+        7,
+        10
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 8,
+    "fields": {
+      "author": 2,
+      "title": "Rise of Dogecoin: From Meme to Money",
+      "content": "If you told someone five years ago that a cryptocurrency based on a Shiba Inu meme would become a global financial phenomenon, they would have laughed. And yet, here we are, with **Dogecoin**, the \"funniest currency on the block,\" taking the financial world by stormΓÇöor at least trying to, between viral tweets and unexpected market fluctuations.  \r\n\r\nThe rise of Dogecoin isnΓÇÖt just another cryptocurrency story; it's a bizarre mix of internet humor, decentralized finance, and memes with real-world consequences. So how did a cryptocurrency born from a joke come to command the attention of investors, billionaires, and conspiracy theorists alike? LetΓÇÖs dive into this wild and hilarious story.\r\n\r\n---\r\n\r\n## A Quick History: How Dogecoin Went from Meme to Money  \r\n\r\nDogecoin was created in **December 2013** by two techies, **Billy Markus and Jackson Palmer**, who likely thought they were just making a harmless meme-inspired joke. The coin was designed to be a ΓÇ£funΓÇ¥ alternative to Bitcoin and other cryptocurrencies. Inspired by the now-iconic Shiba Inu memeΓÇöcomplete with its curious, skeptical, and somewhat smug-looking faceΓÇöthe currency came with the tagline *\"to the moon\"*.  \r\n\r\nBut what started as a lighthearted experiment quickly spiraled into something far bigger. Instead of fading into internet obscurity like most memes do, Dogecoin took off like a rocket, and its journey has been anything but predictable.\r\n\r\n---\r\n\r\n## The Memes That Made Dogecoin Famous  \r\n\r\nWhat sets Dogecoin apart from Bitcoin, Ethereum, or any other cryptocurrency is its origin story. Bitcoin has financial charts, cryptographic mining, and complex jargon. Dogecoin? Dogecoin has *memes.*  \r\n\r\nDogecoinΓÇÖs rise was fueled by the internetΓÇÖs tendency to embrace humor and collective community movements. Social media platforms like Twitter and Reddit became the launchpad for its popularity, as users adopted Dogecoin as the currency of choice for donations, tipping, and general meme shenanigans.  \r\n\r\n### **The Power of the Meme Army**  \r\nThe Dogecoin community is famously grassroots. Redditors, especially those from the **r/dogecoin** community, began using Dogecoin to support charitable causes and to crowdfund various projects. They sent Dogecoin to help with clean water initiatives, space missions, and random acts of kindness. A group even managed to send a **Doge-themed satellite to the moon**ΓÇöwell, sort of.\r\n\r\nThe mix of humor, generosity, and meme-sharing made Dogecoin a viral hit, despite being created with far less technological ambition than Bitcoin or Ethereum. Unlike other cryptocurrencies, Dogecoin's mining system was intentionally designed to be light on energy and open to everyone, further adding to its charm.\r\n\r\n---\r\n\r\n## The Elon Musk Effect: How the Meme King Took Over  \r\n\r\nLetΓÇÖs not ignore one of the biggest accelerants in the meteoric rise of Dogecoin: **Elon Musk.**  \r\n\r\nThe Tesla CEO and modern-day space explorer has an undeniable ability to reshape industries with nothing more than a tweet. His love for memesΓÇöand specifically his love for Dogecoin memesΓÇöhas catapulted this cryptocurrency into the headlines repeatedly.  \r\n\r\nOne simple tweet from MuskΓÇöwhether calling it *\"the people's crypto,\"* or his famous proclamation that *\"Dogecoin is better than Bitcoin\"ΓÇöhas sent DogecoinΓÇÖs market value soaring. On more than one occasion, Dogecoin prices have risen by hundreds of percentage points simply because Musk pressed his keyboard and shared his thoughts.  \r\n\r\nYou could say Musk has become the unofficial *face of Dogecoin.* Every tweet from him about Dogecoin sends investors and speculators into a frenzy, and critics would argue that he has introduced both volatility and unpredictability into a market already famous for being chaotic.\r\n\r\n---\r\n\r\n## The Financial Rollercoaster: When Memes Affect Money  \r\n\r\nDogecoin is not your typical cryptocurrency. While Bitcoin and Ethereum rise and fall based on financial trends, technological developments, or investor sentiment, Dogecoin's market seems tethered to memes, internet trends, and social media drama.  \r\n\r\nOne moment, Dogecoin is trading at $0.003; the next, thanks to another Musk tweet or viral Reddit post, itΓÇÖs suddenly $0.10. Its volatility is like watching a game of financial pinball, except the bumpers are jokes, tweets, and internet hype.\r\n\r\nInvestors often find themselves torn: do they take profits and run, or do they keep riding this meme-fueled financial rollercoaster to *\"the moon\"*ΓÇöDogecoinΓÇÖs popular slogan for wealth?  \r\n\r\n---\r\n\r\n## The Critics: ΓÇ£ItΓÇÖs a Joke CurrencyΓÇ¥  \r\n\r\nOf course, not everyone thinks DogecoinΓÇÖs rise is funny. Many financial analysts and critics have raised concerns about its lack of intrinsic value, technology, and stability compared to other cryptocurrencies. Unlike Bitcoin, which has a limited supply (making it scarce and therefore valuable), Dogecoin has no hard cap on the number of coins that can exist, making its scarcityΓÇöand therefore its potential valueΓÇömuch more unpredictable.\r\n\r\n### **Financial Analysts Sound the Alarm**  \r\nCritics are quick to call Dogecoin a *\"pump-and-dump scheme\"*. This has sparked debates about whether Dogecoin is merely speculative trading fueled by investor excitement rather than a legitimate financial tool. Skeptics argue that treating cryptocurrencies as memes opens a PandoraΓÇÖs box of financial instability and market manipulation.\r\n\r\nYet, for all the skepticism, Dogecoin has proven resilient. Many of its loyal investors view it as a symbol of democratized finance, a ΓÇ£peopleΓÇÖs cryptocurrencyΓÇ¥ that transcends traditional financial systems.\r\n\r\n---\r\n\r\n## Dogecoin Today: Is It a Meme? A Currency? Or Both?  \r\n\r\nDespite the controversies, Dogecoin has found its way into mainstream financial discussions. Businesses, from online gaming to retail giants, have begun accepting Dogecoin as a form of payment. Even high-profile endorsements have turned Dogecoin into a sort of pop culture icon, straddling the line between digital currency and internet phenomenon.  \r\n\r\nYet, many people are left wondering: Is Dogecoin a legitimate cryptocurrency? Or are we just living in a meme-fueled financial fever dream? Perhaps itΓÇÖs a bit of both.  \r\n\r\nThe bottom line is this: whether youΓÇÖre a financial expert, a casual investor, or just someone who loves memes, Dogecoin continues to prove that humor and finance can coexistΓÇöalbeit chaotically.\r\n\r\n---\r\n\r\n## Final Thoughts: The Doge Future  \r\n\r\nAs Dogecoin continues its unpredictable financial journey, its status as a meme cryptocurrency reminds us that the modern financial world is no longer solely about technical innovations or corporate strategy. Social media hype, jokes, and viral trends now have the power to move markets in ways that were once unimaginable.\r\n\r\nWhether you love Dogecoin, hate Dogecoin, or just laugh at its chaotic rise from meme to market darling, one thing is certain: the cryptocurrency world will never be the same. And as long as there are memes on the internet and billionaires with Twitter accounts, Dogecoin will likely stay in the conversation.\r\n\r\nSo will Dogecoin go to the moon? Well, letΓÇÖs see what the next memeΓÇöor tweetΓÇöbrings. ≡ƒÜÇ",
+      "picture": "article_pictures/doge-coin-article.png",
+      "created_at": "2024-12-09T00:54:55.647Z",
+      "is_approved": true,
+      "approved_by": 1,
+      "approved_at": "2024-12-09T00:57:10.712Z",
+      "deleted_at": null,
+      "tags": [
+        11,
+        41,
+        42,
+        3
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 9,
+    "fields": {
+      "author": 2,
+      "title": "The Moon Landing Was Totally Faked",
+      "content": "# **HereΓÇÖs How NASA Fooled the World**  \r\n\r\nAlright, friends, buckle up, because IΓÇÖm about to drop some truth bombs thatΓÇÖll knock you out of your comfy chairs and into a new understanding of reality. The moon landing? Yes, *that* moon landingΓÇöthe iconic one from **1969** that your history teacher swore actually happenedΓÇöwas **100% fake.** And before you roll your eyes and call me a \"conspiracy theorist,\" just hear me out.  \r\n\r\nIΓÇÖve done the research, connected the dots, and, trust me, once you see it all, youΓÇÖll *never* look at Neil ArmstrongΓÇÖs first steps the same way again. LetΓÇÖs unravel this lie one layer at a time.\r\n\r\n---\r\n\r\n## **The First Red Flag: The Flag IsnΓÇÖt Flapping, Man**  \r\n\r\nOne of the most glaring pieces of evidence that the moon landing was a Hollywood-style production is the infamous American flag incident. If youΓÇÖve ever watched footage of Armstrong planting the flag, youΓÇÖll notice something strange: the flag doesnΓÇÖt flutter in the wind.  \r\n\r\nNow, you may be saying, *\"Duh, thereΓÇÖs no atmosphere on the moon.\"* But hold onto your tinfoil hats because this is precisely why they faked it. The absence of wind doesnΓÇÖt mean a thing if youΓÇÖve got a well-funded, studio-backed production team (looking at you, NASA) staging it on a soundstage.  \r\n\r\nSee, a quick simulation of zero-gravity soundstage wind machines can make a fake flag look as \"real\" as a moon landing ever could. **Why would NASA miss this detail?** Because they didnΓÇÖt. They *planned* it. ItΓÇÖs all part of the elaborate cover-up.  \r\n\r\nDonΓÇÖt believe me? Look at the videos. Analyze the shadows. Watch the **non-fluttering flag.** Once youΓÇÖve got your eyes on this, youΓÇÖll never unsee it.\r\n\r\n---\r\n\r\n## **The Stanley Kubrick Connection: Director of the Moon Stage**  \r\n\r\nAh yes, the legendary director Stanley Kubrick. You probably know him as the mind behind *2001: A Space Odyssey* and other cinematic masterpieces. But you might not know that Kubrick was allegedly hired by NASA to direct the entire moon landing in a soundstage somewhere in Hollywood.  \r\n\r\nThink about it: Kubrick was a master of set design, lighting, and storytelling. His *visual style* has been known to make people believe theyΓÇÖre seeing otherworldly thingsΓÇöso why not use his expertise to fake one of the greatest hoaxes in American history?  \r\n\r\nThe evidence is damning when you consider the smooth cinematography, the eerie lack of any \"moon-like randomness\" in the footage, and the perfectly timed camera movements. The footage from the moon has Kubrick's fingerprints all over it, and once you factor in his love for surreal imagery, the conclusion becomes unavoidable.  \r\n\r\nLetΓÇÖs be honest: would you trust a director who made a film as hauntingly detailed as *The Shining* with your space program? I rest my case.\r\n\r\n---\r\n\r\n## **The Timeline is Suspicious, Friends**  \r\n\r\nHereΓÇÖs another thing you need to pay attention to: the timeline. We were expected to believe that just a few years after launching satellites and being in the infancy of rocketry research, humans magically traveled to the moon. Think about it. There were barely functional computers back thenΓÇöless computing power than your smartphoneΓÇöand yet they \"somehow\" managed to make interstellar space travel happen.  \r\n\r\nSounds fishy, doesnΓÇÖt it?  \r\n\r\nThe timeline was rushed. Space agencies needed a \"win\" during the Cold War to show superiority over the Soviets. What better way to accomplish that than a giant, fabricated televised event to make everyone feel patriotic while still competing with a global space race?  \r\n\r\nThe moon landing wasnΓÇÖt about explorationΓÇöit was about propaganda. You might think this sounds extreme, but consider the context. In 1969, Americans desperately needed morale boosts, and nothing pumps morale like pretending youΓÇÖve conquered space with your flag and giant cameras on a soundstage.  \r\n\r\n---\r\n\r\n## **The Shadows: Illuminati Confirmed?**  \r\n\r\nLetΓÇÖs talk about shadows for a second. I know what youΓÇÖre thinking: *\"Shadows are shadows, bro.\"* But youΓÇÖd be wrong. Look at the moon landing footage with fresh eyes, free of brainwashing. The shadows are *way too perfect.* They donΓÇÖt behave the way they should if the moonΓÇÖs supposed to have its own lighting dynamics or natural conditions.  \r\n\r\nLook closely at the shadows cast by Armstrong and the lunar module. TheyΓÇÖre unnervingly straight. They look artificially lit, as though they were crafted under the precise control of studio lighting. Shadows behaving weirdly in space are a thingΓÇöunless youΓÇÖre filming on a controlled soundstage with artificial lights arranged perfectly.  \r\n\r\nWhen you factor in the weird, unnatural look of the shadows and combine that with Stanley Kubrick's expertise, itΓÇÖs pretty clear weΓÇÖve been scammed. Trust me, the Illuminati loves this kind of stuff. DonΓÇÖt believe me? You should.\r\n\r\n---\r\n\r\n## **NASAΓÇÖs *Oopsies*: The Evidence Disappears**  \r\n\r\nHereΓÇÖs another clue that the moon landing was orchestrated: NASA has been *incredibly* selective about what it shares with the public. Ever wonder why footage from the Apollo missions is so clean and uncorrupted? ItΓÇÖs because they meticulously cleaned, edited, and adjusted the footage in post-production.  \r\n\r\nLetΓÇÖs not forget how information \"disappears\" in government programs. NASA claims theyΓÇÖve \"lost\" data about the moon landing, and if you believe that, you probably also believe they found the *\"right path to real moon cheese\"* and kept it a secret. Governments are good at erasing data, but NASA is *extraordinary* at covering its tracks.  \r\n\r\nLook at missing files, missing photographs, and disappearing telemetry data. This is a patternΓÇöone that suggests manipulation, deception, and quite possibly a bit of Hollywood magic.\r\n\r\n---\r\n\r\n## **Conclusion: Wake Up, Sheeple**  \r\n\r\nAt this point, the evidence should be undeniable. The flag, the shadows, the involvement of Hollywood director Stanley Kubrick, and the Cold War propaganda machine are enough to make you question everything youΓÇÖve ever believed about space exploration.  \r\n\r\nSo ask yourself this: Did we ever actually go to the moon? Or was it just a clever, multi-billion-dollar hoax staged in a soundstage in California and powered by conspiracy, propaganda, and advanced Cold War technology?  \r\n\r\nLook at the evidence. Dig into the timeline. Watch the videos. Once you connect the dots, itΓÇÖs clear. The moon landing wasnΓÇÖt a historic step for mankindΓÇöit was a well-scripted performance designed to keep you watching TV and not asking questions.  \r\n\r\nStay vigilant, friends. The truth is out there. *And it looks suspiciously like a soundstage.*",
+      "picture": "article_pictures/fake-moon-landing.jpg",
+      "created_at": "2024-12-09T01:01:59.934Z",
+      "is_approved": true,
+      "approved_by": 1,
+      "approved_at": "2024-12-09T01:02:48.815Z",
+      "deleted_at": null,
+      "tags": [
+        37,
+        9,
+        3,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 10,
+    "fields": {
+      "author": 2,
+      "title": "Bigfoot is Real: The Unshakable Truth",
+      "content": "Alright, fellow truth seekers and cryptid enthusiasts, grab your trail cameras, your camping gear, and your most trustworthy tinfoil hat, because IΓÇÖm about to drop some undeniable proof that Bigfoot, the legendary woodland giant, **absolutely exists.**  \r\n\r\nYes, I know what youΓÇÖre going to say: *\"Oh, itΓÇÖs just a myth, a hoax, a modern-day campfire story.\"* But let me tell you something. YouΓÇÖve been lied to. The government, the mainstream media, and possibly even SasquatchΓÇÖs own PR team have conspired to keep the truth buried under the leaves of the Pacific Northwest for *decades.*  \r\n\r\nBut donΓÇÖt worry, IΓÇÖve got the evidence, the witnesses, and the undeniable connections to finally convince you. ItΓÇÖs time to wake up and stop ignoring the facts, friends. Bigfoot isnΓÇÖt a figment of folklore. HeΓÇÖs out there, stomping through the woods and living his best cryptid life.  \r\n\r\nLetΓÇÖs dive into the indisputable truth about BigfootΓÇÖs existence.\r\n\r\n---\r\n\r\n## **The Sightings: TheyΓÇÖre Not Just Random Stories, People**  \r\n\r\nLetΓÇÖs start with the most obvious evidence: the countless eyewitness sightings. All around the United StatesΓÇöand especially in areas like **Washington, Oregon, and Pennsylvania**ΓÇöpeople have reported encounters with a towering, bipedal creature covered in hair. Some of these witnesses are your average Joe blow hikers, outdoors enthusiasts, and hunters, while others are credible professionals like police officers and park rangers.  \r\n\r\n### **Eyewitness Testimonies Add Up**  \r\nThese arenΓÇÖt just drunk campers trying to spice up their weekends with ghost stories. Nope. These are honest, upstanding citizens who have experienced the unthinkable: a *real, living, breathing Bigfoot.*  \r\n\r\nOne case in particular, from **Skamania County, Washington,** featured a sighting so well-documented itΓÇÖs worth examining. A group of hikers reportedly saw a massive, shaggy figure dart across the trail, leaving behind enormous footprints and broken branches. Their story checks out, with local rangers unable to explain the event.  \r\n\r\nNow ask yourself: How many hoaxes would have to line up across decades and across different locations for this many people to invent essentially the same thing? The answer is simple: **zero.**  \r\n\r\nThese people saw Bigfoot. Period.\r\n\r\n---\r\n\r\n## **The Footprints: Too Big to Ignore**  \r\n\r\nAh yes, the footprints. I can already hear you skeptics saying, *\"Footprints are easy to fake, man.\"* But let me ask you this: **how many people in the woods just happen to have size 17 feet covered in thick hair?**  \r\n\r\nThe sheer size of these prints isnΓÇÖt just suspiciousΓÇöitΓÇÖs evidence. TheyΓÇÖre enormous, deeply embedded into the forest floor, and theyΓÇÖve been found in locations *that no human would logically wander into.* Think about that. You arenΓÇÖt going to accidentally stumble into the deep woods of the Pacific Northwest and leave behind 18-inch tracks unless youΓÇÖre, wellΓÇª *Bigfoot.*  \r\n\r\nYou might think the sightings could be dismissed, but when you combine footprint discoveries with hair samples and sound recordings, youΓÇÖve got a recipe for one giant *\"this is real\"* moment.  \r\n\r\n### **DNA Evidence:**  \r\nAnd you canΓÇÖt ignore the DNA evidence. Over the years, hair samples have been collected from Bigfoot sightingsΓÇösamples that, when analyzed, have defied every logical explanation. Most of these samples show markers that are human-like but *not human.* They donΓÇÖt match any known known primate species. Strange, right? You donΓÇÖt think itΓÇÖs a coincidence, do you?  \r\n\r\nSome scientists refer to these findings as \"unexplained primate ancestry,\" but we all know what they really are: **Bigfoot DNA.**\r\n\r\n---\r\n\r\n## **The Government is Covering This Up (Of Course)**  \r\n\r\nLetΓÇÖs face it: *anytime something strange happens, the government is involved.* The woods are sacred spacesΓÇöfilled with mystery, wild animals, and ancient phenomenaΓÇöand if Bigfoot is real, the government would absolutely have to suppress it. Why? Simple: **Fear and Control.**  \r\n\r\nThe government doesnΓÇÖt want you to know that thereΓÇÖs an intelligent cryptid wandering in the woods. Think about itΓÇöif you had Bigfoot roaming out there, the military-industrial complex would try to weaponize it or study it for its biological properties. Maybe Bigfoot could teach them something about survival, evolution, or even supernatural abilities.  \r\n\r\nThis cover-up explains everything: why sightings are brushed off, why witnesses disappear (or are silenced), and why the media is so dismissive of all these reports. Trust me, friends, Bigfoot isnΓÇÖt just wandering through the woods by chance. HeΓÇÖs hereΓÇöand the government has been scrambling to keep us in the dark about it.\r\n\r\n---\r\n\r\n## **The Ancient Origins of Sasquatch**  \r\n\r\nBigfoot isnΓÇÖt a new phenomenon, by the way. He didnΓÇÖt just appear out of nowhere in the 20th century. This creature has a long history rooted in Native American folklore and ancient accounts. The legends of beings similar to Bigfoot stretch back *centuries.* The Native American tribes across the Pacific Northwest have been sharing tales about ΓÇ£Forest GiantsΓÇ¥ or ΓÇ£Hairy MenΓÇ¥ for generations.  \r\n\r\nThese stories werenΓÇÖt just campfire stories or shared tales to scare children. They had historical context, and they were based on real, tangible experiences. Think about itΓÇöthese accounts predate modern pop culture and the introduction of cryptozoology into the mainstream. And yet, they align perfectly with the description of Bigfoot.\r\n\r\nSome historians believe that Bigfoot could be an ancient remnant of human-like creaturesΓÇösomething like an undiscovered hominin species. That would explain their intelligence, their elusiveness, and their ability to evade discovery despite being so large.\r\n\r\n---\r\n\r\n## **Bigfoot and the Parallel Dimensions Theory**  \r\n\r\nHereΓÇÖs where things get really interesting. Some conspiracy theorists (yes, including me) believe that Bigfoot isnΓÇÖt just a flesh-and-blood creature roaming the woods. Nope. They believe Bigfoot might be using *dimensional portals.* Yes, you heard me rightΓÇöinterdimensional travel.  \r\n\r\nThink about it: this would explain how Bigfoot always seems to disappear just as humans start to get a clear view. Perhaps Bigfoot can \"shift\" into another dimension or step through a rift in time and space, effectively becoming invisible or untouchable whenever humans start poking around.  \r\n\r\nThis ties into other cryptid sightings and unexplained phenomenaΓÇötime loops, UFO sightings, strange electromagnetic interference, and quantum anomalies. Bigfoot could very well be a highly advanced interdimensional traveler rather than just a giant forest ape.  \r\n\r\nCrazy, you say? Perhaps. But as they say in the conspiracy circles: *truth is stranger than fiction.*\r\n\r\n---\r\n\r\n## **Conclusion: The Forest Holds Secrets WeΓÇÖre Not Ready for**  \r\n\r\nLook, I know the skeptics will scoff, and the mainstream media will dismiss this as another kooky theory. But let me leave you with one final thought: **you can ignore Bigfoot, but that doesnΓÇÖt make him any less real.**  \r\n\r\nWhether you believe in footprints, DNA evidence, government cover-ups, or ancient legends, the evidence points in one direction. Bigfoot is real. HeΓÇÖs out there, in the woods, walking on two feet and living his cryptid life far from our modern world of skepticism and cynicism.  \r\n\r\nSo the next time you hear a snapping twig in the woods or spot an unusual movement through the trees, ask yourself: *What if Bigfoot is watching?*  \r\n\r\nStay vigilant, friends. The woods are alive, and theyΓÇÖre hiding secrets far stranger than we can imagine.",
+      "picture": "article_pictures/bigfoot.webp",
+      "created_at": "2024-12-09T01:07:32.082Z",
+      "is_approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        9,
+        41,
+        12,
+        15,
+        26
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 11,
+    "fields": {
+      "author": 2,
+      "title": "Patrick Bateman is Real",
+      "content": "Alright, sit down, conspiracy enthusiasts and curious skeptics alike, because IΓÇÖm about to hit you with one of the wildest, most bone-chilling theories youΓÇÖve probably never heard before. You might know the name Patrick Bateman as a fictional character from *American Psycho,* the iconic book-turned-movie about a wealthy, psychotic Wall Street executive with a taste for blood and power. But what if I told you that Patrick Bateman isnΓÇÖt just a fictional villain but an *actual person*ΓÇöalive, active, and walking among us?  \r\n\r\nYes, you heard that right. Patrick Bateman is real. And no, this isnΓÇÖt some lazy attempt at a bad fan theory. IΓÇÖve done my homework, connected the dots, and examined the evidence. The layers of this rabbit hole go *deep.* LetΓÇÖs explore the cold, horrifying, and undeniable truth behind the belief that Patrick Bateman is, in fact, a real-life figure cloaked in secrecy, power, and death.  \r\n\r\n---\r\n\r\n## **The Fiction vs. Reality Conundrum**  \r\n\r\nLetΓÇÖs start with the obvious question: *Why would anyone think Patrick Bateman, a fictional character, could be real?* Well, thatΓÇÖs easy. History has proven time and time again that reality tends to mimic fiction far more often than youΓÇÖd think. And if youΓÇÖve ever read *American Psycho* by Bret Easton Ellis or watched the movie adaptation, youΓÇÖll know that the story isnΓÇÖt just a fictional tale. It taps into a horrifying mix of unchecked greed, power, vanity, and violenceΓÇöthe very aspects that permeate real life in the modern capitalist world.  \r\n\r\nThe world Patrick Bateman inhabitsΓÇöthe high-powered corporate finance industry, the obsession with appearances, the descent into psychosis through unchecked privilegeΓÇöis disturbingly easy to find in the real world. The book and film were powerful cultural commentaries, but the theory goes: what if they werenΓÇÖt just commentary? What if Patrick Bateman was an expos├⌐, a real person concealed by layers of government, corporations, and shadowy elites?  \r\n\r\nHereΓÇÖs where it gets interesting.\r\n\r\n---\r\n\r\n## **Evidence #1: The Number of Wall Street Sociopaths**  \r\n\r\nLetΓÇÖs be real for a moment: Wall Street and the corporate finance industry are filled with sociopaths. If youΓÇÖve spent even a little time reading about hedge fund managers, CEOs, or billionaires with unchecked ambition, youΓÇÖll quickly notice that the traits Patrick Bateman embodiesΓÇönarcissism, psychopathy, ambition, cold detachmentΓÇöarenΓÇÖt all that rare.  \r\n\r\nThese individuals are essentially the *real-life* Batemans, and history is riddled with examples of business executives and socialites engaging in behavior that mirrors the actions of our favorite fictional killer.  \r\n\r\n### **But What If One of Them Took it Further?**  \r\n\r\nThink about it. Some of these corporate leaders live with immense power, isolation, and control. Some of them have the means, the wealth, and the ability to disappear without a trace. What if one of these individuals embraced their darker impulses, turning them into a real-life version of Bateman? After all, *American Psycho* isn't just a book about an unhinged individual; itΓÇÖs a commentary on how unchecked privilege and power can lead to extreme detachment and sociopathy. Could it be possible that one of these sociopaths took that transformation into reality?  \r\n\r\nThe theory suggests that Patrick Bateman exists among the elite, a living example of what happens when a person fully succumbs to their ambitions and desiresΓÇötaking the mask off entirely and embracing their own psychosis as they wield unimaginable influence over markets, politics, and human lives.\r\n\r\n---\r\n\r\n## **Evidence #2: The Disappearance of High-Profile Individuals**  \r\n\r\nLetΓÇÖs dive into the second layer of evidence: the unexplained disappearances of high-profile individuals over the years. If you study strange disappearances within the elite circles of the financial sector, youΓÇÖll notice a disturbing pattern.  \r\n\r\nWeΓÇÖre talking about CEOs, hedge fund managers, and Wall Street tycoons vanishing without warning, with their disappearance being explained by sudden financial scandals, personal breakdowns, or ΓÇ£unfortunate circumstances.ΓÇ¥ But what if these disappearances were actually part of a much darker narrative?  \r\n\r\nOne hypothesis suggests that BatemanΓÇöoperating in the shadowsΓÇöcould have orchestrated these disappearances. Think about it: wealthy individuals, cutthroat business types, under pressure and without safety nets, could become targets for someone who sees them as weak links. Patrick Bateman, with his penchant for control, manipulation, and brutality, would fit the bill perfectly.  \r\n\r\n---\r\n\r\n## **Evidence #3: Government Cover-Ups and Conspiracy Connections**  \r\n\r\nHereΓÇÖs where things get *really* interesting. Whenever you mention Patrick Bateman being real, the response is always the same: *\"Oh, come on, thatΓÇÖs insane.\"* But hereΓÇÖs the thingΓÇögovernmental agencies are known for their secrecy, their intelligence operations, and their willingness to suppress truths to protect power.  \r\n\r\nImagine if there was ever a real-life Patrick Bateman who used his influence to manipulate stock markets, control resources, and eliminate opposition through violent means. WouldnΓÇÖt it make sense that his existence would be buried? Cover-ups exist all the time. Financial institutions are vulnerable, and the elite class will always preserve their influence at the cost of transparency.  \r\n\r\n### **Bateman as a Shadow Agent**  \r\n\r\nSome theorists argue that Patrick Bateman could even be a covert intelligence assetΓÇöoperating as a kind of financial assassin. His real role could involve destabilizing economies, silencing whistleblowers, or using psychological manipulation to enforce control through subtle methods of coercion. After all, *American Psycho* has often felt less like a story and more like a blueprint.  \r\n\r\nThink about it. The man has the perfect cover: a powerful, charismatic, successful public persona combined with the ultimate willingness to kill without remorse. If you were running covert operations through financial manipulation, would you not use someone like Patrick Bateman to do your dirty work?  \r\n\r\nThe idea of him being both real *and* a government asset isnΓÇÖt just speculation. ItΓÇÖs *possible.*\r\n\r\n---\r\n\r\n## **The Psychological Profile Matches Real-Life Patterns**  \r\n\r\nIf you think the idea of Patrick Bateman being real is absurd, consider the psychological patterns outlined in *American Psycho.* The Bateman personality is a textbook example of what psychologists call **antisocial personality disorder**ΓÇötraits like a complete lack of empathy, extreme narcissism, control-obsession, and impulsive violence.  \r\n\r\nThese traits exist in real life. Sociologists and psychologists studying high-stakes finance and corporate leadership have repeatedly noted how people with these personality traits can quickly climb the social ladder while destroying everything in their path.  \r\n\r\nSo what if Patrick Bateman was a psychological archetype brought to lifeΓÇöa representation of these traits in an individual who went beyond self-awareness and moral limits, becoming a full-blown predator?\r\n\r\n---\r\n\r\n## **Conclusion: The Patrick Bateman Phenomenon is Real**  \r\n\r\nHereΓÇÖs the thing: Patrick Bateman isnΓÇÖt just a fictional story from a novel or a movie. What if he represents a psychological and sociopolitical archetype, one that has manifested in real life among the ultra-wealthy elite? The evidence is compelling: disappearances, patterns of corporate sociopathy, the manipulation of markets, and government secrecy.  \r\n\r\nCould Patrick Bateman have started as fiction only to manifest as reality through a mix of privilege, unchecked ambition, and psychopathy? The dots connect themselves when you start pulling at the threads.\r\n\r\nIt may sound like a wild conspiracy theory at first, but dig deeper. Look at the world around youΓÇöthe corporate greed, the disappearances, the manipulation, the unchecked power. Ask yourself: What if Patrick Bateman is already here, hiding in plain sight, controlling the strings of markets, life, and death?  \r\n\r\nStay alert, my friends. The truth is darkerΓÇöand far more realΓÇöthan you ever imagined.",
+      "picture": "",
+      "created_at": "2024-12-09T01:10:51.825Z",
+      "is_approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        35,
+        9,
+        20,
+        22,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 12,
+    "fields": {
+      "author": 3,
+      "title": "Global Conspiracy of the Dominion Pact",
+      "content": "*By Detective John Carter, Investigative Journalist and Observer of the WorldΓÇÖs Dark Secrets*  \r\n\r\nThe city has always had its share of shadowsΓÇönarrow alleyways, smoke-filled bars, crooked politicians, and the kind of whispered rumors you canΓÇÖt shake off once they latch onto your bones. But let me tell you, this isnΓÇÖt your everyday case of corruption or espionage. This goes deeper.  \r\n\r\nIΓÇÖve spent the last five years unraveling the threads of a conspiracy so vast, so insidious, that if you squint hard enough at the pieces, youΓÇÖll see a world on the brink. ItΓÇÖs a story tied to power, greed, and the cold hands of political ambition, and the fingerprints all lead back to one nation: **The Republic of Valoria.**  \r\n\r\nThis isnΓÇÖt idle speculation or conspiracy fodder to get you riled up. This is years of investigation, late-night briefings, leaked documents, informants, and cryptic whispers. The Republic of Valoria, with its unchecked military might and secretive intelligence networks, is planning something catastrophicΓÇöa global-scale operation that threatens to reshape nations, economies, and lives.\r\n\r\nAnd hereΓÇÖs the twist: this isnΓÇÖt just about war or conquest. ItΓÇÖs about control, manipulation, and ensuring that power remains firmly in the hands of the elite.  \r\n\r\nHereΓÇÖs what I know.  \r\n\r\n---\r\n\r\n## **The Dominion Pact: A Shadowy Alliance**\r\n\r\nLetΓÇÖs cut straight to the heart of the matter. The Republic of Valoria is rumored to be at the head of a clandestine alliance known as the **Dominion Pact.** It sounds sleek and polished on paper, right? Governments meeting at grand summits, shaking hands, and offering promises of trade agreements and alliances? Except this isnΓÇÖt about cooperation.  \r\n\r\nThe Dominion Pact isnΓÇÖt about shared prosperity. ItΓÇÖs about totalitarian control, domination of global resources, and the silencing of dissidents. Through a mix of military might, advanced cyber-operations, and strategic resource manipulation, Valoria has established a web of partnerships that would give them an unprecedented ability to manipulate the economy, disrupt alliances, and influence elections worldwide.\r\n\r\n### **How It Works:**  \r\nThe key lies in the combination of advanced military technology, deep economic infiltration, and access to energy resources. Valoria has been using covert operations to buy out key natural resource markets and infrastructure assetsΓÇöpower grids, oil fields, shipping routes, and even crucial agricultural production hubs. With this kind of reach, they can essentially destabilize entire countries through coordinated blackouts, price manipulation, and engineered economic shocks.  \r\n\r\nTheyΓÇÖve mastered the art of using proxy nations to wage economic and military warfare without dirtying their hands directly. Think of it as puppeteering at a global scaleΓÇösilently pulling strings behind closed doors while entire nations suffer.\r\n\r\n---\r\n\r\n## **The Leaks: Uncovering the Plan**  \r\n\r\nIt wasnΓÇÖt always this clear. Like all great conspiracies, this one remained buried for years, shrouded in secrecy and coded messages. But you canΓÇÖt keep secrets forever, not when the world is this interconnected. Over the last two years, IΓÇÖve seen leaked documents, communications intercepts, and intelligence reports that point to a chilling conclusion: Valoria isnΓÇÖt just playing games. TheyΓÇÖve already begun testing their new model of domination.\r\n\r\n### **Project Black Swan**  \r\nThis is the key phrase that keeps showing up in intelligence reports. IΓÇÖve tracked it down, and I can confirm that **Project Black Swan** is a global destabilization initiative that seeks to sow division, economic turmoil, and political unrest across the globe. This project is ValoriaΓÇÖs first real test of asymmetric warfare at a global scaleΓÇöusing technology, financial tools, and proxy militaries to undermine societies from within.  \r\n\r\nThe blueprint is as follows:  \r\n\r\n1. **Economic Sabotage:** Target key economies by triggering recessions, manipulating supply chains, and exploiting market vulnerabilities.  \r\n2. **Cyber-Disruption:** Use advanced hacking units and cyber-weaponry to cripple infrastructure networks, utility grids, and financial systems.  \r\n3. **Propaganda Warfare:** Disseminate misinformation through social media and digital channels to fracture public trust and erode faith in democratic institutions.  \r\n4. **Resource Manipulation:** Engineer shortages of vital resources (fuel, water, food) by leveraging control over strategic resource markets and supply routes.  \r\n\r\nItΓÇÖs a cold, calculated plan. A global chessboard, with entire populations left vulnerable and helpless as they watch their economies collapse, their governments disintegrate, and their societies crumble.\r\n\r\n---\r\n\r\n## **The Evidence Trail: Leaked Intel and Whisper Networks**\r\n\r\nYouΓÇÖve got to dig for the truth when dealing with operations like this. Leaks arenΓÇÖt easy to come by, especially when governments know how to control their information. But IΓÇÖve managed to piece together a network of whistleblowers, defectors, and anonymous sources with access to classified documents. The pattern is unmistakable.\r\n\r\n1. **Financial Disruptions in Key Trading Hubs:** From the failed stock market crashes in Eastern Europe to targeted manipulation in resource-rich regions like the Middle East and South America, there are too many coincidences for this to simply be random. The dominoes are falling in a coordinated fashion.  \r\n2. **Cyberattacks on Infrastructure:** Advanced cyber-hacking groups have crippled key infrastructure points in multiple nations this yearΓÇöpower grids in Eastern Europe, shipping lane disruptions in Southeast Asia, and coordinated disruptions in food supply chains. These attacks mirror military strategies laid out in leaked intelligence files tied to ValoriaΓÇÖs military.  \r\n3. **Military Escalations Near Strategic Borders:** The movements of ValoriaΓÇÖs military along key borders signal something ominous. These arenΓÇÖt random maneuvers. TheyΓÇÖre strategic preparations for potential incursions, sabotage operations, or show-of-force exercises meant to destabilize neighboring nations.\r\n\r\nIΓÇÖve spoken to people who have worked in international intelligence and even military defense circles. They say the evidence is clear: Valoria is expanding its influence, testing military capabilities, and actively preparing for a coordinated global disruption.\r\n\r\n---\r\n\r\n## **Why Does This Matter?**  \r\n\r\nIf the Dominion Pact and ValoriaΓÇÖs plans sound like something from a Cold War-era spy thriller, let me put it plainly: **this isnΓÇÖt fiction.** This isnΓÇÖt just about military campaigns or proxy wars. This is about how the entire world could be reshaped through financial instability, technological weaponry, and population division.  \r\n\r\nThe people of the world arenΓÇÖt just fighting wars anymore. TheyΓÇÖre fighting for *resources, stability, and control.* ValoriaΓÇÖs plan is to ensure they hold all the cardsΓÇöfinancially, militarily, and technologicallyΓÇöso they can reshape global hierarchies without firing a single traditional bullet.\r\n\r\nImagine entire nations becoming economically dependent on ValoriaΓÇÖs controlled markets. Imagine shortages of food and fuel leading to civil unrest across major cities. Imagine entire democratic elections being swayed by misinformation campaigns emanating from hidden command centers.\r\n\r\nThis isnΓÇÖt speculation. This isnΓÇÖt idle fear-mongering. The documents, the leaked reports, and the whispers all paint one singular picture: **Valoria is pulling the strings, and the world is vulnerable.**  \r\n\r\n---\r\n\r\n## **The Global Response: Where Do We Go from Here?**  \r\n\r\nHereΓÇÖs the problem: whoΓÇÖs going to stop this? The international community has become adept at toothless responsesΓÇöstatements of concern, sanctions that donΓÇÖt stick, and diplomatic back-channel games that never pan out. Valoria is far too clever, far too well-equipped, and far too ambitious to be stopped by traditional means.\r\n\r\nSo, how do we counter this? How do the other nations fight back against shadowy war games and coordinated destabilization campaigns? ThatΓÇÖs the million-dollar question.  \r\n\r\nThe answer? It lies in shared intelligence, alliances, whistleblowers, and exposing the truth to the light of day. Valoria thrives on secrecy and misinformation. Our only weapon is transparency, unity, and action.  \r\n\r\nBut whether the world will respond in time remains to be seen. The clock is ticking, and the shadows are growing.\r\n\r\n---\r\n\r\n## **Conclusion: The Time to Act is Now**  \r\n\r\nLook, IΓÇÖve spent my entire career in the shadows, chasing ghosts, pulling back curtains, and watching how the gears of power turn. But this isnΓÇÖt a ghost story. This is real.  \r\n\r\nThe Dominion Pact, Project Black Swan, and the secret military-industrial plans of Valoria are very much alive. What happens next will depend on how the world chooses to respond to this threat. Will we be passive spectators as nations crumble into chaos, or will we confront the shadows head-on?  \r\n\r\nIΓÇÖve got my suspicions, and IΓÇÖve got my sources, but one thing is for certain: **the world is on the cusp of a cataclysm. The question is, who will act first?**  \r\n\r\nStay vigilant. The game is far from over.",
+      "picture": "article_pictures/espionage.webp",
+      "created_at": "2024-12-09T01:25:44.411Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        1,
+        35,
+        12,
+        15,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 13,
+    "fields": {
+      "author": 3,
+      "title": "The Hawk Tuah Girl Crypto Scam",
+      "content": "The thing about the world is, it runs on greed. Always has, always will. Some days, that greed shows itself through power plays, war, or manipulation. Other days, it takes a digital formΓÇöcryptocurrency scams. And let me tell you, theyΓÇÖre a dime a dozen these days. It wasnΓÇÖt the first time IΓÇÖd tracked a financial con down, but this one? This one had the perfect mask.  \r\n\r\nThe target? A cryptocurrency scheme led by the elusive social media sensation known only as **ΓÇ£Hawk Tuah Girl.ΓÇ¥**  \r\n\r\nYouΓÇÖve probably heard of her. The name was everywhereΓÇöInstagram, TikTok, YouTube, and Twitter. She had the perfect formula: a mix of glitzy vibes, influencer charm, and a sort of financial guru mystique that had thousands of followers clamoring to give her their trust. Hawk Tuah Girl promised financial freedom, quick returns, and insider crypto tips. She spoke the language of success and luxury with a golden smile and an even shinier image. But as I dug into the story, I found out that behind all the glitz and glamour, there was nothing but lies, manipulation, and theft.\r\n\r\nThe deeper I pulled on this thread, the more I realized how far-reaching this scam was. Hawk Tuah Girl wasnΓÇÖt just a social media influencer dabbling in crypto. She was a master con artist with a financial web woven so tightly that millions had already fallen into its trap.  \r\n\r\n---\r\n\r\n## **How the Hawk Tuah Girl Built the Perfect Crypto Illusion**  \r\n\r\nLetΓÇÖs talk about the hook. Every good scam has a bait, and Hawk Tuah Girl had the kind of bait that would make any con artist proud. She built herself as a sort of financial prophetΓÇöa blend of digital aesthetics, financial jargon, and an addictive social media presence that convinced people that crypto was *the way forward.*  \r\n\r\nShe wasnΓÇÖt just posting glamorous selfies or flashy travel photos. She was pushing the idea of success through cryptocurrencies, promising followers that with her guidance, anyone could achieve financial freedom in a matter of months.  \r\n\r\nHer posts? Slick, perfectly edited, and accompanied by captions like:\r\n\r\n> *\"Dream big. Invest smart. The future is crypto. #HawkTuahGirl #FinancialFreedom #CryptoSuccess\"*\r\n\r\nOr:\r\n\r\n> *\"10X your money in 30 days. Let me show you how. DM me now.\"*\r\n\r\nThe thing about social media influencers is their ability to build trust. Hawk Tuah GirlΓÇÖs charm was that she came off as just *relatable enough.* She showed herself traveling to exotic places, dining in luxury, and spending the kind of money most people only dreamed of. Her followers believed they could have the same lifeΓÇö*if only* they followed her advice.\r\n\r\nAnd like all scams, it wasnΓÇÖt just about advice. It was about access. Hawk Tuah Girl would encourage her audience to join exclusive, ΓÇ£limitedΓÇ¥ investment groups. She promised insider access to special cryptocurrency opportunities, using her supposed market knowledge to lure them in. These groups were the beginning of the financial black hole.\r\n\r\n---\r\n\r\n## **The Investigation Begins: Cracks in the Perfect Facade**  \r\n\r\nIt all started with a whisperΓÇöone of those anonymous messages that hits your inbox with no context, just a breadcrumb:\r\n\r\n> *\"Watch Hawk Tuah Girl. SheΓÇÖs got schemes. SheΓÇÖs not what she says.\"*\r\n\r\nI get these kinds of messages all the time. Most of them are just wild paranoia, but my gut told me there was something here. So I dug in.  \r\n\r\nI started tracking her digital footprintΓÇöscraping through her social media accounts, monitoring her business moves, and analyzing blockchain transactions. I wasnΓÇÖt just looking at photos of her in designer outfits or the videos of her flashing shiny cars. I looked at the money trail.  \r\n\r\nThe first red flag came from her investment group. The \"exclusive\" crypto community Hawk Tuah Girl would direct people toward was structured with a level of secrecy only possible through manipulation. Members would pay hefty sums to join this ΓÇ£exclusive investment group.ΓÇ¥ They were promised early access to crypto trades and financial adviceΓÇöbut there was no proof it existed. It was all smoke and mirrors, a digital mirage to siphon money.\r\n\r\nI dug deeper into these transactions, tracking wallets, bank accounts, and blockchain patterns. What I found made my blood run cold.\r\n\r\n---\r\n\r\n## **The Money Trail: Blockchain DoesnΓÇÖt Lie**  \r\n\r\nCryptocurrency operates on transparency. Every transaction, every purchase, every transfer is recorded on a blockchain. And thanks to my sources and technical expertise, I had access to Hawk Tuah GirlΓÇÖs web of transactions. She thought she could hide behind wallets and code. She thought blockchain was her safe zone.\r\n\r\nI was wrong.  \r\n\r\nThe financial trail led directly to the same wallet addresses. Funds from her \"exclusive investment group\" payments were being funneled into off-shore accounts with ties to shell companies. My research showed that the transfers were heavily obfuscated, but they all pointed back to a centralized set of wallets.  \r\n\r\nI cross-referenced these wallets with financial reports, offshore accounts, and intelligence leaks. The picture became crystal clear: Hawk Tuah GirlΓÇÖs crypto scheme wasnΓÇÖt just about market manipulationΓÇöit was about funneling money from unsuspecting followers into accounts far removed from their reach.  \r\n\r\nWhat I found wasnΓÇÖt just typical investment fraud. It was organized theft. Members of her ΓÇ£exclusive groupsΓÇ¥ were promised lucrative returns, but their money wasnΓÇÖt going to cryptocurrency markets. It was going straight into personal accounts controlled by an elaborate network linked to Hawk Tuah Girl.  \r\n\r\nHere was the smoking gun: these transactions, tied to her social media promotions, showed coordinated siphoning of wealth from followers through baited promises of financial freedom. The system was rigged from the very beginning.\r\n\r\n---\r\n\r\n## **The Player Behind the Persona**  \r\n\r\nThe thing about cons like this is that they rely on trust. Hawk Tuah GirlΓÇÖs persona was carefully crafted, blending financial savvy with that influencer ΓÇ£star power.ΓÇ¥ But behind the scenes? She was just another person, hiding in plain sight.\r\n\r\nSources connected me to former insiders who had worked directly with her team. One former financial advisor turned whistleblower confirmed that Hawk Tuah Girl had orchestrated this scheme through layers of third-party accounts, dummy financial groups, and trust systems. The pyramid scheme was as well-oiled as they comeΓÇödesigned to make sure that by the time the money was gone, the trail was obscured.\r\n\r\nAnd yet, through social media charisma and calculated social trends, she kept followers in line. Many of her victims felt too embarrassed to come forward, fearing judgment for their participation.\r\n\r\n---\r\n\r\n## **The Fallout: Millions in the Wake of Deception**  \r\n\r\nThe scamΓÇÖs impact is staggering. Estimates place the number of victims at *hundreds of thousands.* Some were young college students investing their first paychecks. Others were older workers betting their savings on the promises of financial freedom. Hawk Tuah Girl built her empire on the belief that dreams could come true through the blockchain. In reality, all she did was plunder dreamsΓÇöand bank accounts.\r\n\r\nIΓÇÖve spent sleepless nights piecing this story together, pulling conversations, blockchain data, financial reports, and intelligence leaks into a narrative. This isnΓÇÖt just a financial story. This is a human story. ItΓÇÖs about desperation, hope, and how far people will go to believe they can escape their circumstances through trends and easy paths.\r\n\r\n---\r\n\r\n## **The Endgame: Justice in a Digital Age**  \r\n\r\nIt isnΓÇÖt just about exposing Hawk Tuah Girl anymore. The real question is how we can prevent this kind of scam from happening again. Cryptocurrency is still in its wild-west phase. People are still learning the ropes, and scams like this exploit that uncertainty.\r\n\r\nMy investigation isnΓÇÖt over. IΓÇÖve sent this evidence to financial watchdogs, international law enforcement, and cryptocurrency regulators. The pieces of the puzzle are here. They just need to act.\r\n\r\nIf youΓÇÖve invested in crypto, be careful. Ask questions. Follow the money trail. Look for the patterns and the red flags. If it sounds *too good to be true,* it probably is.\r\n\r\nThe Hawk Tuah Girl isnΓÇÖt just another social media influencer with a dream. SheΓÇÖs the embodiment of greed, manipulation, and the kind of financial crime that leaves thousands in ruin. The question is whether the system can catch her before the web stretches even further.  \r\n\r\nStay vigilant. Watch the numbers. Watch the transactions. Because in this game, theyΓÇÖre always watching you first.",
+      "picture": "article_pictures/hawk-tuah-article.jpg",
+      "created_at": "2024-12-09T01:32:36.351Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        32,
+        3,
+        36,
+        41,
+        42,
+        20,
+        26,
+        30,
+        31
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 14,
+    "fields": {
+      "author": 4,
+      "title": "Shakshuka: History and Variations",
+      "content": "## ** Exploring the History,**  \r\n\r\nShakshuka. The name alone can transport you to a warm, cozy kitchen filled with the rich, tantalizing aroma of spiced tomatoes, peppers, and eggs. This iconic dish has captured the hearts of food enthusiasts across the world with its simplicity, bold flavors, and versatility. Whether served for brunch, lunch, or dinner, shakshuka is both comforting and satisfying, combining hearty ingredients with a rich history.  \r\n\r\nBut what exactly is shakshuka? How did this iconic dish come about? And how can you make it yourself at home? LetΓÇÖs dive into the origins, ingredients, and variations of one of the most beloved dishes in Middle Eastern and Mediterranean cuisine.\r\n\r\n---\r\n\r\n## **What is Shakshuka?**  \r\n\r\nShakshuka is a flavorful and hearty dish consisting of poached eggs in a spiced tomato sauce. The base is usually a blend of tomatoes, onions, garlic, bell peppers, and a variety of spices such as cumin, paprika, and chili powder. The eggs are cracked into the sauce and cooked until just set, creating a delicious mix of tender eggs and vibrant, spiced tomato flavors.\r\n\r\nShakshuka is traditionally served with warm breadΓÇöideal for scooping up the sauceΓÇöand is a perfect choice for anyone looking for a satisfying, healthy, and filling meal. Though itΓÇÖs traditionally a breakfast dish in many regions, shakshuka has since gained popularity across the world and can be enjoyed at any time of day.\r\n\r\n---\r\n\r\n## **The History Behind Shakshuka**  \r\n\r\nShakshuka has a rich and diverse history, with its origins often debated. Many believe the dish has roots in North Africa, particularly Tunisia or Libya, before spreading to other parts of the Middle East and the Mediterranean region. The name \"shakshuka\" is derived from the Arabic word *shaqqa,* which translates roughly to *\"to stick together\"* or *\"to clump together\"ΓÇö*reflecting its signature, hearty consistency.\r\n\r\nAs with many traditional dishes, shakshuka has variations depending on regional influences. While North African and Middle Eastern cultures are credited with its development, the dish is now a staple in Israeli, Mediterranean, and even European cuisine.\r\n\r\nShakshuka made its way into Israeli cuisine during the mid-20th century, becoming a popular dish thanks to Jewish immigrants and regional influences. Over time, shakshuka became symbolic of Mediterranean flavors and modern brunch culture, celebrated for its simplicity and ability to be modified to suit a variety of tastes.\r\n\r\n---\r\n\r\n## **Core Ingredients of Traditional Shakshuka**  \r\n\r\nAlthough there are many variations of shakshuka, the base ingredients are relatively consistent. HereΓÇÖs what goes into a classic shakshuka:\r\n\r\n1. **Tomatoes:** The heart of the dish. Fresh tomatoes or canned tomato pur├⌐e are used to create the rich, velvety sauce.\r\n2. **Eggs:** The centerpiece of shakshuka. The eggs are poached in the tomato sauce until they reach the perfect textureΓÇötender but fully cooked.\r\n3. **Bell Peppers:** Usually red or green, bell peppers add sweetness and depth to the sauce.\r\n4. **Onions and Garlic:** Aromatics like onions and garlic are saut├⌐ed first to build the foundation of flavor.\r\n5. **Spices:** Spices are essential in shakshuka. Common choices include cumin, paprika, chili powder, and coriander.\r\n6. **Olive Oil:** Essential for saut├⌐ing the vegetables and creating depth of flavor.\r\n\r\n### **Optional Ingredients:**  \r\nMany variations include ingredients such as:\r\n- Feta cheese: Crumbled on top for creaminess.\r\n- Spinach: Stirred in for added nutrition and a fresh green element.\r\n- Lamb or sausage: For a heartier, protein-rich variation.\r\n- Zucchini or eggplant: Roasted or saut├⌐ed and added to the sauce for texture and flavor.\r\n\r\n---\r\n\r\n## **How to Make Shakshuka at Home**  \r\n\r\nMaking shakshuka at home is simple, and with the right ingredients, it can come together in under 30 minutes. HereΓÇÖs a quick and easy shakshuka recipe to try:\r\n\r\n### **Ingredients:**  \r\n- 2 tablespoons olive oil  \r\n- 1 medium onion, finely chopped  \r\n- 3 cloves garlic, minced  \r\n- 1 bell pepper, diced  \r\n- 1 can (400g) canned crushed tomatoes or 5 fresh tomatoes, diced  \r\n- 1 teaspoon cumin  \r\n- 1 teaspoon paprika  \r\n- 1/2 teaspoon chili powder (adjust to taste)  \r\n- 4 to 6 large eggs  \r\n- Salt and pepper to taste  \r\n- Fresh parsley or cilantro for garnish  \r\n\r\n### **Instructions:**  \r\n1. **Heat Oil and Saut├⌐ Aromatics:** In a large skillet or frying pan, heat the olive oil over medium heat. Add the onion and saut├⌐ until soft and translucent, about 3-4 minutes. Add the garlic and bell pepper, cooking until fragrant.  \r\n2. **Add Spices:** Stir in the cumin, paprika, and chili powder, allowing them to bloom in the oil for about 30 seconds.  \r\n3. **Add Tomatoes:** Pour in the crushed tomatoes and stir well. Season with salt and pepper. Allow the sauce to simmer for about 10 minutes until thickened.  \r\n4. **Crack in the Eggs:** Using the back of a spoon, make small wells in the sauce. Crack one egg into each well. Cover the pan with a lid and let the eggs poach for 5-7 minutes, or until the whites are set and the yolks are still runny (or cook longer for firmer eggs).  \r\n5. **Garnish and Serve:** Remove the pan from heat, sprinkle with fresh parsley or cilantro, and serve immediately with warm, crusty bread.  \r\n\r\n---\r\n\r\n## **Popular Variations of Shakshuka**  \r\n\r\nWhile the classic shakshuka is unbeatable, there are a number of popular variations that make this dish even more exciting and versatile:\r\n\r\n### 1. **Green Shakshuka:**  \r\nInstead of a tomato base, green shakshuka uses ingredients like spinach, kale, and green peppers to create a vibrant green sauce.\r\n\r\n### 2. **Cheese Shakshuka:**  \r\nFeta or ricotta can be added either as a topping or stirred into the sauce for added creaminess.\r\n\r\n### 3. **Spicy Shakshuka:**  \r\nFor those who love heat, extra chili powder, harissa paste, or hot sauce can transform shakshuka into a fiery, flavor-packed dish.\r\n\r\n### 4. **Meat Lover's Shakshuka:**  \r\nGround lamb, sausage, or beef can be added to the tomato base to create a heartier, protein-rich variation.\r\n\r\n---\r\n\r\n## **Why Shakshuka Has Become So Popular**  \r\n\r\nShakshukaΓÇÖs appeal lies in its simplicity, comfort, and versatility. ItΓÇÖs a dish that can be modified to suit dietary needs, taste preferences, or pantry items. Its use of accessible, healthy ingredients and ability to pair perfectly with crusty bread or pita has cemented it as a favorite for brunch, lunch, and dinner worldwide.\r\n\r\nIts Mediterranean roots and simplicity make it a perfect choice for anyone who wants to enjoy a meal that combines flavor, history, and ease.  \r\n\r\n---\r\n\r\n## **Final Thoughts: A Dish Worth Trying**  \r\n\r\nWhether youΓÇÖre a seasoned chef or new to Middle Eastern cuisine, shakshuka offers an accessible, warm, and satisfying introduction to this style of cooking. With its simple ingredients, minimal prep time, and iconic taste, shakshuka is a timeless dish that can fit into any meal plan.\r\n\r\nSo the next time youΓÇÖre looking for something hearty, spiced, and versatile, give shakshuka a try. With just a skillet, some eggs, and a few pantry staples, you can experience a bit of history, comfort, and culture in one delicious dish.",
+      "picture": "article_pictures/shakshukawebp.webp",
+      "created_at": "2024-12-09T01:43:47.544Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        38,
+        13,
+        23,
+        25,
+        28
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 15,
+    "fields": {
+      "author": 4,
+      "title": "Activism Against Bulgaria's Bad Roads",
+      "content": "## **How One Tragic Accident Sparked a Nationwide Movement**  \r\n\r\n*By A Novice Investigative Journalist on the Ground*  \r\n\r\nIt started with a single momentΓÇöa screech of tires, a collision, and the sound of lives torn apart. A single tragic accident that shook a nation and exposed what many already knew but few truly acknowledged: **Bulgaria's roads are in desperate need of repair.**  \r\n\r\nOn a cold December morning, in the small town of Montana, a devastating accident claimed the lives of three innocent people. The cause? Poorly maintained infrastructure, dangerous potholes, and roads that have been neglected for years. This wasnΓÇÖt an isolated incident. It was the spark that ignited a growing movement of citizens demanding change.\r\n\r\nFrom local residents to civil organizations, a wave of outrage has swept across Bulgaria, and with it comes a unified demand: *Fix the roads.*\r\n\r\n---\r\n\r\n## **The Accident that Ignited the Debate**  \r\n\r\nThe accident occurred on a stretch of the national highway connecting Montana to Sofia. A family vehicle lost control after hitting a massive pothole, leading to a collision with oncoming traffic. Three lives were lost in an instant.  \r\n\r\nEyewitnesses recall the vehicle skidding, the cries of panic, and the helplessness that comes when thereΓÇÖs no immediate solution. Locals blamed not just the drivers involved but the state of the road itself. For years, citizens of towns like Montana and Sofia have complained about the lack of attention given to vital infrastructure repairs.\r\n\r\nThe victimΓÇÖs family members, heartbroken and grieving, took to social media with a simple yet powerful message:\r\n\r\n> *ΓÇ£No more. Our loved ones deserve safe roads. Fix the highways. Now.ΓÇ¥*\r\n\r\nThis statement resonated across the nation.\r\n\r\n---\r\n\r\n## **The State of BulgariaΓÇÖs Roads: A Long-Standing Problem**  \r\n\r\nAnyone whoΓÇÖs driven in Bulgaria will attest to the struggles of navigating its aging infrastructure. From rural areas to major highways, BulgariaΓÇÖs roads are riddled with potholes, cracks, and dangerous uneven patches. Poor road conditions arenΓÇÖt just an inconvenienceΓÇötheyΓÇÖre a life-threatening hazard.\r\n\r\n### **Why are the roads in such a state?**  \r\n\r\nGovernmental mismanagement and a lack of investment are major factors. Over the years, numerous promises have been made by politicians to address the issue, but they have consistently fallen through. Budget allocations have shifted, red tape has slowed reforms, and infrastructure projects have been delayed due to corruption and poor planning.\r\n\r\nDespite billions in European Union funding intended to upgrade infrastructure, many citizens argue that money is either misused or poorly executed.\r\n\r\nLocal activist groups blame this inaction on:\r\n\r\n- **Corruption:** A lack of transparency in how repair funds are spent.  \r\n- **Bureaucratic inefficiencies:** Delays in approving and executing projects.  \r\n- **Prioritization issues:** Government programs focusing on urban development instead of rural highways and essential infrastructure.\r\n\r\nThe result? Roads that are unsafe, ill-maintained, and unable to accommodate the increasing traffic of a modern nation.\r\n\r\n---\r\n\r\n## **The Rise of the Activist Movement**  \r\n\r\nFollowing the tragic accident in Montana, a movement began to gather steam. Citizens took to the streets, forming alliances between grassroots organizations, social media groups, and community leaders. Their goal: pressure the Bulgarian government to prioritize road repair and infrastructure maintenance.\r\n\r\nThis movement has combined traditional protest methodsΓÇömarches and demonstrationsΓÇöwith modern activism, leveraging platforms like Facebook and Twitter to spread their message. Social media campaigns have amplified their calls, reaching not just local towns but cities across the country.\r\n\r\nOne prominent grassroots movement is the **Safe Roads Bulgaria Initiative,** which uses petitions, rallies, and data to hold policymakers accountable. The group argues that **proactive investment in infrastructure is a human rights issue**ΓÇöone that should transcend political divides.\r\n\r\n---\r\n\r\n## **What Needs to Change? A Clear Plan for Solutions**  \r\n\r\nActivists have laid out several demands to address the problem. These include:  \r\n\r\n1. **Immediate repairs to the most dangerous stretches of highway** with high rates of accidents.  \r\n2. **Transparent allocation of EU funding** to ensure the money is used directly for infrastructure improvements.  \r\n3. **Increased investment in long-term planning** to maintain roads and prevent future deterioration.  \r\n4. **Implementation of oversight mechanisms** to ensure that funds intended for infrastructure repair are spent effectively and without corruption.  \r\n5. **Upgrading rural areasΓÇÖ infrastructure** to connect small towns and improve safety for drivers and pedestrians alike.\r\n\r\nBy targeting both short-term solutions (patching potholes and dangerous routes) and long-term reforms (better planning and modernization of national highways), activists hope to break the cycle of neglect.\r\n\r\n---\r\n\r\n## **Political Response: Promises vs. Action**  \r\n\r\nThe response from the Bulgarian government has been mixed. In the aftermath of the Montana accident, officials promised increased funding and expedited efforts to address the most pressing issues. Yet, activists remain skeptical.\r\n\r\nBulgariaΓÇÖs political scene has long struggled with corruption, shifting priorities, and inefficiencies. Promises have been made before, but the question remains: *Will this time be different?*  \r\n\r\nPrime Minister Stefan Petrov has acknowledged the severity of the situation, stating:\r\n\r\n> *ΓÇ£We will ensure that every necessary step is taken to prevent such tragedies from happening again. Roads are a priority.ΓÇ¥*\r\n\r\nHowever, promises are one thing; action is another. Activists are closely monitoring the governmentΓÇÖs spending decisions and pressing for transparency in how funds are allocated. They are demanding that the promises translate into results.\r\n\r\n---\r\n\r\n## **How You Can Get Involved**  \r\n\r\nIf youΓÇÖre a resident of Bulgaria or simply believe in safer infrastructure as a fundamental right, there are several ways you can support the cause:  \r\n\r\n1. **Join local protests and rallies:** Show your support by standing with communities affected by unsafe roads.  \r\n2. **Sign petitions:** Activist groups circulate petitions to demand political action. Your signature can make a difference.  \r\n3. **Raise awareness on social media:** Share news, statistics, and calls to action on platforms like Facebook, Twitter, and Instagram.  \r\n4. **Support grassroots organizations:** Financial support can help keep campaigns running and maintain public pressure on policymakers.  \r\n\r\nEvery voice matters. Every action can send a signal to those in power that citizens demand better and safer infrastructure.\r\n\r\n---\r\n\r\n## **A Call for Urgency**  \r\n\r\nThe tragic events in Montana are not isolated. Every week, stories emerge about accidents linked to the poor state of BulgariaΓÇÖs roads. These arenΓÇÖt just statistics; they are livesΓÇöfamilies torn apart, communities grieving, and the simple, preventable loss of lives.  \r\n\r\nBulgaria stands at a crossroads: either continue with inaction and delays, or step into a future where infrastructure reflects progress, safety, and responsibility. The activists fighting for this change are not just fighting potholes and poor maintenanceΓÇöthey are fighting for accountability, equality, and justice.\r\n\r\nRoad safety is not politicalΓÇöitΓÇÖs a human right. The time to act is now.",
+      "picture": "article_pictures/bulgaria-roads.jpg",
+      "created_at": "2024-12-09T01:55:27.911Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        32,
+        33,
+        10,
+        43,
+        12,
+        17,
+        18,
+        19,
+        26
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 16,
+    "fields": {
+      "author": 4,
+      "title": "Exposing the developer of this web site",
+      "content": "## **Website Developer Exposed as the Ultimate Weaboo: A Journey into the Otaku Abyss**  \r\n\r\nIn a shocking discovery that has rocked the local tech scene, it has come to light that the *mysteriously quiet* website developer behind our favorite Click-Bait Haven is not just a coder, but an *actual full-fledged weaboo.*  \r\n\r\nYes, the evidence is damning. Behind the clean UI, the well-written code, and the seamless navigation of our favorite modern website lies the heart of a true anime connoisseurΓÇöa devout follower of the sacred texts of *Neon Genesis Evangelion,* *Bleach,* *Berserk,* and the *Monogatari series.*  \r\n\r\n---\r\n\r\n## **The Evidence: Crunchyroll Tabs & Evangelion References**  \r\n\r\nIt all started when an anonymous tipster discovered the developer's browser history. Among the expected Google searches like *\"CSS Flexbox cheat sheet\"* and *\"how to optimize database queries\"* there was a curious pattern. \r\n\r\nSeveral tabs were suspiciously left open:  \r\n- **\"Why Gendo Ikari is the true protagonist\"**  \r\n- **\"Best Bleach episodes ranked\"**  \r\n- **\"Vtuber debuts\"**  \r\n- **\"How to build a Yu-Gi-Oh! meta deck with 4D spatial manipulation\"**  \r\n\r\nClearly, this developer isnΓÇÖt just dabbling in techΓÇöthey are *living* in a digital shrine of anime culture. If you thought their passion for Python was admirable, wait until you hear their *actual* thoughts on *Berserk*ΓÇÖs recent adaptation controversies.  \r\n\r\n---\r\n\r\n## **The Clues Were in Plain Sight**  \r\n\r\nLooking back on things, it was obvious. The subtle signs were always there:\r\n\r\n1. **Website Aesthetics:** Every button and page background looks suspiciously inspired by a late-night anime OP. The pastel gradients, flowing UI elements, and occasional ominous red text scream *Evangelion* vibes.  \r\n   \r\n2. **Hidden Easter Eggs:** A sharp-eyed user discovered that clicking certain navigation buttons triggers a GIF of a crying anime girl with the words *\"Yabe\"* overlayed. Coincidence? We think not.  \r\n\r\n3. **Mysterious Stream Schedule:** Between updates, the dev maintains a cryptic \"streaming schedule\" with time slots for *\"Weekly VTuber Deep Dives\"* and *\"Trading Card Summoning Rituals.\"* This isnΓÇÖt codingΓÇöthis is a lifestyle.\r\n\r\n---\r\n\r\n## **The Tell-Tale Signs: Analyzing Their Social Media Footprint**  \r\n\r\nWhile the devΓÇÖs professional accounts boast resumes, technical certifications, and client testimonials, their personal ones are nothing short of a modern otaku temple. One can only describe their tweets as *\"Vtuber reaction GIFs over technical jargon\"*ΓÇöa poetic mix of *\"The world is full of suffering\"* and *\"Just bought a full set of Soul Reaper cosplay for the office.\"*  \r\n\r\nFrom posting about *BerserkΓÇÖs* newest heartbreak moments to organizing their next trading card event with *Yugioh* fanatics (meta strategies for summoning the Blue-Eyes White Dragon have never felt this *real*), it has become clear that this developer has fully embraced their inner weeb persona.\r\n\r\n---\r\n\r\n## **The Developer's Double Life: A Fine Balance of Code & Cosplay**  \r\n\r\nOur sources suggest this mysterious figure spends 60 hours a week meticulously debugging websites and 30 hours organizing waifu rankings in a personal spreadsheet labeled *\"Best Girl 2024 Edition.\"*  \r\n\r\nImagine this: debugging a broken CSS animation while listening to the *Monogatari* seriesΓÇÖ iconic opening track, pausing only to check if they can optimize their server by summoning a Red-Eyes Dark Dragoon. The duality is impressive, inspiring, and terrifying.\r\n\r\n---\r\n\r\n## **Conclusion: The DevΓÇÖs True Identity? A Hero, A Villain, or a Final Boss?**  \r\n\r\nWhile we cannot confirm the exact extent of this weaboo infiltration, itΓÇÖs clear that this developer has mastered the art of blending code with culture. Between the cryptic references, the perfectly executed website animations, and the love of giant robots and trading cards, it would be wise to consider:  \r\n\r\n**Are we all just NPCs in this developer's anime-inspired web universe?**  \r\n\r\nThe next time you visit Click-Bait Haven, stop for a moment. Look at the UI. Ask yourself: *How many hours went into this pageΓÇª and how many hours were spent contemplating the plot twists of *Neon Genesis Evangelion?***\r\n\r\nStay alert, friends. The weaboo developer might just be in their final form.",
+      "picture": "article_pictures/expose-dev.webp",
+      "created_at": "2024-12-09T02:16:30.097Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": "2024-12-09T02:18:14.852Z",
+      "tags": [
+        34,
+        35,
+        3,
+        41,
+        30
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 17,
+    "fields": {
+      "author": 5,
+      "title": "Yoasobi: Redefining Modern Pop Music",
+      "content": "## **Yoasobi: The Unique Japanese Duo Redefining Modern Pop Music**  \r\n\r\nIf youΓÇÖve ever stumbled across a song that feels both dreamy and introspective yet incredibly catchy at the same time, chances are youΓÇÖve encountered *Yoasobi.* The Japanese music duo has become one of the most exciting and innovative forces in the modern J-pop and electronic music scene. With their blend of storytelling, electronic beats, and stunning visuals, Yoasobi has redefined how music interacts with narrative, captivating audiences worldwide.\r\n\r\n---\r\n\r\n## **Who is Yoasobi?**  \r\n\r\nYoasobi is a musical duo from Japan consisting of **Ayase**, a skilled producer and songwriter, and **Ikura**, a talented vocalist. They rose to fame in 2019 with their debut single *\"Yoru ni Kakeru\"* (translated as *\"Into the Night\"*), and since then, theyΓÇÖve cemented themselves as trailblazers in the world of electronic pop music.  \r\n\r\nWhat makes Yoasobi unique is their styleΓÇöblending electronic music, synth-pop, and storytelling into a cohesive sound that feels both futuristic and emotional. Their approach to music often revolves around adapting short stories into their songs, creating soundscapes that perfectly match their narrative themes.\r\n\r\n---\r\n\r\n## **Their Signature Sound: Storytelling through Soundscapes**  \r\n\r\nOne of the most distinctive characteristics of YoasobiΓÇÖs music is their storytelling element. They often take short stories, novels, and other narratives as the foundation for their songs. Through their songs, they craft atmospheric worlds filled with emotion, reflection, and compelling drama.\r\n\r\nYoasobiΓÇÖs music features:\r\n\r\n- **Innovative Production:** Ayase's production style combines electronic pop, R&B, and ambient elements, crafting intricate yet danceable soundscapes.  \r\n- **Evocative Lyrics:** IkuraΓÇÖs vocals bring these stories to life with a dreamy and emotional tone, helping listeners connect with each narrative.  \r\n- **A Mix of Minimalism and Complexity:** Their sound is layered yet crisp, with soft electronic undertones that never feel overwhelming.\r\n\r\nTheir music has a way of feeling cinematicΓÇöa perfect blend of sound and emotion that matches the story theyΓÇÖre telling.\r\n\r\n---\r\n\r\n## **Notable Hits and Popular Tracks**  \r\n\r\nYoasobiΓÇÖs discography is a mixture of deeply emotional tracks and upbeat electronic bangers. Some of their most well-known songs include:\r\n\r\n### **1. *Yoru ni Kakeru (Into the Night)***  \r\nTheir debut single took off almost instantly, thanks to its dreamy melody, powerful storytelling, and AyaseΓÇÖs masterful production. *\"Yoru ni Kakeru\"* showcases their ability to pair narrative with sound, with lyrics inspired by feelings of longing and exploration.  \r\n\r\n### **2. *Tabun (Maybe)***  \r\nThis hit features a perfect combination of soft, flowing melodies and rhythmic electronic undertones. IkuraΓÇÖs voice is emotive and calming, conveying feelings of uncertainty and hope.\r\n\r\n### **3. *Haruka (ΘüÑπüï)***  \r\nAn exploration of memory, time, and the abstract journey through human emotions, *Haruka* is another example of YoasobiΓÇÖs masterful ability to merge music with storytelling.\r\n\r\nEach track offers listeners a journey through intricate feelings, vivid emotions, and beautifully composed electronic beats, embodying both introspection and dancefloor-ready rhythms.\r\n\r\n---\r\n\r\n## **The Music Video Aesthetic: Art, Animation, and Storytelling**  \r\n\r\nMuch like their music, Yoasobi's music videos complement their sound by combining animated visuals and abstract imagery. Often inspired by Japanese animation and surrealist storytelling, their videos are a visual feast that matches the emotive power of their tracks.\r\n\r\nTheir visuals are filled with symbolism, abstract landscapes, and stunning artistryΓÇödrawing fans into their layered soundscapes and narrative worlds. These videos are not just promotional tools; theyΓÇÖre part of YoasobiΓÇÖs storytelling experience, offering listeners a fully immersive journey.\r\n\r\nFans admire their ability to translate emotion into visually stunning narratives, with animation styles ranging from minimal sketches to breathtakingly complex visuals.\r\n\r\n---\r\n\r\n## **Global Impact and Influence**  \r\n\r\nAlthough Yoasobi hails from Japan, their music has transcended borders. With their innovative sound, theyΓÇÖve gathered a global fanbase, with listeners from across Asia, the West, and beyond. Thanks to platforms like **YouTube, Spotify, and other streaming services**, their music is easy to access and enjoy for fans worldwide.  \r\n\r\nYoasobi has brought modern J-pop into the international spotlight by combining experimental electronic sounds, traditional storytelling, and emotive melodies. Their unique formula continues to attract listeners of various musical tastes, proving their versatility and talent.\r\n\r\n---\r\n\r\n## **Their Influence on the Future of J-Pop**  \r\n\r\nYoasobiΓÇÖs success isnΓÇÖt just about catchy music or compelling visuals. TheyΓÇÖve redefined the notion of pop music in Japan by merging traditional electronic music styles with storytelling elements and modern-day anime aesthetics. Their use of short stories as the foundation of songs is a fresh approach that has inspired many aspiring musicians to follow suit.\r\n\r\nAdditionally, their versatility has paved the way for other collaborations in the electronic pop genre, blending electronic sounds with more traditional J-pop elements. Ayase and IkuraΓÇÖs success is a clear testament to their creativity and how innovation can transform musical landscapes.\r\n\r\n---\r\n\r\n## **Conclusion: YoasobiΓÇÖs Journey is Just Beginning**  \r\n\r\nWith their signature blend of electronic music, emotive storytelling, and mesmerizing visuals, Yoasobi continues to capture the hearts of fans worldwide. Their music isn't just something you listen toΓÇöit's an emotional journey, a story told through sound, and a reflection of lifeΓÇÖs most intricate feelings.\r\n\r\nWhether youΓÇÖre a casual listener or a die-hard fan, diving into YoasobiΓÇÖs catalog is an experience like no other. With every new release, they invite listeners into their worldΓÇöa world of dreams, memories, emotions, and rhythm.  \r\n\r\nYoasobi proves that music is more than sound. ItΓÇÖs a story waiting to be told, a feeling waiting to be shared, and an emotion waiting to be felt. Keep listening because this journey has only just begun.",
+      "picture": "article_pictures/yoasobi-article.jpg",
+      "created_at": "2024-12-09T02:30:33.895Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        4,
+        13,
+        14,
+        20,
+        21,
+        24,
+        30
+      ]
+    }
+  },
+  {
+    "model": "articles.article",
+    "pk": 18,
+    "fields": {
+      "author": 5,
+      "title": "Neon Genesis Evangelion: Timeless Masterpiece",
+      "content": "## **Why *Neon Genesis Evangelion* is a Timeless Masterpiece in the World of Anime**  \r\n\r\nWhen it comes to iconic and groundbreaking anime, few titles are as influential and celebrated as *Neon Genesis Evangelion.* Directed by Hideaki Anno and first airing in 1995, this psychological mecha series continues to captivate audiences over 25 years later. Its complex narrative, stunning animation, deeply philosophical themes, and innovative direction have solidified it as a masterpiece that has shaped the anime industry as we know it.\r\n\r\nSo, what is it about *Neon Genesis Evangelion* that has ensured its status as one of the greatest and most timeless anime of all time? LetΓÇÖs explore its brilliance and enduring legacy.\r\n\r\n---\r\n\r\n## **1. Complex Storytelling: A Deep Psychological Journey**  \r\n\r\nAt its core, *Neon Genesis Evangelion* is much more than a traditional mecha series with giant robots fighting giant monsters (referred to as *Angels* in the show). Hideaki Anno crafted a story that delves into themes of depression, trauma, existential crises, and the search for meaning in a fractured and uncertain world.\r\n\r\nThe plot revolves around **Shinji Ikari**, a young and reluctant pilot tasked with piloting a giant bio-mechanical robot (Eva) to fight mysterious enemies. However, as the story progresses, *Evangelion* leaves behind simple action sequences and dives into psychological drama, exploring ShinjiΓÇÖs relationships, fears, and mental struggles.\r\n\r\n### **What makes the story timeless?**  \r\nThe narrative touches on universal questions:  \r\n- What does it mean to be human?  \r\n- How does trauma shape our decisions and perspectives?  \r\n- Can we ever find genuine connection in a world that isolates us?  \r\n\r\nThis philosophical depth ensures that *Neon Genesis Evangelion* resonates with viewers regardless of time or age. The characters arenΓÇÖt just heroes or villains; theyΓÇÖre broken, confused, and very humanΓÇömaking it all the more relatable.\r\n\r\n---\r\n\r\n## **2. Groundbreaking Animation and Artistic Vision**  \r\n\r\nWhen *Neon Genesis Evangelion* first aired, its animation style was revolutionary. Studio Gainax and Hideaki Anno pushed the limits of visual storytelling with their unique artistic choices, combining traditional hand-drawn animation with surreal visual effects and atmospheric imagery.\r\n\r\nFrom the mecha designs to the Angels and their otherworldly nature, every visual in *Evangelion* feels meticulously crafted. Its art style conveys both awe and discomfort, creating a surreal and hypnotic viewing experience. The visual direction is as much about storytelling as the plot itself, using symbolic imagery, abstract visuals, and stark contrasts to reflect themes of isolation, fear, and uncertainty.\r\n\r\n---\r\n\r\n## **3. Symbolism and Thematic Depth**  \r\n\r\nOne of the standout qualities of *Neon Genesis Evangelion* is its use of symbolism. The series is layered with religious references, psychological theories, philosophical discussions, and mythological undertones. From Christian imagery like crosses and references to Adam and Eve to Jungian psychoanalysis and existential concepts, *Evangelion* creates a narrative rich in layers.\r\n\r\n### **Some key thematic elements include:**  \r\n- **Existentialism:** Exploring themes of despair, purpose, and finding meaning in a seemingly uncaring universe.  \r\n- **Isolation and Connection:** Characters struggle to connect with one another, mirroring human fears of rejection and loneliness.  \r\n- **Mental Health:** Shinji and the other characters embody struggles like depression, anxiety, and identity crises.  \r\n- **Humanity vs. Technology:** The Eva units themselves are bio-mechanical constructs, reflecting the blurred line between humanity and machinery.\r\n\r\nHideaki Anno does not shy away from philosophical musings, making *Evangelion* feel intellectual and contemplative rather than simply a sci-fi adventure. The series asks viewers to reflect on their own lives, fears, and perspectives, creating a deeply personal and meditative viewing experience.\r\n\r\n---\r\n\r\n## **4. The Characters: Broken, Complex, and Relatable**  \r\n\r\nAnother reason *Neon Genesis Evangelion* continues to resonate is its incredible character development. Unlike traditional shonen anime with archetypal heroes and villains, *Evangelion* is unafraid to show its characters' flaws, fears, and complexities.\r\n\r\n### **Shinji Ikari ΓÇô The Reluctant Hero**  \r\nShinji, the main protagonist, is a deeply flawed and emotionally complex character. His struggles with his role as a pilot, his relationship with his estranged father, and his internal feelings make him one of animeΓÇÖs most compelling and relatable characters.\r\n\r\n### **The Other Pilots**  \r\nRei Ayanami and Asuka Langley Soryu add additional layers of complexity to the story. Rei represents stoicism, quiet mystery, and detachment, while Asuka embodies fiery confidence but struggles with her own emotional scars. The dynamic between these three pilots reflects different perspectives on trauma, relationships, and identity.\r\n\r\nTheir character development is raw, honest, and deeply human. They aren't perfect, and their stories are filled with tension, vulnerability, and struggleΓÇöelements that make them timeless and memorable.\r\n\r\n---\r\n\r\n## **5. A Reflection of the Human Condition**  \r\n\r\nWhat elevates *Neon Genesis Evangelion* from other mecha series is its focus on the psychological struggles of its characters rather than just mecha battles or action sequences. The series doesnΓÇÖt merely focus on fighting Angels; instead, it explores the internal battles within the characters themselvesΓÇöaddressing themes of abandonment, fear, self-doubt, and redemption.\r\n\r\n*Evangelion* isnΓÇÖt just about robots and sci-fi tropes. It is a meditation on what it means to live, to connect with others, and to find purpose in a world that can often feel indifferent.\r\n\r\n---\r\n\r\n## **6. The Endings and Interpretations: A Legacy of Mystery**  \r\n\r\nOne of the reasons *Neon Genesis Evangelion* remains so impactful is its willingness to subvert expectations. The showΓÇÖs endingΓÇöboth the original TV series ending and the subsequent *End of Evangelion* filmΓÇöare notoriously open-ended and abstract. This approach leaves viewers with questions, theories, and philosophical musings, ensuring that discussions about the series never truly die.\r\n\r\nHideaki Anno's choice to make the narrative intentionally abstract and symbolic means that each viewer can take their own interpretation from the story. Some view it as a psychological journey, others as a commentary on the nature of human existence, and others as a critique of media itself. The flexibility of interpretation has solidified *EvangelionΓÇÖs* reputation as a series that sparks thoughtful discussion.\r\n\r\n---\r\n\r\n## **7. Timelessness in the Modern Age**  \r\n\r\nOver two decades since its initial release, *Neon Genesis Evangelion* remains relevant because it taps into universal themes of fear, hope, and discovery. As a philosophical, psychological, and visual work, *Evangelion* continues to influence newer generations of anime fans and creators.\r\n\r\nModern fans can watch *Evangelion* and experience it as a historical masterpiece while also connecting to its deeply personal storytelling. Every rewatch, whether itΓÇÖs on streaming services or in remastered editions, reveals new layers, questions, and reflections.\r\n\r\n---\r\n\r\n## **Conclusion: *Neon Genesis Evangelion* Will Always Be Timeless**  \r\n\r\n*Neon Genesis Evangelion* is more than just an anime. It's a work of art, philosophy, psychology, and storytelling that has changed the course of the anime industry. Hideaki AnnoΓÇÖs vision, paired with groundbreaking animation, stunning visual symbolism, and deep psychological storytelling, ensures that *Evangelion* will always stand the test of time.\r\n\r\nIt is a series that asks its viewers to think deeply, feel deeply, and question their own existence, much like the journey of its protagonist, Shinji. Even years after its initial release, *Neon Genesis Evangelion* continues to capture hearts and minds, ensuring its place as one of the most groundbreaking and timeless anime series in history.",
+      "picture": "article_pictures/nge-article.jpeg",
+      "created_at": "2024-12-09T02:36:07.446Z",
+      "is_approved": true,
+      "approved_by": null,
+      "approved_at": null,
+      "deleted_at": null,
+      "tags": [
+        38,
+        39,
+        9,
+        13,
+        24,
+        28,
+        29
+      ]
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 1,
+    "fields": {
+      "article": 2,
+      "author": 2,
+      "content": "This article is fake news!",
+      "created_at": "2024-12-09T00:22:44.936Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 2,
+    "fields": {
+      "article": 1,
+      "author": 2,
+      "content": "Great site, helped me learn a lot!",
+      "created_at": "2024-12-09T00:23:31.865Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 3,
+    "fields": {
+      "article": 3,
+      "author": 2,
+      "content": "Amazing what science and technology can do!",
+      "created_at": "2024-12-09T00:24:03.644Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 4,
+    "fields": {
+      "article": 4,
+      "author": 1,
+      "content": "Very scary place, I hope it gets better!",
+      "created_at": "2024-12-09T00:28:04.454Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 5,
+    "fields": {
+      "article": 4,
+      "author": 2,
+      "content": "I will be looking into this story more!",
+      "created_at": "2024-12-09T00:35:46.105Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 6,
+    "fields": {
+      "article": 9,
+      "author": 1,
+      "content": "This gave me a laugh, good job!",
+      "created_at": "2024-12-09T01:03:12.786Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 7,
+    "fields": {
+      "article": 1,
+      "author": 3,
+      "content": "Im happy to be here!",
+      "created_at": "2024-12-09T01:18:14.444Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 8,
+    "fields": {
+      "article": 9,
+      "author": 3,
+      "content": "Very funny",
+      "created_at": "2024-12-09T01:18:33.241Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 9,
+    "fields": {
+      "article": 4,
+      "author": 3,
+      "content": "I will help look into this story",
+      "created_at": "2024-12-09T01:18:52.680Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 10,
+    "fields": {
+      "article": 12,
+      "author": 3,
+      "content": "More people should know about this, I will make it my mission!",
+      "created_at": "2024-12-09T01:26:46.007Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 11,
+    "fields": {
+      "article": 12,
+      "author": 1,
+      "content": "John is doing some good work",
+      "created_at": "2024-12-09T01:27:07.456Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 12,
+    "fields": {
+      "article": 3,
+      "author": 3,
+      "content": "The world of science is getting interesting...",
+      "created_at": "2024-12-09T01:27:58.370Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 13,
+    "fields": {
+      "article": 13,
+      "author": 3,
+      "content": "Its funny because its true",
+      "created_at": "2024-12-09T01:33:44.820Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 14,
+    "fields": {
+      "article": 12,
+      "author": 4,
+      "content": "wow",
+      "created_at": "2024-12-09T01:40:37.216Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 15,
+    "fields": {
+      "article": 14,
+      "author": 4,
+      "content": "its tasty believe me!",
+      "created_at": "2024-12-09T01:44:32.135Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 16,
+    "fields": {
+      "article": 15,
+      "author": 1,
+      "content": "this has been an issue for a long-long time",
+      "created_at": "2024-12-09T01:56:10.887Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 17,
+    "fields": {
+      "article": 16,
+      "author": 4,
+      "content": "I hope a lot of people see this before the dev takes it down!",
+      "created_at": "2024-12-09T02:17:47.372Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 18,
+    "fields": {
+      "article": 16,
+      "author": 1,
+      "content": "Removing this....",
+      "created_at": "2024-12-09T02:18:06.455Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 19,
+    "fields": {
+      "article": 17,
+      "author": 1,
+      "content": "godlike music",
+      "created_at": "2024-12-09T02:30:59.763Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 20,
+    "fields": {
+      "article": 18,
+      "author": 5,
+      "content": "TRUE",
+      "created_at": "2024-12-09T02:36:20.916Z"
+    }
+  },
+  {
+    "model": "articles.comment",
+    "pk": 21,
+    "fields": {
+      "article": 18,
+      "author": 2,
+      "content": "TRUE",
+      "created_at": "2024-12-09T02:38:17.375Z"
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 1,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-08T23:45:01.499Z",
+      "profile": 1,
+      "article": 1
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 2,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T00:09:41.183Z",
+      "profile": 1,
+      "article": 3
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 3,
+    "fields": {
+      "reaction_type": "Dislike",
+      "created_at": "2024-12-09T00:10:27.186Z",
+      "profile": 1,
+      "article": 2
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 4,
+    "fields": {
+      "reaction_type": "Dislike",
+      "created_at": "2024-12-09T00:22:30.985Z",
+      "profile": 2,
+      "article": 2
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 5,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T00:23:02.286Z",
+      "profile": 2,
+      "article": 3
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 6,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T00:27:49.653Z",
+      "profile": 1,
+      "article": 4
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 8,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:03:02.047Z",
+      "profile": 1,
+      "article": 9
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 9,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:11:11.709Z",
+      "profile": 2,
+      "article": 1
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 10,
+    "fields": {
+      "reaction_type": "Dislike",
+      "created_at": "2024-12-09T01:11:37.752Z",
+      "profile": 2,
+      "article": 9
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 11,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:17:59.242Z",
+      "profile": 3,
+      "article": 1
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 12,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:26:27.002Z",
+      "profile": 3,
+      "article": 12
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 13,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:26:58.725Z",
+      "profile": 1,
+      "article": 12
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 14,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:27:42.672Z",
+      "profile": 3,
+      "article": 3
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 15,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:33:28.167Z",
+      "profile": 3,
+      "article": 13
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 16,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:40:09.276Z",
+      "profile": 4,
+      "article": 1
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 17,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:55:57.906Z",
+      "profile": 1,
+      "article": 15
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 18,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:17:50.055Z",
+      "profile": 4,
+      "article": 16
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 19,
+    "fields": {
+      "reaction_type": "Dislike",
+      "created_at": "2024-12-09T02:17:53.234Z",
+      "profile": 1,
+      "article": 16
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 20,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:30:43.720Z",
+      "profile": 5,
+      "article": 17
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 21,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:34:13.714Z",
+      "profile": 1,
+      "article": 17
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 22,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:36:47.480Z",
+      "profile": 5,
+      "article": 18
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 23,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:38:22.765Z",
+      "profile": 2,
+      "article": 18
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 24,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:38:33.586Z",
+      "profile": 2,
+      "article": 15
+    }
+  },
+  {
+    "model": "articles.articlereaction",
+    "pk": 25,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:38:46.869Z",
+      "profile": 2,
+      "article": 12
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 1,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T00:22:47.039Z",
+      "profile": 2,
+      "comment": 1
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 3,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T00:28:08.000Z",
+      "profile": 1,
+      "comment": 4
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 4,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T00:28:26.150Z",
+      "profile": 2,
+      "comment": 4
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 5,
+    "fields": {
+      "reaction_type": "Dislike",
+      "created_at": "2024-12-09T00:28:56.067Z",
+      "profile": 1,
+      "comment": 1
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 6,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:18:17.306Z",
+      "profile": 3,
+      "comment": 7
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 7,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:19:40.258Z",
+      "profile": 3,
+      "comment": 9
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 8,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:26:48.547Z",
+      "profile": 3,
+      "comment": 10
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 9,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T01:27:09.888Z",
+      "profile": 1,
+      "comment": 10
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 10,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:17:48.967Z",
+      "profile": 4,
+      "comment": 17
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 11,
+    "fields": {
+      "reaction_type": "Dislike",
+      "created_at": "2024-12-09T02:17:56.072Z",
+      "profile": 1,
+      "comment": 17
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 12,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:36:22.298Z",
+      "profile": 5,
+      "comment": 20
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 13,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:38:19.300Z",
+      "profile": 2,
+      "comment": 20
+    }
+  },
+  {
+    "model": "articles.commentreaction",
+    "pk": 14,
+    "fields": {
+      "reaction_type": "Like",
+      "created_at": "2024-12-09T02:38:21.676Z",
+      "profile": 2,
+      "comment": 21
+    }
+  },
+  {
+    "model": "moderation_system.notification",
+    "pk": 1,
+    "fields": {
+      "profile": 2,
+      "time_of_review": "2024-12-09T00:26:58.946Z",
+      "reviewer": 1,
+      "viewed": true,
+      "is_positive_review": true,
+      "reason_for_rejection": "",
+      "article_title": "Exploring My City of Vidin's Corruption",
+      "article_id": 4
+    }
+  },
+  {
+    "model": "moderation_system.notification",
+    "pk": 2,
+    "fields": {
+      "profile": 2,
+      "time_of_review": "2024-12-09T00:40:46.930Z",
+      "reviewer": 1,
+      "viewed": true,
+      "is_positive_review": false,
+      "reason_for_rejection": "This theory is not real, also use more appropriate tags!",
+      "article_title": "Dead Internet Theory, Its the truth",
+      "article_id": 5
+    }
+  },
+  {
+    "model": "moderation_system.notification",
+    "pk": 3,
+    "fields": {
+      "profile": 2,
+      "time_of_review": "2024-12-09T00:57:10.720Z",
+      "reviewer": 1,
+      "viewed": true,
+      "is_positive_review": true,
+      "reason_for_rejection": "",
+      "article_title": "Rise of Dogecoin: From Meme to Money",
+      "article_id": 8
+    }
+  },
+  {
+    "model": "moderation_system.notification",
+    "pk": 4,
+    "fields": {
+      "profile": 2,
+      "time_of_review": "2024-12-09T01:02:45.465Z",
+      "reviewer": 1,
+      "viewed": false,
+      "is_positive_review": true,
+      "reason_for_rejection": "",
+      "article_title": "Rising Tensions Between Nordar and Virelia",
+      "article_id": 6
+    }
+  },
+  {
+    "model": "moderation_system.notification",
+    "pk": 5,
+    "fields": {
+      "profile": 2,
+      "time_of_review": "2024-12-09T01:02:48.824Z",
+      "reviewer": 1,
+      "viewed": false,
+      "is_positive_review": true,
+      "reason_for_rejection": "",
+      "article_title": "The Moon Landing Was Totally Faked",
+      "article_id": 9
+    }
+  }
+]

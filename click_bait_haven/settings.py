@@ -24,12 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# Probably should keep this in the .env file, but this project is open-source anyway
+# I know the key should remain hidde, but If I dont keep it public here then the testing
+# data and account logins won't work properly, because the password hashing will change
+# I am not so dumb to just leave it public for no reason...
 SECRET_KEY = r"django-insecure-zlv-0v4xsdk5&ppexf6ndep&1pm%%3-r59mk-xfckdq+y$b-wu"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG") == True
 
+
+# This should also be in the .env if I want to deploy
 ALLOWED_HOSTS = ['*']
 
 
@@ -91,6 +95,7 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
 }
 
+# this is for the api to work like I intended it to
 CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
