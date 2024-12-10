@@ -50,7 +50,8 @@
                                         {% if approval_phase %}
                                             <h2>Enter a reason for rejection!</h2> 
                                             <textarea name="reason_for_rejection" id="reason-rejection"
-                                            placeholder="Please give your reasons here..." required></textarea>
+                                            placeholder="Please give your reasons here..." required
+                                            maxlength="500" minlength="1"></textarea>
                                             <br>
                                             <button type="submit" class="btn-moderation" id="submit-rejection">Reject Article!</button>
                                         {% else %}
@@ -177,7 +178,7 @@
                                                 <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
                                             </div>
                                         {% endif %}
-                                        <a href="{% url 'profile_details' author.pk %}" class="comment-user-username">{{ comment.author.user.username }}</a>
+                                        <a href="{% url 'profile_details' comment.author.pk %}" class="comment-user-username">{{ comment.author.user.username }}</a>
                                         <span class="comment-date">On {{ comment.created_at|date:"d/m/Y" }}</span>
                                     </div>
                                     <p class="comment-content">
@@ -243,7 +244,7 @@
                                                 <img src="{% static 'images/default-profile-pic.jpg' %}" alt="User profile picture">
                                             </div>
                                         {% endif %}
-                                        <a href="{% url 'profile_details' author.pk %}" class="comment-user-username">{{ comment.author.user.username }}</a>
+                                        <a href="{% url 'profile_details' comment.author.pk %}" class="comment-user-username">{{ comment.author.user.username }}</a>
                                         <span class="comment-date">On {{ comment.created_at|date:"d/m/Y" }}</span>
                                     </div>
                                     <p class="comment-content">

@@ -52,6 +52,14 @@ main {
 
 }
 
+.user-details h1 {
+    display: block;
+    width: 20ch;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
 .details-buttons {
     display: flex;
     align-items: center;
@@ -86,6 +94,13 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.user-email {
+    width: 25ch;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
 .bio {
     background-color: white;
     padding: 2rem;
@@ -96,6 +111,9 @@ main {
 
 .bio p {
     max-width: 70ch;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 
@@ -126,6 +144,9 @@ main {
 }
 
 @media screen and (max-width: 800px) {
+    .profile-info {
+        flex-direction: column;
+    }
     .profile-header {
         flex-direction: column;
         gap: 3rem;

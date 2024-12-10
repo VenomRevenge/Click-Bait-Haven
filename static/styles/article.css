@@ -76,6 +76,17 @@ ul, ol {
     overflow: hidden;
 }
 
+.author-name {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: 30ch;
+}
+
+.publish-date {
+    margin-left: auto;
+}
+
 .article-image {
     border-radius: 8px;
     overflow: hidden;
@@ -211,9 +222,22 @@ ul, ol {
     overflow: hidden;
 }
 
+.comment-user-username {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: 30ch;
+}
+
 .comment-date {
     color: gray;
     margin-left: auto;
+}
+
+.comment-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .comment-actions {

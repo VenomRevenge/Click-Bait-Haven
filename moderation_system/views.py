@@ -95,7 +95,7 @@ def approve_article(request, pk):
         raise Http404
     # in case mod or admin tries to approve an already approved article so notif doesnt get created
     elif article.is_approved and not article.deleted_at:
-        messages.success(request, 'That article is already approved!')
+        messages.error(request, 'That article is already approved!')
         return redirect('article', pk)
 
     article.is_approved = True
@@ -147,8 +147,10 @@ def reject_article(request, pk):
         return redirect('article', pk)
     # if the request is not POST or there is no reason given then redirect back to article page
     elif request.method != 'POST' or not reason or len(reason) == 0:
-        messages.success(request, 'Please enter a reason for rejection!')
+        messages.error(request, 'Please enter a reason for rejection!')
         return redirect('article', pk)
+    elif len(reason) > 500:
+        messages.error(request, 'The reson must be within 500 charactes in length')
     
     
     article.soft_delete()

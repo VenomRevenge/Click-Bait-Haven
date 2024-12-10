@@ -323,7 +323,8 @@ def post_comment(request, pk):
     # checking if the content is between the allowed length
     if content and (Comment.CONTENT_MIN_LENGTH <= len(content) <= Comment.CONTENT_MAX_LENGTH):
         Comment.objects.create(article=article, author=profile, content=content)
-
+    else:
+        messages.error(request, "Comment must be between 1 and 500 characters long")
     
     return redirect(url)
 

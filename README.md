@@ -10,6 +10,7 @@ A dynamic journalism web app allowing users to publish, review, and interact wit
 - **pip**: For installing dependencies  
 - **Browser**: Developed and tested using Brave and Chrome. A Chromium-based browser is recommended but others probably work as well.
 - **GIT**: Alternatively you can just download the source code.
+- **Python Virtual Environment**: Optional, but recommended
 ---
 
 ## Setup Instructions
@@ -38,17 +39,17 @@ At the root level of the project (where `manage.py` is located), create a `.env`
 # You dont need to set this or change it if you are testing
 # you can read the comment in the settings.py if you are wondering
 # why I left it here
-SECRET_KEY="django-insecure-zlv-0v4xsdk5&ppexf6ndep&1pm%%3-r59mk-xfckdq+y$b-wu"
+SECRET_KEY=django-insecure-zlv-0v4xsdk5&ppexf6ndep&1pm%%3-r59mk-xfckdq+y$b-wu
 
 # Debug mode
-DEBUG="True"  # Set to "False" for production
+DEBUG=True
 
 # PostgreSQL database settings
-DB_NAME="your_db_name"
-DB_USER="postgres"  # or your PostgreSQL username
-DB_PASSWORD="your_postgres_user_password"
-DB_HOST="127.0.0.1" # or your host
-DB_PORT="5432" # or your port
+DB_NAME=your_db_name
+DB_USER=postgres
+DB_PASSWORD=your_postgres_user_password
+DB_HOST=127.0.0.1
+DB_PORT=5432
 
 # Web3Forms API key for testing contact email feature
 WEB3FORMS_EMAIL_ACCESS_KEY="your_key_here"
@@ -67,6 +68,12 @@ python manage.py loaddata data.json
 ```
 
 **Note**: It is recommended to use a freshly created database for optimal results.
+
+### Step 6: Run the app
+Use this command to run the app:
+```bash
+python manage.py runserver
+```
 
 ---
 
