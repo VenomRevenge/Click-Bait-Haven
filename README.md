@@ -19,7 +19,7 @@ A dynamic journalism web app allowing users to publish, review, and interact wit
 ```bash
 git clone https://github.com/VenomRevenge/Click-Bait-Haven.git
 ```
-And navigate to the root directory (manage.py level)
+And navigate to the root directory (`manage.py` level)
  ```bash
 cd Click-Bait-Haven
 ```
@@ -52,8 +52,10 @@ DB_HOST=127.0.0.1
 DB_PORT=5432
 
 # Web3Forms API key for testing contact email feature
-WEB3FORMS_EMAIL_ACCESS_KEY="your_key_here"
+WEB3FORMS_EMAIL_ACCESS_KEY=your_key_here
 ```
+
+**Note**: Visit https://web3forms.com/ to get your key, its free and no registration required.
 
 ### Step 4: Database Migration
 Run the following command to apply migrations:
@@ -87,6 +89,7 @@ The web app features six types of users, each with unique permissions:
 
 ### 2. Citizen Journalists (regular users without permissions)
 - All anonymous user permissions.
+- View other profiles
 - Publish articles (subject to review).
 - Edit profile and articles (articles return to the review phase upon edits).
 - Comment on and react to articles/comments.
@@ -163,5 +166,5 @@ API documentation is available at `/api/` with Swagger UI.
 ### Asynchronous Contact Form
 - Implements Web3Forms for email-based communication with the site owner.
 
-**Note**: Visit https://web3forms.com/ to get your key, its free and no registration required.
+
 
