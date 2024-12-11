@@ -107,13 +107,15 @@ The web app features six types of users, each with unique permissions:
 
 ### 5. Staff
 - All moderator permissions.
+- Edit other users' profiles
 - Permanently ban users.
+- Edit and delete other users' comments
 - Access the Django admin site.
 
 ### 6. Superuser
 - All staff permissions.
 - Full CRUD on all users, articles, and comments.
-- Access soft-deleted articles for reinstatement or permanent deletion.
+- Access soft-deleted articles page for reinstatement or permanent deletion.
 
 ---
 
