@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Access Denied</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles/reset-and-font.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/403.css' %}">
+</head>
+<body>
+
+<div class="access-denied-page">
+    <h1>🛑 Access Denied</h1>
+    <p class="warning">
+        Nice try, journalist, but you’re reaching classified territory! 🕵️‍♂️<br>
+        Only the *elite* reporters get clearance to enter here.
+    </p>
+    <p class="explanation">
+        Looks like you're trying to get the scoop on something big…<br>
+        Unfortunately, this story's embargoed for you. <br><br>
+        <strong>Don’t try that again… or risk a lifetime suspension from Click-Bait Haven™! 😉</strong>
+    </p>
+    <a href="/" class="back-btn">Back to Home</a>
+</div>
+
+</body>
+</html>

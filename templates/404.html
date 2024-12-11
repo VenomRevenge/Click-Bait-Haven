@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles/reset-and-font.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/404.css' %}">
+</head>
+<body>
+
+<div class="not-found-page">
+    <h1>404 - Story Not Found 🕵️‍♀️</h1>
+    <p class="message">
+        "You’ve stumbled upon the *legendary lost article*... or maybe just a broken link!<br>
+        The page you're hunting for has vanished, and we're out of leads."
+    </p>
+    <p class="hint">
+        But don’t worry, *real journalists* never give up on a lead! Try searching again, or return to our homepage to dig up the latest scoops.
+    </p>
+    <a href="{% url 'index' %}" class="back-btn">Back to Home</a>
+</div>
+
+</body>
+</html>

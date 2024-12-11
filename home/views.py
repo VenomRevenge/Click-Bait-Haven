@@ -173,3 +173,11 @@ def privacy_policy(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
+
+
+def custom_403(request, exception):
+    return render(request, '403.html', status=403)

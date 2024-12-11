@@ -1,5 +1,5 @@
 from django.urls import path, include
-from home.views import Register, SignIn, about, contact_us, delete_notification, index, my_notifications, privacy_policy, random_article, sign_out
+from home.views import Register, SignIn, about, contact_us, custom_403, custom_404, delete_notification, index, my_notifications, privacy_policy, random_article, sign_out
 
 
 urlpatterns = [
@@ -17,3 +17,6 @@ urlpatterns = [
         ]) 
     ),
 ]
+
+handler404 = custom_404
+handler403 = custom_403
