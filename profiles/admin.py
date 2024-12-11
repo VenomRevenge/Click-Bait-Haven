@@ -54,28 +54,32 @@ class UserAdmin(UserAdmin, ModelAdmin):
 
     def make_confirmed_journalist(self, request, queryset):
         permission = Permission.objects.get(codename='confirmed_journalist')
+        queryset = queryset.filter(is_active=True)
         for user in queryset:
             user.user_permissions.clear()
             user.user_permissions.add(permission)
-            user.profile.role = Roles.CONFIRMED_JOURNALIST
+            if hasattr(user, 'profile'):
+                user.profile.role = Roles.CONFIRMED_JOURNALIST
             user.profile.save()
             
     make_confirmed_journalist.short_description = 'Make users confirmed journalists'
 
     def make_moderator(self, request, queryset):
         permission = Permission.objects.get(codename='moderator')
+        queryset = queryset.filter(is_active=True)
         for user in queryset:
             user.user_permissions.clear()
             user.user_permissions.add(permission)
-            user.profile.role = Roles.MODERATOR
+            if hasattr(user, 'profile'):
+                user.profile.role = Roles.MODERATOR
             user.profile.save()
-
     make_moderator.short_description = 'Give users moderation permissions'
 
     def remove_all_permissions(self, request, queryset):
         for user in queryset:
             user.user_permissions.clear()
-            user.profile.role = Roles.CITIZEN_JOURNALIST
+            if hasattr(user, 'profile'):
+                user.profile.role = Roles.CITIZEN_JOURNALIST
             user.profile.save()
         self.message_user(request, "All permissions have been removed for the selected users.")
     remove_all_permissions.short_description = "Remove all permissions for selected users"
